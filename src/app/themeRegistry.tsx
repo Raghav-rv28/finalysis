@@ -7,8 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from "./theme";
 import { useState } from 'react';
 
-
-export default function ThemeRegistry(props: { options: any; children: any; }) {
+export default function ThemeRegistry(props: { options: any; children: React.ReactNode; }) {
   const { options, children } = props;
 
   const [{ cache, flush }] = useState(() => {

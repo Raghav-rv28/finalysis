@@ -1,19 +1,24 @@
 import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
 
-// A custom theme for this app
+declare module '@mui/material/styles' {
+    interface CustomTheme {
+      danger?: {
+        super?: string;
+      };
+    }
+  
+    interface Theme extends CustomTheme {}
+    interface ThemeOptions extends CustomTheme {}
+  }
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#556cd6',
+    palette:{
+        primary:{
+            main: "#fff",
+        },  
     },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
-    },
-  },
-});
-
+    danger:{
+        super: "#f00",
+    }
+  });
+  
 export default theme;

@@ -1,6 +1,6 @@
 import ThemeRegistry from "./themeRegistry";
 
-export default function RootLayout(props: { children: any; }) {
+export default function RootLayout(props: { children: React.ReactNode; }) {
   const { children } = props;
   return (
     <html lang="en">

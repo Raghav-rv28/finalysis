@@ -9,7 +9,7 @@ export default function Home() {
       <Container>
         <Box>
           <Card>
-            <Typography variant="h2">Hello World ~</Typography>
+            <Typography color="primary" variant="h2">Hello World</Typography>
           </Card>
         </Box>
       </Container>
