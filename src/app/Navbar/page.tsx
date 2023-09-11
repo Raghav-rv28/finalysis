@@ -1,10 +1,13 @@
+//NEXT & REACT
 import * as React from "react";
+import Image from "next/image";
+import { useSession, signIn } from "next-auth/react";
+//MUI IMPORTS
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
@@ -13,54 +16,24 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import Image from "next/image";
+import FormGroup from "@mui/material/FormGroup";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Avatar from "@mui/material/Avatar";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+// Media & Files
 import logoOnly from "../../../public/media/logo/logoOnly.png";
 import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
-import { Avatar, useMediaQuery } from "@mui/material";
-import MaterialUISwitch from "./Components/darkmode";
-import { useSession, signIn } from "next-auth/react";
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.secondary.main, 0.25),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.secondary.main, 0.55),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
+import MaterialUISwitch from "./Components/MaterialUISwitch";
+import {
+  Search,
+  StyledInputBase,
+  SearchIconWrapper,
+} from "./Components/Search";
+// Search Design
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-
-export default function NavBar() {
+export default function NavBar({ mode, setMode }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -166,7 +139,7 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar enableColorOnDark position="static">
         <Toolbar>
           {lessThanSmall ? (
             <Image
@@ -203,7 +176,20 @@ export default function NavBar() {
               </Badge>
             </IconButton>
             {/* Dark Mode */}
-            <MaterialUISwitch sx={{ m: 2 }} />
+            <FormGroup>
+              <FormControl>
+                <FormControlLabel
+                  label=""
+                  onChange={() =>
+                    setMode((prev: string) =>
+                      prev === "light" ? "dark" : "light"
+                    )
+                  }
+                  checked={mode === "light"}
+                  control={<MaterialUISwitch sx={{ m: 2 }} />}
+                />
+              </FormControl>
+            </FormGroup>
             <Avatar
               variant="rounded"
               alt="login"

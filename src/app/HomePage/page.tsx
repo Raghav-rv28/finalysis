@@ -8,7 +8,7 @@ export default function HomePage() {
       <Container
         disableGutters
         maxWidth="xl"
-        sx={{ height: 1960, backgroundColor: "secondary.light" }}
+        sx={{ height: 1960, backgroundColor: "primary.dark" }}
       >
         <Indexes />
       </Container>
