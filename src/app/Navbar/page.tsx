@@ -19,7 +19,7 @@ import logoOnly from "../../../public/media/logo/logoOnly.png";
 import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
 import { Avatar, useMediaQuery } from "@mui/material";
 import MaterialUISwitch from "./Components/darkmode";
-
+import { useSession, signIn } from "next-auth/react";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -68,9 +68,13 @@ export default function NavBar() {
   const lessThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+  const { data: session, status } = useSession();
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+    if (status === "authenticated") {
+      setAnchorEl(event.currentTarget);
+    } else {
+      signIn();
+    }
   };
 
   const handleMobileMenuClose = () => {
@@ -145,7 +149,7 @@ export default function NavBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -206,7 +210,7 @@ export default function NavBar() {
               color="secondary"
               sx={{ bgcolor: "secondary.main", width: 56, height: 56 }}
               onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
-                handleMobileMenuOpen(event)
+                handleProfileMenuOpen(event)
               }
             >
               <AccountCircle fontSize="large" />

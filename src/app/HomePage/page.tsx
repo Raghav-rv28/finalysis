@@ -1,12 +1,17 @@
 import Box from "@mui/material/Box";
 import Indexes from "./Components/Indexes";
+import Container from "@mui/material/Container";
 
 export default function HomePage() {
   return (
     <div>
-      <Box>
+      <Container
+        disableGutters
+        maxWidth="xl"
+        sx={{ height: 1960, backgroundColor: "secondary.light" }}
+      >
         <Indexes />
-      </Box>
+      </Container>
     </div>
   );
 }
