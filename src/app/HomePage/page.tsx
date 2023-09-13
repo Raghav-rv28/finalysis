@@ -1,6 +1,7 @@
 "use client";
 import Container from "@mui/material/Container";
 import Indexes from "./Components/Indexes";
+import TickerTape from "./Components/TickerTape";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
         sx={{ height: "100vh", backgroundColor: "primary.main" }}
       >
         <Indexes indexes={["SPY"]} />
+        <TickerTape tickers={["spy"]} />
       </Container>
     </div>
   );
