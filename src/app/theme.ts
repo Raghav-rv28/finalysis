@@ -13,8 +13,8 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffe98a",
-      light: "rgb(255,237,160)",
+      main: "rgb(255,237,160)",
+      light: "#ffe98a",
       dark: "#ffdf57",
     },
     secondary: {
@@ -35,15 +35,19 @@ const theme = createTheme({
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
-    secondary: {
-      main: "#ffe98a",
-      light: "rgb(255,237,160)",
-      dark: "#ffdf57",
-    },
     primary: {
       main: "#280b45",
       light: "#411271",
       dark: "#0e0419",
+    },
+    text: {
+      primary: "rgba(0,0,0,0.87)",
+      secondary: "#808080",
+    },
+    secondary: {
+      main: "#ffe98a",
+      light: "rgb(255,237,160)",
+      dark: "#ffdf57",
     },
     background: {
       paper: "#121212",

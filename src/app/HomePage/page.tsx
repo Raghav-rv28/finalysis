@@ -1,16 +1,15 @@
-import Box from "@mui/material/Box";
-import Indexes from "./Components/Indexes";
+"use client";
 import Container from "@mui/material/Container";
+import Indexes from "./Components/Indexes";
 
 export default function HomePage() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#252525" }}>
       <Container
-        disableGutters
         maxWidth="xl"
-        sx={{ height: 1960, backgroundColor: "primary.dark" }}
+        sx={{ height: "100vh", backgroundColor: "primary.main" }}
       >
-        <Indexes />
+        <Indexes indexes={["SPY"]} />
       </Container>
     </div>
   );

@@ -139,7 +139,11 @@ export default function NavBar({ mode, setMode }) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar enableColorOnDark position="static">
+      <AppBar
+        enableColorOnDark
+        sx={{ backgroundColor: "primary.dark" }}
+        position="static"
+      >
         <Toolbar>
           {lessThanSmall ? (
             <Image

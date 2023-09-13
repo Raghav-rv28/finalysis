@@ -10,7 +10,7 @@ export default function RootLayout(props: {
 }) {
   const { session, children } = props;
   const [mode, setMode] = useState<"light" | "dark">("light");
-
+  console.log(mode);
   useEffect(() => {
     const mode = localStorage.getItem("mode");
     if (mode === "light" || mode === "dark") setMode(mode);
