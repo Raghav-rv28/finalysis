@@ -31,6 +31,7 @@ import {
   StyledInputBase,
   SearchIconWrapper,
 } from "./Components/Search";
+import TickerTape from "./Components/TickerTape";
 // Search Design
 
 export default function NavBar({ mode, setMode }) {
@@ -221,6 +222,7 @@ export default function NavBar({ mode, setMode }) {
           </Box>
         </Toolbar>
       </AppBar>
+      <TickerTape tickers={["spy"]} />
       {renderMobileMenu}
       {renderMenu}
     </Box>

@@ -9,15 +9,13 @@ export default function RootLayout(props: {
   children: React.ReactNode;
 }) {
   const { session, children } = props;
-  const [mode, setMode] = useState<"light" | "dark">("light");
-  console.log(mode);
-  useEffect(() => {
-    const mode = localStorage.getItem("mode");
-    if (mode === "light" || mode === "dark") setMode(mode);
-  }, []);
+  // const mode = localStorage.getItem("mode");
+  const [mode, setMode] = useState<string>();
 
   useEffect(() => {
-    localStorage.setItem("mode", mode);
+    if (mode !== undefined) {
+      localStorage.setItem("mode", mode);
+    }
   }, [mode]);
 
   return (

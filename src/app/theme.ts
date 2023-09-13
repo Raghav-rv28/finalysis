@@ -41,7 +41,7 @@ const darkTheme = createTheme({
       dark: "#0e0419",
     },
     text: {
-      primary: "rgba(0,0,0,0.87)",
+      primary: "#fff",
       secondary: "#808080",
     },
     secondary: {
