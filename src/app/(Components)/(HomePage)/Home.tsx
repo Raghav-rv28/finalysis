@@ -88,21 +88,38 @@ export default function Home() {
             />
           </Grid>
         </Grid>
-        <Grid container columns={15} columnSpacing={1} direction="row">
+        <Grid
+          justifyContent="center"
+          alignItems="center"
+          container
+          columns={15}
+          columnSpacing={1}
+          direction="row"
+        >
           {/* NEWS SECTION */}
-          <Grid lg={11}>
-            <Tabs
-              textColor="secondary"
-              indicatorColor="secondary"
-              value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
+          <Grid sm={11} xs={12}>
+            <Box
+              sx={{
+                maxWidth: { xs: 350, sm: 480, md: 640 },
+                bgcolor: "background.paper",
+              }}
             >
-              <Tab label="WatchList" />
-              <Tab label="Portfolio" />
-              <Tab label="CryptoCurrency" />
-              <Tab label="News" />
-            </Tabs>
+              <Tabs
+                textColor="secondary"
+                indicatorColor="secondary"
+                value={value}
+                onChange={handleChange}
+                variant="scrollable"
+                scrollButtons="auto"
+                allowScrollButtonsMobile
+                aria-label="basic tabs example"
+              >
+                <Tab label="WatchList" />
+                <Tab label="Portfolio" />
+                <Tab label="CryptoCurrency" />
+                <Tab label="News" />
+              </Tabs>
+            </Box>
             <CustomTabPanel value={value} index={0}>
               WatchList
             </CustomTabPanel>
@@ -117,7 +134,7 @@ export default function Home() {
             </CustomTabPanel>
           </Grid>
           {/* TOP MOVERS SECTION */}
-          <Grid lg={4}>
+          <Grid sx={{ justifyContent: "center" }} lg={4} md={4} sm={4}>
             <TopMovers />
           </Grid>
         </Grid>
