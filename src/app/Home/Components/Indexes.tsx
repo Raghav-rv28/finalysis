@@ -8,7 +8,7 @@ export default function Indexes({ indexes }) {
   const getCard = useCallback((options: any, index: any) => {
     console.log("testing");
     return (
-      <Grid item sm={5} md={4} lg={2.4}>
+      <Grid key={JSON.stringify(indexes)} item sm={5} md={4} lg={2.4}>
         <Card
           key={JSON.stringify(options)}
           sx={{ backgroundColor: "inherit", display: "flex" }}

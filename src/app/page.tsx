@@ -1,9 +1,9 @@
 import React from "react";
-import HomePage from "./HomePage/page";
-export default async function Home() {
+import Home from "./Home/page";
+export default async function Homepage() {
   return (
     <main>
-      <HomePage />
+      <Home />
     </main>
   );
 }
