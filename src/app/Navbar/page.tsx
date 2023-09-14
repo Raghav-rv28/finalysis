@@ -35,7 +35,8 @@ import {
 import TickerTape from "./Components/TickerTape";
 // Search Design
 
-export default function NavBar({ mode, setMode }) {
+export default function NavBar(props: { mode: string; setMode: any }) {
+  const { mode, setMode } = props;
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -44,12 +45,9 @@ export default function NavBar({ mode, setMode }) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
+
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    if (status === "authenticated") {
-      setAnchorEl(event.currentTarget);
-    } else {
-      signIn();
-    }
+    setAnchorEl(event.currentTarget);
   };
 
   const handleMobileMenuClose = () => {
@@ -74,7 +72,7 @@ export default function NavBar({ mode, setMode }) {
 
     handleMenuClose();
   };
-
+  console.log(session);
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -94,8 +92,14 @@ export default function NavBar({ mode, setMode }) {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleSignInOut}>
-        {session ? "Sign Out" : "Sign In"}
+        {session?.user ? "Sign Out" : "Sign In"}
       </MenuItem>
+      {session && (
+        <MenuItem>
+          {session.user.name}
+          <Avatar sx={{ marginLeft: "1rem" }} src={session.user.image}></Avatar>
+        </MenuItem>
+      )}
     </Menu>
   );
 
