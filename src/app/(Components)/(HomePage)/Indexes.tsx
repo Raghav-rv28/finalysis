@@ -3,14 +3,13 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useCallback } from "react";
 import AreaChart from "./AreaChart";
-import { nanoid } from "nanoid";
 export default function Indexes({ indexes }) {
   const getCard = useCallback((options: any, index: any) => {
     console.log("testing");
     return (
-      <Grid key={nanoid()} item sm={5} md={4} lg={2.4}>
+      <Grid key={crypto.randomUUID()} item sm={5} md={4} lg={2.4}>
         <Card
-          key={nanoid()}
+          key={crypto.randomUUID()}
           sx={{ backgroundColor: "inherit", display: "flex" }}
         >
           <Box sx={{ display: "flex", flexDirection: "column" }}>
