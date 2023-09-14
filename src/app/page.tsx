@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Home from "./Home/page";
-import NavBar from "./Navbar/page";
+import Home from "./(Components)/(HomePage)/Home";
+import NavBar from "./(Components)/(NavBar)/Navbar";
 import ThemeRegistry from "./themeRegistry";
 export default function Homepage() {
   const [mode, setMode] = useState<string>();
