@@ -5,58 +5,65 @@ import { useCallback } from "react";
 import AreaChart from "./AreaChart";
 
 export default function Indexes({ indexes }) {
-  const getCard = useCallback((options: any, index: any) => {
-    console.log("testing");
-    return (
-      <Grid key={JSON.stringify(indexes)} item sm={5} md={4} lg={2.4}>
-        <Card
-          key={JSON.stringify(options)}
-          sx={{ backgroundColor: "inherit", display: "flex" }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <CardContent sx={{ flex: "1 0 auto" }}>
-              <Typography component="div" variant="h5">
-                {index.ticker}
-              </Typography>
-              <Typography
-                variant="body1"
-                color="text.secondary"
-                component="span"
+  const getCard = useCallback(
+    (options: any, index: any) => {
+      console.log("testing");
+      return (
+        <Grid key={JSON.stringify(indexes)} item sm={5} md={4} lg={2.4}>
+          <Card
+            key={JSON.stringify(options)}
+            sx={{ backgroundColor: "inherit", display: "flex" }}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <CardContent sx={{ flex: "1 0 auto" }}>
+                <Typography component="div" variant="h5">
+                  {index.ticker}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  component="span"
+                >
+                  {index.name}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ marginLeft: "0.3rem" }}
+                  color={
+                    index.priceChange.includes("-") ? "#ff0000" : "#00ff00"
+                  }
+                  component="span"
+                >
+                  {index.price}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ marginLeft: "0.3rem" }}
+                  color={
+                    index.priceChange.includes("-") ? "#ff0000" : "#00ff00"
+                  }
+                  component="span"
+                >
+                  {index.priceChange}
+                </Typography>
+              </CardContent>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  pl: 1,
+                  pb: 1,
+                }}
               >
-                {index.name}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                sx={{ marginLeft: "0.3rem" }}
-                color={index.priceChange.includes("-") ? "#ff0000" : "#00ff00"}
-                component="span"
-              >
-                {index.price}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                sx={{ marginLeft: "0.3rem" }}
-                color={index.priceChange.includes("-") ? "#ff0000" : "#00ff00"}
-                component="span"
-              >
-                {index.priceChange}
-              </Typography>
-            </CardContent>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                pl: 1,
-                pb: 1,
-              }}
-            >
-              <AreaChart options={options} />
+                <AreaChart options={options} />
+              </Box>
             </Box>
-          </Box>
-        </Card>
-      </Grid>
-    );
-  }, []);
+          </Card>
+        </Grid>
+      );
+    },
+    [indexes]
+  );
 
   return (
     <Grid
