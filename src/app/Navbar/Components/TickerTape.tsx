@@ -1,3 +1,4 @@
+"use client";
 import { Pause, PlayArrow } from "@mui/icons-material";
 import { Box, Grid, Button, Typography } from "@mui/material";
 import React, { Suspense, useEffect } from "react";
