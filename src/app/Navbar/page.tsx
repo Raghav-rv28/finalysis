@@ -2,7 +2,7 @@
 //NEXT & REACT
 import * as React from "react";
 import Image from "next/image";
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signOut, signIn } from "next-auth/react";
 //MUI IMPORTS
 import { styled, alpha, useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -65,6 +65,16 @@ export default function NavBar({ mode, setMode }) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleSignInOut = () => {
+    if (status === "authenticated") {
+      signOut();
+    } else {
+      signIn();
+    }
+
+    handleMenuClose();
+  };
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -83,7 +93,9 @@ export default function NavBar({ mode, setMode }) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleSignInOut}>
+        {session ? "Sign Out" : "Sign In"}
+      </MenuItem>
     </Menu>
   );
 
