@@ -1,0 +1,14 @@
+.ag-theme-alpine {
+  --ag-foreground-color: #280b45;
+  --ag-background-color: #ffeda0;
+  --ag-header-foreground-color: #280b45;
+  --ag-header-background-color: #ffeda0;
+  --ag-odd-row-background-color: #ffdf57;
+}
+.ag-theme-alpine-dark {
+  --ag-background-color: #280b45;
+  --ag-foreground-color: #ffeda0;
+  --ag-header-background-color: #280b45;
+  --ag-odd-row-background-color: #411271;
+  --ag-header-foreground-color: #ffeda0;
+}

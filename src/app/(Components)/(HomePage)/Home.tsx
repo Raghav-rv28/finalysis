@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import NewsList from "./NewsList";
+import CryptoCurrency from "./Cryptocurrency";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -123,7 +124,7 @@ export default function Home() {
               <NewsList />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              CryptoCurrency
+              <CryptoCurrency />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
               Portfolio

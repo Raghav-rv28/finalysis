@@ -29,13 +29,16 @@ export default function TickerTape({ tickers }) {
         >{`${ticker.symbol}`}</Typography>
         <Typography
           sx={{
+            borderRadius: "10px",
             marginLeft: "1rem",
-            textShadow:
-              "1px 1px 2px rgba(0, 0, 0, 0.75), -1px -1px 2px rgba(0, 0, 0, 0.75)",
+            padding: "0.2rem",
+            backgroundColor: ticker.percent_change.includes("-")
+              ? "rgba(255,0,0,0.6)"
+              : "rgba(0,255,0,0.6)",
           }}
           component="span"
           variant="subtitle2"
-          color={ticker.percent_change.includes("-") ? "#ff0000" : "#00ff00"}
+          color="text.primary"
         >{`${ticker.open} ${ticker.percent_change}%`}</Typography>
       </Box>
     );
