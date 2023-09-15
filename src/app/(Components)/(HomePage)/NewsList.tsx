@@ -32,7 +32,7 @@ export default function NewsList() {
       }}
       gap={15}
     >
-      {data.results.map((item) => {
+      {data.test.map((item) => {
         const cols = item.featured ? 2 : 1;
         const rows = item.featured ? 2 : 1;
 
