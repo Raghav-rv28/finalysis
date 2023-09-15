@@ -113,23 +113,23 @@ export default function Home() {
                 scrollButtons="auto"
                 allowScrollButtonsMobile
               >
-                <Tab label="WatchList" />
-                <Tab label="Portfolio" />
-                <Tab label="CryptoCurrency" />
                 <Tab label="News" />
+                <Tab label="CryptoCurrency" />
+                <Tab label="Portfolio" />
+                <Tab label="WatchList" />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-              WatchList
+              <NewsList />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              Portfolio
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
               CryptoCurrency
             </CustomTabPanel>
+            <CustomTabPanel value={value} index={2}>
+              Portfolio
+            </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-              <NewsList />
+              WatchList
             </CustomTabPanel>
           </Grid>
           {/* TOP MOVERS SECTION */}

@@ -3,44 +3,15 @@ import { Pause, PlayArrow } from "@mui/icons-material";
 import { Box, Grid, Button, Typography } from "@mui/material";
 import React, { Suspense, useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import data from "../../api/data/indexquote.json";
 export default function TickerTape({ tickers }) {
-  const [tickerData, setTickerData] = React.useState<Array<any>>();
+  const [tickerData, setTickerData] = React.useState<any>();
   const [play, setPlay] = React.useState<boolean>(true);
+
   useEffect(() => {
     if (tickers.length) {
       // Fetch data for each Ticker one by one
-      setTickerData([
-        {
-          ticker: "SPY",
-          name: "S&P 500",
-          price: "447.59",
-          priceChange: "+0.4%",
-        },
-        {
-          ticker: "QQQ",
-          name: "NASDAQ",
-          price: "375.59",
-          priceChange: "-0.4%",
-        },
-        {
-          ticker: "DIA",
-          name: "DOW JONES",
-          price: "349.59",
-          priceChange: "+1.4%",
-        },
-        {
-          ticker: "IWM",
-          name: "Russell 2k",
-          price: "183.59",
-          priceChange: "+0.4%",
-        },
-        {
-          ticker: "BTCUSD",
-          name: "BITCOIN",
-          price: "26468.5",
-          priceChange: "-1.4%",
-        },
-      ]);
+      setTickerData(data);
     }
   }, [tickers]);
 
@@ -55,7 +26,7 @@ export default function TickerTape({ tickers }) {
           sx={{ marginLeft: "1rem" }}
           component="span"
           color="text.primary"
-        >{`${ticker.ticker}`}</Typography>
+        >{`${ticker.symbol}`}</Typography>
         <Typography
           sx={{
             marginLeft: "1rem",
@@ -64,8 +35,8 @@ export default function TickerTape({ tickers }) {
           }}
           component="span"
           variant="subtitle2"
-          color={ticker.priceChange.includes("-") ? "#ff0000" : "#00ff00"}
-        >{`${ticker.price} ${ticker.priceChange}`}</Typography>
+          color={ticker.percent_change.includes("-") ? "#ff0000" : "#00ff00"}
+        >{`${ticker.open} ${ticker.percent_change}%`}</Typography>
       </Box>
     );
   };
@@ -75,9 +46,18 @@ export default function TickerTape({ tickers }) {
       <Grid item lg={48}>
         <Suspense fallback={<>...Loading</>}>
           <Marquee play={play}>
-            {tickerData.map((ticker) => {
-              return <Ticker key={ticker.ticker} ticker={ticker} />;
-            })}
+            {Object.values(tickerData).map(
+              (ticker: {
+                symbol: string;
+                name: string;
+                volume: string;
+                open: string;
+                change: string;
+                percent_change: string;
+              }) => {
+                return <Ticker key={ticker.symbol} ticker={ticker} />;
+              }
+            )}
           </Marquee>
         </Suspense>
       </Grid>
