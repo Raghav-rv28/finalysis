@@ -74,11 +74,11 @@ export default function CryptoCurrency() {
     },
   ]);
 
-  const onGridReady = () => {
-    if (gridRef !== undefined && gridRef.current !== undefined) {
-      gridRef?.current?.api.sizeColumnsToFit();
-    }
-  };
+  //   const onGridReady = () => {
+  //     if (gridRef !== undefined && gridRef.current !== undefined) {
+  //       gridRef?.current?.api.sizeColumnsToFit();
+  //     }
+  //   };
 
   return (
     <div
@@ -91,7 +91,7 @@ export default function CryptoCurrency() {
     >
       <AgGridReact
         ref={gridRef}
-        onGridReady={onGridReady}
+        // onGridReady={onGridReady}
         rowData={rowData}
         defaultColDef={defaultColDefs}
         columnDefs={columnData}
