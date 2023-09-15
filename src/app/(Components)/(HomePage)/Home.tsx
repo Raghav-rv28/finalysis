@@ -10,6 +10,7 @@ import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import NewsList from "./NewsList";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -50,7 +51,7 @@ export default function Home() {
         }}
       >
         {/* INDEXES/MARKETS CHART SECTION */}
-        <Grid container direction="column" wrap="nowrap">
+        <Grid container direction="row" alignItems="flex-start" wrap="nowrap">
           <Grid item sx={{ marginTop: "1rem" }}>
             <Indexes
               indexes={[
@@ -96,12 +97,11 @@ export default function Home() {
           columnSpacing={1}
           direction="row"
         >
-          {/* NEWS SECTION */}
-          <Grid sm={11} xs={12}>
+          {/* TAB SECTION */}
+          <Grid item sm={11} xs={12}>
             <Box
               sx={{
-                maxWidth: { xs: 350, sm: 480, md: 640 },
-                bgcolor: "background.paper",
+                maxWidth: { xs: 350, sm: 480, md: 640, lg: 960 },
               }}
             >
               <Tabs
@@ -112,7 +112,6 @@ export default function Home() {
                 variant="scrollable"
                 scrollButtons="auto"
                 allowScrollButtonsMobile
-                aria-label="basic tabs example"
               >
                 <Tab label="WatchList" />
                 <Tab label="Portfolio" />
@@ -130,11 +129,18 @@ export default function Home() {
               CryptoCurrency
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-              News
+              <NewsList />
             </CustomTabPanel>
           </Grid>
           {/* TOP MOVERS SECTION */}
-          <Grid sx={{ justifyContent: "center" }} lg={4} md={4} sm={4}>
+          <Grid
+            item
+            alignSelf="baseline"
+            sx={{ justifyContent: "center" }}
+            lg={4}
+            md={4}
+            sm={4}
+          >
             <TopMovers />
           </Grid>
         </Grid>

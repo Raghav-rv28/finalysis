@@ -1,4 +1,5 @@
 import Accordion from "@mui/material/Accordion";
+import { styled } from "@mui/material/styles";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -6,7 +7,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
@@ -14,27 +15,42 @@ import Paper from "@mui/material/Paper";
 import data from "../../api/data/topmovers.json";
 import millify from "millify";
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    color: theme.palette.secondary.main,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    color: theme.palette.secondary.main,
+    fontSize: 14,
+  },
+}));
+
 export default function TopMovers() {
   return (
-    <Box sx={{ backgroundColor: "primary.main" }}>
+    <Box>
       {/* TOP GAINERS */}
       <Accordion>
         <AccordionSummary
+          sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Top Gainers</Typography>
+          <Typography color="secondary">Top Gainers</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "primary.main" }}>
           <TableContainer component={Paper}>
-            <Table aria-label="simple table" size="small">
+            <Table
+              sx={{ backgroundColor: "primary.main" }}
+              aria-label="simple table"
+              size="small"
+            >
               <TableHead>
                 <TableRow>
-                  <TableCell>Symbol</TableCell>
-                  <TableCell align="left">Price</TableCell>
-                  <TableCell align="left">Change %</TableCell>
-                  <TableCell align="left">Float</TableCell>
+                  <StyledTableCell>Symbol</StyledTableCell>
+                  <StyledTableCell align="left">Price</StyledTableCell>
+                  <StyledTableCell align="left">Change %</StyledTableCell>
+                  <StyledTableCell align="left">Float</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -43,14 +59,16 @@ export default function TopMovers() {
                     key={row.name}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
+                    <StyledTableCell component="th" scope="row">
                       {row.ticker}
-                    </TableCell>
-                    <TableCell align="left">{row.price}</TableCell>
-                    <TableCell align="left">{row.change_percentage}</TableCell>
-                    <TableCell align="left">
+                    </StyledTableCell>
+                    <StyledTableCell align="left">{row.price}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      {row.change_percentage}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">
                       {millify(Number(row.volume))}
-                    </TableCell>
+                    </StyledTableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -61,21 +79,31 @@ export default function TopMovers() {
       {/* TOP LOSERS */}
       <Accordion>
         <AccordionSummary
+          sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Top Losers</Typography>
+          <Typography color="secondary">Top Losers</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "primary.main" }}>
           <TableContainer component={Paper}>
-            <Table aria-label="simple table" size="small">
+            <Table
+              sx={{ backgroundColor: "primary.main" }}
+              aria-label="simple table"
+              size="small"
+            >
               <TableHead>
                 <TableRow>
-                  <TableCell>Symbol</TableCell>
-                  <TableCell align="left">Price</TableCell>
-                  <TableCell align="left">Change %</TableCell>
-                  <TableCell align="left">Float</TableCell>
+                  <StyledTableCell>Symbol</StyledTableCell>
+                  <StyledTableCell
+                    sx={{ color: "secondary.main" }}
+                    align="left"
+                  >
+                    Price
+                  </StyledTableCell>
+                  <StyledTableCell align="left">Change %</StyledTableCell>
+                  <StyledTableCell align="left">Float</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -84,14 +112,16 @@ export default function TopMovers() {
                     key={row.name}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
+                    <StyledTableCell component="th" scope="row">
                       {row.ticker}
-                    </TableCell>
-                    <TableCell align="left">{row.price}</TableCell>
-                    <TableCell align="left">{row.change_percentage}</TableCell>
-                    <TableCell align="left">
+                    </StyledTableCell>
+                    <StyledTableCell align="left">{row.price}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      {row.change_percentage}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">
                       {millify(Number(row.volume))}
-                    </TableCell>
+                    </StyledTableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -102,21 +132,26 @@ export default function TopMovers() {
       {/* ACTIVELY TRADED  */}
       <Accordion>
         <AccordionSummary
+          sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Top Volume Gainers</Typography>
+          <Typography color="secondary">Top Volume Gainers</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{ backgroundColor: "primary.main" }}>
           <TableContainer component={Paper}>
-            <Table aria-label="simple table" size="small">
+            <Table
+              sx={{ backgroundColor: "primary.main" }}
+              aria-label="simple table"
+              size="small"
+            >
               <TableHead>
                 <TableRow>
-                  <TableCell>Symbol</TableCell>
-                  <TableCell align="left">Price</TableCell>
-                  <TableCell align="left">Change %</TableCell>
-                  <TableCell align="left">Float</TableCell>
+                  <StyledTableCell>Symbol</StyledTableCell>
+                  <StyledTableCell align="left">Price</StyledTableCell>
+                  <StyledTableCell align="left">Change %</StyledTableCell>
+                  <StyledTableCell align="left">Float</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -125,14 +160,16 @@ export default function TopMovers() {
                     key={row.name}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
+                    <StyledTableCell component="th" scope="row">
                       {row.ticker}
-                    </TableCell>
-                    <TableCell align="left">{row.price}</TableCell>
-                    <TableCell align="left">{row.change_percentage}</TableCell>
-                    <TableCell align="left">
+                    </StyledTableCell>
+                    <StyledTableCell align="left">{row.price}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      {row.change_percentage}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">
                       {millify(Number(row.volume))}
-                    </TableCell>
+                    </StyledTableCell>
                   </TableRow>
                 ))}
               </TableBody>
