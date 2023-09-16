@@ -29,6 +29,7 @@ import logoWithSlogan from "../../../../public/media/logo/logoWithSlogan.png";
 import MaterialUISwitch from "./MaterialUISwitch";
 import { Search, StyledInputBase, SearchIconWrapper } from "./Search";
 import TickerTape from "./TickerTape";
+import searchData from "../../api/data/samplesearch.json";
 // Search Design
 interface PageProps {
   mode: any;
@@ -36,8 +37,11 @@ interface PageProps {
 }
 export default function NavBar({ mode, setMode }: PageProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorSearchEl, setAnchorSearchEl] =
+    React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
+  const [searchListOpen, setSearchListOpen] = React.useState<boolean>(false);
   const theme = useTheme();
   const lessThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isMenuOpen = Boolean(anchorEl);
@@ -70,7 +74,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
 
     handleMenuClose();
   };
-  console.log(session);
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -152,6 +156,9 @@ export default function NavBar({ mode, setMode }: PageProps) {
       </MenuItem>
     </Menu>
   );
+  const handleSearchClose = () => {
+    setSearchListOpen(true);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -181,10 +188,30 @@ export default function NavBar({ mode, setMode }: PageProps) {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                console.log(event.target.value);
+                setSearchListOpen(true);
+                setAnchorSearchEl(event.currentTarget);
+              }}
               placeholder="Under Construction..."
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorSearchEl}
+            open={searchListOpen}
+            onClose={handleSearchClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            {searchData.data.map((value) => {
+              return (
+                <MenuItem key={crypto.randomUUID()}>{value.symbol}</MenuItem>
+              );
+            })}
+          </Menu>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
