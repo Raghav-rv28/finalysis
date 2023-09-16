@@ -1,4 +1,8 @@
 .ag-theme-alpine {
+  --ag-borders: none;
+  --ag-row-border-style: solid;
+  --ag-row-border-width: 1px;
+  --ag-row-border-color: #280b45;
   --ag-foreground-color: #280b45;
   --ag-background-color: #ffeda0;
   --ag-header-foreground-color: #280b45;
@@ -6,6 +10,10 @@
   --ag-odd-row-background-color: #ffdf57;
 }
 .ag-theme-alpine-dark {
+  --ag-borders: none;
+  --ag-row-border-style: solid;
+  --ag-row-border-width: 1px;
+  --ag-row-border-color: #ffeda0;
   --ag-background-color: #280b45;
   --ag-foreground-color: #ffeda0;
   --ag-header-background-color: #280b45;

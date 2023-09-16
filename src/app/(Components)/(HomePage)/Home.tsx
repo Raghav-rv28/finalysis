@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import NewsList from "./NewsList";
 import CryptoCurrency from "./Cryptocurrency";
+import MovingNews from "./MovingNews";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -53,41 +54,8 @@ export default function Home() {
       >
         {/* INDEXES/MARKETS CHART SECTION */}
         <Grid container direction="row" alignItems="flex-start" wrap="nowrap">
-          <Grid item sx={{ marginTop: "1rem" }}>
-            <Indexes
-              indexes={[
-                {
-                  ticker: "SPY",
-                  name: "S&P 500",
-                  price: "447.59",
-                  priceChange: "+0.4%",
-                },
-                {
-                  ticker: "QQQ",
-                  name: "NASDAQ",
-                  price: "375.59",
-                  priceChange: "-0.4%",
-                },
-                {
-                  ticker: "DIA",
-                  name: "DOW JONES",
-                  price: "349.59",
-                  priceChange: "+1.4%",
-                },
-                {
-                  ticker: "IWM",
-                  name: "Russell 2k",
-                  price: "183.59",
-                  priceChange: "+0.4%",
-                },
-                {
-                  ticker: "BTCUSD",
-                  name: "BITCOIN",
-                  price: "26468.5",
-                  priceChange: "-1.4%",
-                },
-              ]}
-            />
+          <Grid item sx={{ marginTop: "1rem", overflow: "hidden" }}>
+            <MovingNews />
           </Grid>
         </Grid>
         <Grid

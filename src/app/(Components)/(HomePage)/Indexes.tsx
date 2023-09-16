@@ -1,11 +1,12 @@
 "use client";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import AreaChart from "./AreaChart";
+import chartData from "../../api/data/chartdata.json";
+import { Sparklines, SparklinesBars } from "react-sparklines-typescript";
 export default function Indexes({ indexes }) {
-  const getCard = useCallback((options: any, index: any) => {
-    console.log("testing");
+  const getCard = useCallback((index: any) => {
     return (
       <Grid key={crypto.randomUUID()} item sm={5} md={4} lg={2.4}>
         <Card
@@ -49,7 +50,11 @@ export default function Indexes({ indexes }) {
                 pb: 1,
               }}
             >
-              <AreaChart options={options} />
+              <Sparklines
+                data={chartData.values.map((value: { open: string }) =>
+                  Number(value.open)
+                )}
+              ></Sparklines>
             </Box>
           </Box>
         </Card>
@@ -66,21 +71,7 @@ export default function Indexes({ indexes }) {
       rowSpacing={3}
     >
       {indexes.map((index: string) => {
-        const options = {
-          responsive: true,
-          animation: false,
-          plugins: {
-            legend: {
-              rtl: true,
-              labels: {
-                font: {
-                  size: 14,
-                },
-              },
-            },
-          },
-        };
-        return getCard(options, index);
+        return getCard(index);
       })}
       <Grid item></Grid>
     </Grid>
