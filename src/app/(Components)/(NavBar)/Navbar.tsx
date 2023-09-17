@@ -52,6 +52,14 @@ export default function NavBar({ mode, setMode }: PageProps) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
+  const searchRef = React.useRef();
+  // Effects
+  React.useEffect(() => {
+    if (searchQuery !== "" && searchRef.current !== undefined) {
+      setSearchListOpen(true);
+      setAnchorSearchEl(searchRef.current);
+    }
+  }, [searchQuery, searchRef]);
 
   const getSearchResults = React.useCallback(() => {
     const temp: Array<any> = [];
@@ -209,7 +217,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                autoFocus
+                inputRef={searchRef}
                 value={searchQuery}
                 placeholder={String(stockData.data.length)}
                 inputProps={{ "aria-label": "search" }}
@@ -220,8 +228,6 @@ export default function NavBar({ mode, setMode }: PageProps) {
                   ) {
                     setSearchQuery(event.target.value);
                     setSearchResults(getSearchResults());
-                    setSearchListOpen(true);
-                    setAnchorSearchEl(event.currentTarget);
                   }
                 }}
               />

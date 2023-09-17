@@ -13,6 +13,7 @@ import React from "react";
 import NewsList from "./NewsList";
 import CryptoCurrency from "./Cryptocurrency";
 import MovingNews from "./MovingNews";
+import TradingViewChart from "./TradingViewChart";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -82,20 +83,20 @@ export default function Home() {
                 scrollButtons="auto"
                 allowScrollButtonsMobile
               >
-                <Tab label="News" />
+                <Tab label="Indexes" />
                 <Tab label="CryptoCurrency" />
-                <Tab label="Portfolio" />
+                <Tab label="News" />
                 <Tab label="WatchList" />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-              <NewsList />
+              <TradingViewChart />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
               <CryptoCurrency />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-              Portfolio
+              <NewsList />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
               WatchList
