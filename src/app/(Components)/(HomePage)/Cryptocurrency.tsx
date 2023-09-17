@@ -8,12 +8,13 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import millify from "millify";
 import { Sparklines, SparklinesLine } from "react-sparklines-typescript";
+import { Nightlife } from "@mui/icons-material";
 
 export default function CryptoCurrency() {
   const [rowData, setRowData] = useState<any>(SampleCoinData.data.coins);
   const theme = useTheme();
   const defaultColDefs = { resizable: true };
-  const gridRef = useRef();
+  const gridRef = useRef<any>(null);
   const getCryptoName = (params) => (
     <Box>
       <img
@@ -74,11 +75,12 @@ export default function CryptoCurrency() {
     },
   ]);
 
-  //   const onGridReady = () => {
-  //     if (gridRef !== undefined && gridRef.current !== undefined) {
-  //       gridRef?.current?.api.sizeColumnsToFit();
-  //     }
-  //   };
+  const onGridReady = () => {
+    console.log(gridRef);
+    if (gridRef.current !== undefined && gridRef.current !== null) {
+      gridRef.current.api.sizeColumnsToFit();
+    }
+  };
 
   return (
     <div
@@ -91,7 +93,7 @@ export default function CryptoCurrency() {
     >
       <AgGridReact
         ref={gridRef}
-        // onGridReady={onGridReady}
+        onGridReady={onGridReady}
         rowData={rowData}
         defaultColDef={defaultColDefs}
         columnDefs={columnData}

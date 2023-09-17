@@ -83,17 +83,17 @@ export default function Home() {
                 scrollButtons="auto"
                 allowScrollButtonsMobile
               >
-                <Tab label="Indexes" />
                 <Tab label="CryptoCurrency" />
+                <Tab label="Indexes" />
                 <Tab label="News" />
                 <Tab label="WatchList" />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-              <TradingViewChart />
+              <CryptoCurrency />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              <CryptoCurrency />
+              <TradingViewChart />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
               <NewsList />

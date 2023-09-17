@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget() {
-  const container = useRef<HTMLInputElement>();
+  const container = useRef<HTMLDivElement>();
 
   useEffect(() => {
     const script = document.createElement("script");
