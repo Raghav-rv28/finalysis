@@ -22,6 +22,7 @@ import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Avatar from "@mui/material/Avatar";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Typography from "@mui/material/Typography";
 
 // Media & Files
 import logoOnly from "../../../../public/media/logo/logoOnly.png";
@@ -30,6 +31,8 @@ import MaterialUISwitch from "./MaterialUISwitch";
 import { Search, StyledInputBase, SearchIconWrapper } from "./Search";
 import TickerTape from "./TickerTape";
 import searchData from "../../api/data/samplesearch.json";
+import stockData from "../../api/data/stocks.json";
+
 // Search Design
 interface PageProps {
   mode: any;
@@ -42,11 +45,28 @@ export default function NavBar({ mode, setMode }: PageProps) {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
   const [searchListOpen, setSearchListOpen] = React.useState<boolean>(false);
+  const [searchResults, setSearchResults] = React.useState<Array<any>>([]);
+  const [searchQuery, setSearchQuery] = React.useState<string>("");
   const theme = useTheme();
   const lessThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
+
+  const getSearchResults = React.useCallback(() => {
+    const temp: Array<any> = [];
+    let counter = 10;
+    stockData?.data.map((value, index) => {
+      if (counter === 0) {
+        return temp;
+      }
+      if (value.symbol.includes(searchQuery.toUpperCase())) {
+        temp.push(value);
+        counter -= 1;
+      }
+    });
+    return temp;
+  }, [searchQuery]);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -157,7 +177,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
     </Menu>
   );
   const handleSearchClose = () => {
-    setSearchListOpen(true);
+    setSearchListOpen(false);
   };
 
   return (
@@ -183,20 +203,30 @@ export default function NavBar({ mode, setMode }: PageProps) {
             />
           )}
           <Box sx={{ flexGrow: 1 }} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                console.log(event.target.value);
-                setSearchListOpen(true);
-                setAnchorSearchEl(event.currentTarget);
-              }}
-              placeholder="Under Construction..."
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+          <FormControl>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                autoFocus
+                value={searchQuery}
+                placeholder={String(stockData.data.length)}
+                inputProps={{ "aria-label": "search" }}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  if (
+                    event.target.value !== "" &&
+                    event.target.value !== null
+                  ) {
+                    setSearchQuery(event.target.value);
+                    setSearchResults(getSearchResults());
+                    setSearchListOpen(true);
+                    setAnchorSearchEl(event.currentTarget);
+                  }
+                }}
+              />
+            </Search>
+          </FormControl>
           <Menu
             id="basic-menu"
             anchorEl={anchorSearchEl}
@@ -206,9 +236,24 @@ export default function NavBar({ mode, setMode }: PageProps) {
               "aria-labelledby": "basic-button",
             }}
           >
-            {searchData.data.map((value) => {
+            {searchResults.map((value) => {
               return (
-                <MenuItem key={crypto.randomUUID()}>{value.symbol}</MenuItem>
+                <MenuItem key={crypto.randomUUID()}>
+                  <Typography variant="subtitle1">{value.symbol} - </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ paddingLeft: "0.5rem" }}
+                  >
+                    {value.name}
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    fontSize={10}
+                    sx={{ marginLeft: "1rem" }}
+                  >
+                    ({value.exchange})
+                  </Typography>
+                </MenuItem>
               );
             })}
           </Menu>

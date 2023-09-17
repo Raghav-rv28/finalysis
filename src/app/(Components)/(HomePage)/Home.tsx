@@ -67,7 +67,7 @@ export default function Home() {
           direction="row"
         >
           {/* TAB SECTION */}
-          <Grid item sm={11} xs={12}>
+          <Grid alignSelf="baseline" item sm={11} xs={12}>
             <Box
               sx={{
                 maxWidth: { xs: 350, sm: 480, md: 640, lg: 960 },
