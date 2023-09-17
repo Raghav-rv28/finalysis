@@ -1,6 +1,6 @@
 import { AgGridReact } from "ag-grid-react";
 import { useState, useEffect, useRef } from "react";
-import SampleCoinData from "../../api/data/samplecoindata.json";
+import SampleCoinData from "../../app/api/data/samplecoindata.json";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import "./styles.css";
@@ -8,7 +8,6 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import millify from "millify";
 import { Sparklines, SparklinesLine } from "react-sparklines-typescript";
-import { Nightlife } from "@mui/icons-material";
 
 export default function CryptoCurrency() {
   const [rowData, setRowData] = useState<any>(SampleCoinData.data.coins);

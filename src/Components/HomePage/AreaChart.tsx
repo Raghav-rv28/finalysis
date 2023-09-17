@@ -11,7 +11,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { useTheme } from "@mui/material/styles";
-import chartData from "../../api/data/chartdata.json";
+import chartData from "../../app/api/data/chartdata.json";
 ChartJS.register(
   CategoryScale,
   LinearScale,

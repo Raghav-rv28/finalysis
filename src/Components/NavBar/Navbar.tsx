@@ -25,13 +25,12 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 
 // Media & Files
-import logoOnly from "../../../../public/media/logo/logoOnly.png";
-import logoWithSlogan from "../../../../public/media/logo/logoWithSlogan.png";
+import logoOnly from "../../../public/media/logo/logoOnly.png";
+import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
 import MaterialUISwitch from "./MaterialUISwitch";
 import { Search, StyledInputBase, SearchIconWrapper } from "./Search";
 import TickerTape from "./TickerTape";
-import searchData from "../../api/data/samplesearch.json";
-import stockData from "../../api/data/stocks.json";
+import stockData from "../../app/api/data/stocks.json";
 
 // Search Design
 interface PageProps {
