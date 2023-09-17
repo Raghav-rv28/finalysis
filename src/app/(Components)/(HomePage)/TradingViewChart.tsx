@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget() {
-  const container = useRef();
+  const container = useRef<HTMLInputElement>();
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -59,7 +59,7 @@ function TradingViewWidget() {
             "all|1M"
           ]
         }`;
-    container?.current.appendChild(script);
+    container.current.appendChild(script);
   }, []);
 
   return (
