@@ -28,10 +28,9 @@ import Typography from "@mui/material/Typography";
 import logoOnly from "../../../public/media/logo/logoOnly.png";
 import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
 import MaterialUISwitch from "./MaterialUISwitch";
-import { Search, StyledInputBase, SearchIconWrapper } from "./Search";
+import { Search, StyledTextField, SearchIconWrapper } from "./Search";
 import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/stocks.json";
-
 // Search Design
 interface PageProps {
   mode: any;
@@ -53,12 +52,10 @@ export default function NavBar({ mode, setMode }: PageProps) {
   const { data: session, status } = useSession();
   const searchRef = React.useRef();
   // Effects
-  React.useEffect(() => {
-    if (searchQuery !== "" && searchRef.current !== undefined) {
-      setSearchListOpen(true);
-      setAnchorSearchEl(searchRef.current);
-    }
-  }, [searchQuery, searchRef]);
+  // React.useEffect(() => {
+  //   if (searchQuery !== "" && searchRef.current !== undefined) {
+  //   }
+  // }, [searchQuery, searchRef]);
 
   const getSearchResults = React.useCallback(() => {
     const temp: Array<any> = [];
@@ -210,28 +207,27 @@ export default function NavBar({ mode, setMode }: PageProps) {
             />
           )}
           <Box sx={{ flexGrow: 1 }} />
-          <FormControl>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                inputRef={searchRef}
-                value={searchQuery}
-                placeholder={String(stockData.data.length)}
-                inputProps={{ "aria-label": "search" }}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  if (
-                    event.target.value !== "" &&
-                    event.target.value !== null
-                  ) {
-                    setSearchQuery(event.target.value);
-                    setSearchResults(getSearchResults());
-                  }
-                }}
-              />
-            </Search>
-          </FormControl>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledTextField
+              inputRef={searchRef}
+              value={searchQuery}
+              placeholder={String(stockData.data.length)}
+              inputProps={{ "aria-label": "search" }}
+              onFocus={() => {
+                setSearchListOpen(true);
+                setAnchorSearchEl(searchRef.current);
+              }}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setSearchQuery(event.target.value);
+                if (event.target.value !== "" && event.target.value !== null) {
+                  setSearchResults(getSearchResults());
+                }
+              }}
+            />
+          </Search>
           <Menu
             id="basic-menu"
             anchorEl={anchorSearchEl}

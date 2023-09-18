@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Home from "../Components/HomePage/Home";
 import NavBar from "../Components/NavBar/Navbar";
-import ThemeRegistry from "./themeRegistry";
+import ThemeRegistry from "../lib/theme/themeRegistry";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";

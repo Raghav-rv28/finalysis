@@ -21,7 +21,7 @@ export default function TickerTape({ tickers }) {
 
   const Ticker = ({ ticker }) => {
     return (
-      <Box sx={{ marginTop: "0.34rem" }}>
+      <Box sx={{ marginTop: "0.34rem", marginRight: "1rem" }}>
         <Typography
           sx={{ marginLeft: "1rem" }}
           component="span"

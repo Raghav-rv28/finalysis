@@ -1,4 +1,4 @@
-import InputBase from "@mui/material/InputBase";
+import TextField from "@mui/material/TextField";
 import { styled, alpha } from "@mui/material/styles";
 
 const Search = styled("div")(({ theme }) => ({
@@ -21,13 +21,12 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
   position: "absolute",
-  pointerEvents: "none",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledTextField = styled(TextField)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
@@ -41,4 +40,4 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export { Search, SearchIconWrapper, StyledInputBase };
+export { Search, SearchIconWrapper, StyledTextField };
