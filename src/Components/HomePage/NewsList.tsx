@@ -3,7 +3,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
-import data from "../../app/api/data/latestnews.json";
+import data from "../../app/api/data/global/latestnews.json";
 import { Info } from "@mui/icons-material";
 
 function srcset(
