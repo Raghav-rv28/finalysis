@@ -28,10 +28,27 @@ import Typography from "@mui/material/Typography";
 import logoOnly from "../../../public/media/logo/logoOnly.png";
 import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
 import MaterialUISwitch from "./MaterialUISwitch";
-import { Search, StyledTextField, SearchIconWrapper } from "./Search";
 import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/stocks.json";
+import { SearchDialog } from "./SearchDialog";
 // Search Design
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.secondary.main, 0.25),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.secondary.main, 0.55),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: "auto",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(3),
+    width: "auto",
+  },
+}));
+
 interface PageProps {
   mode: any;
   setMode: any;
@@ -42,7 +59,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
     React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
-  const [searchListOpen, setSearchListOpen] = React.useState<boolean>(false);
+  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   const [searchResults, setSearchResults] = React.useState<Array<any>>([]);
   const [searchQuery, setSearchQuery] = React.useState<string>("");
   const theme = useTheme();
@@ -180,10 +197,11 @@ export default function NavBar({ mode, setMode }: PageProps) {
       </MenuItem>
     </Menu>
   );
-  const handleSearchClose = () => {
-    setSearchListOpen(false);
-  };
-
+  const handleSearchClose = React.useCallback((selectedValue: string) => {
+    console.log(selectedValue);
+    setSearchOpen(false);
+  }, []);
+  console.log(searchOpen);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -192,43 +210,36 @@ export default function NavBar({ mode, setMode }: PageProps) {
         position="static"
       >
         <Toolbar>
-          {lessThanSmall ? (
+          {/* {lessThanSmall ? (
             <Image
               src={logoOnly}
               width={84}
               alt="Logo Only"
               color="secondary"
             />
-          ) : (
-            <Image
-              src={logoWithSlogan}
-              alt="Logo With Slogan"
-              color="secondary"
-            />
-          )}
+          ) : ( */}
+          <Image
+            src={logoWithSlogan}
+            alt="Logo With Slogan"
+            color="secondary"
+          />
+          {/* )} */}
           <Box sx={{ flexGrow: 1 }} />
           <Search>
-            <SearchIconWrapper>
+            <IconButton
+              onClick={() => {
+                setSearchOpen(true);
+              }}
+            >
               <SearchIcon />
-            </SearchIconWrapper>
-            <StyledTextField
-              inputRef={searchRef}
-              value={searchQuery}
-              placeholder={String(stockData.data.length)}
-              inputProps={{ "aria-label": "search" }}
-              onFocus={() => {
-                setSearchListOpen(true);
-                setAnchorSearchEl(searchRef.current);
-              }}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setSearchQuery(event.target.value);
-                if (event.target.value !== "" && event.target.value !== null) {
-                  setSearchResults(getSearchResults());
-                }
-              }}
-            />
+            </IconButton>
           </Search>
-          <Menu
+          <SearchDialog
+            selectedValue=""
+            open={searchOpen}
+            onClose={handleSearchClose}
+          />
+          {/* <Menu
             id="basic-menu"
             anchorEl={anchorSearchEl}
             open={searchListOpen}
@@ -257,7 +268,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
                 </MenuItem>
               );
             })}
-          </Menu>
+          </Menu> */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
