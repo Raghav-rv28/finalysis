@@ -1,215 +1,85 @@
 {
   "data": [
     {
-      "symbol": "SOFI",
-      "instrument_name": "SoFi Technologies, Inc.",
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "currency": "USD",
       "exchange": "NASDAQ",
       "mic_code": "XNGS",
-      "exchange_timezone": "America/New_York",
-      "instrument_type": "Common Stock",
       "country": "United States",
-      "currency": "USD"
+      "type": "Common Stock"
     },
     {
-      "symbol": "SOFI",
-      "instrument_name": "SoFi Technologies, Inc.",
-      "exchange": "BMV",
-      "mic_code": "XMEX",
-      "exchange_timezone": "America/Swift_Current",
-      "instrument_type": "Common Stock",
-      "country": "Mexico",
-      "currency": "MXN"
-    },
-    {
-      "symbol": "SOFIW",
-      "instrument_name": "SoFi Technologies, Inc.",
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "currency": "USD",
       "exchange": "NASDAQ",
       "mic_code": "XNGS",
-      "exchange_timezone": "America/New_York",
-      "instrument_type": "Common Stock",
       "country": "United States",
-      "currency": "USD"
+      "type": "Common Stock"
     },
     {
-      "symbol": "SOFIX",
-      "instrument_name": "Opportunistic Credit Interval Fund - Share Class I",
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "currency": "USD",
       "exchange": "NASDAQ",
-      "mic_code": "XNAS",
-      "exchange_timezone": "America/New_York",
-      "instrument_type": "Mutual Fund",
+      "mic_code": "XNGS",
       "country": "United States",
-      "currency": "USD"
+      "type": "Common Stock"
     },
     {
-      "symbol": "6B0",
-      "instrument_name": "SOFI TECHNOLOGIES",
-      "exchange": "Munich",
-      "mic_code": "XMUN",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "6B0",
-      "instrument_name": "SOFI TECHNOLOGIES",
-      "exchange": "XBER",
-      "mic_code": "XBER",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "6B0",
-      "instrument_name": "SoFi Technologies, Inc.",
-      "exchange": "FSX",
-      "mic_code": "XFRA",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "6B0",
-      "instrument_name": "SoFi Technologies Inc",
-      "exchange": "XSTU",
-      "mic_code": "XSTU",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "6B0",
-      "instrument_name": "SoFi Technologies Inc",
-      "exchange": "XDUS",
-      "mic_code": "XDUS",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "SOFINA",
-      "exchange": "XBER",
-      "mic_code": "XBER",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "SOFINA",
-      "exchange": "XHAN",
-      "mic_code": "XHAN",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "SOF",
-      "instrument_name": "Sofina Société Anonyme",
-      "exchange": "Euronext",
-      "mic_code": "XBRU",
-      "exchange_timezone": "Europe/Brussels",
-      "instrument_type": "Common Stock",
-      "country": "Belgium",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "0G2X",
-      "instrument_name": "Sofina Société Anonyme",
-      "exchange": "LSE",
-      "mic_code": "XLON",
-      "exchange_timezone": "Europe/London",
-      "instrument_type": "Common Stock",
-      "country": "United Kingdom",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "Sofina Société Anonyme",
-      "exchange": "FSX",
-      "mic_code": "XFRA",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "SOF",
-      "instrument_name": "Sofina Société Anonyme",
-      "exchange": "VSE",
-      "mic_code": "XWBO",
-      "exchange_timezone": "Europe/Vienna",
-      "instrument_type": "Common Stock",
-      "country": "Austria",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "Sofina SA",
-      "exchange": "XDUS",
-      "mic_code": "XDUS",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "Sofina SA",
-      "exchange": "Munich",
-      "mic_code": "XMUN",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "8FS",
-      "instrument_name": "Sofina SA",
-      "exchange": "XSTU",
-      "mic_code": "XSTU",
-      "exchange_timezone": "Europe/Berlin",
-      "instrument_type": "Common Stock",
-      "country": "Germany",
-      "currency": "EUR"
-    },
-    {
-      "symbol": "SFNXF",
-      "instrument_name": "Sofina SA",
-      "exchange": "OTC",
-      "mic_code": "PINX",
-      "exchange_timezone": "America/New_York",
-      "instrument_type": "Common Stock",
+      "symbol": "GOOG",
+      "name": "Alphabet Inc",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "mic_code": "XNGS",
       "country": "United States",
-      "currency": "USD"
+      "type": "Common Stock"
     },
     {
-      "symbol": "BE0002818996",
-      "instrument_name": "SOFINA1%23SEP2028",
-      "exchange": "Euronext",
-      "mic_code": "XBRU",
-      "exchange_timezone": "Europe/Brussels",
-      "instrument_type": "Common Stock",
-      "country": "Belgium",
-      "currency": "EUR"
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "mic_code": "XNGS",
+      "country": "United States",
+      "type": "Common Stock"
     },
     {
-      "symbol": "6615",
-      "instrument_name": "Sofiva Genomics Co.,Ltd.",
-      "exchange": "TWSE",
-      "mic_code": "XTAI",
-      "exchange_timezone": "Asia/Taipei",
-      "instrument_type": "Common Stock",
-      "country": "Taiwan",
-      "currency": "TWD"
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "mic_code": "XNGS",
+      "country": "United States",
+      "type": "Common Stock"
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "mic_code": "XNGS",
+      "country": "United States",
+      "type": "Common Stock"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "mic_code": "XNGS",
+      "country": "United States",
+      "type": "Common Stock"
+    },
+    {
+      "symbol": "DOW",
+      "name": "Dow Inc",
+      "currency": "USD",
+      "exchange": "NYSE",
+      "mic_code": "XNYS",
+      "country": "United States",
+      "type": "Common Stock"
     }
-  ],
-  "status": "ok"
+  ]
 }

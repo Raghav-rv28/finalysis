@@ -74,20 +74,28 @@ export default function NavBar({ mode, setMode }: PageProps) {
   //   }
   // }, [searchQuery, searchRef]);
 
-  const getSearchResults = React.useCallback(() => {
-    const temp: Array<any> = [];
-    let counter = 10;
-    stockData?.data.map((value, index) => {
-      if (counter === 0) {
-        return temp;
+  const getSearchResults = React.useCallback(
+    (query: string) => {
+      const temp: Array<any> = [];
+      if (query === "") {
+        setSearchResults(temp);
+        return;
       }
-      if (value.symbol.includes(searchQuery.toUpperCase())) {
-        temp.push(value);
-        counter -= 1;
-      }
-    });
-    return temp;
-  }, [searchQuery]);
+      let counter = 10;
+      stockData?.data.map((value, index) => {
+        if (counter === 0) {
+          return temp;
+        }
+        if (value.symbol.includes(query.toUpperCase())) {
+          console.log(value);
+          temp.push(value);
+          counter -= 1;
+        }
+      });
+      setSearchResults(temp);
+    },
+    [searchQuery]
+  );
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -201,7 +209,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
     console.log(selectedValue);
     setSearchOpen(false);
   }, []);
-  console.log(searchOpen);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -235,7 +243,8 @@ export default function NavBar({ mode, setMode }: PageProps) {
             </IconButton>
           </Search>
           <SearchDialog
-            selectedValue=""
+            search={searchResults}
+            getSearchResults={getSearchResults}
             open={searchOpen}
             onClose={handleSearchClose}
           />

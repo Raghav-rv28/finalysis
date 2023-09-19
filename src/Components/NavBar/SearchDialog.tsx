@@ -9,60 +9,123 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-import PersonIcon from "@mui/icons-material/Person";
-import AddIcon from "@mui/icons-material/Add";
 import Typography from "@mui/material/Typography";
-import { blue } from "@mui/material/colors";
-
-const emails = ["username@gmail.com", "user02@gmail.com"];
-
+import Box from "@mui/material/Box";
+import { TextField } from "@mui/material";
+import defaultSearch from "../../app/api/data/samplesearch.json";
+import { useTheme } from "@mui/material/styles";
 export interface SearchDialogProps {
   open: boolean;
-  selectedValue: string;
+  getSearchResults: any;
+  search: Array<any>;
   onClose: (value: string) => void;
 }
 
 export function SearchDialog(props: SearchDialogProps) {
-  const { onClose, selectedValue, open } = props;
+  const { onClose, getSearchResults, search, open } = props;
 
-  const handleClose = () => {
-    onClose(selectedValue);
-  };
-
+  const theme = useTheme();
   const handleListItemClick = (value: string) => {
     onClose(value);
   };
 
+  const setSearch = (event) => {
+    getSearchResults(event.target.value);
+  };
+
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Set backup account</DialogTitle>
-      <List sx={{ pt: 0 }}>
-        {emails.map((email) => (
-          <ListItem disableGutters key={email}>
-            <ListItemButton onClick={() => handleListItemClick(email)}>
+    <Dialog
+      maxWidth="md"
+      sx={{ minHeight: "50vh" }}
+      fullWidth
+      onClose={onClose}
+      open={open}
+      PaperProps={{
+        style: {
+          backgroundColor: theme.palette.primary.main,
+        },
+      }}
+    >
+      <DialogTitle sx={{ color: theme.palette.secondary.main }}>
+        Search Stonks
+      </DialogTitle>
+      <Box>
+        <Box sx={{ paddingRight: "1rem", paddingLeft: "1rem" }}>
+          <TextField
+            sx={{ width: "100%" }}
+            onChange={(event) => setSearch(event)}
+          />
+        </Box>
+        <List dense>
+          {search.map((value) => {
+            return (
+              <ListItem key={crypto.randomUUID()}>
+                <ListItemButton>
+                  <ListItemText
+                    primary={`${value.symbol} - ${value.name}`}
+                    secondary={value.exchange}
+                  />
+                </ListItemButton>
+                {/* <Typography color="secondary" variant="subtitle1">
+                  {value.symbol} -{" "}
+                </Typography>
+                <Typography
+                  color="secondary"
+                  variant="subtitle1"
+                  sx={{ paddingLeft: "0.5rem" }}
+                >
+                  {value.name}
+                </Typography> */}
+                {/* <Typography
+                  color="secondary"
+                  variant="subtitle1"
+                  sx={{ marginLeft: "2rem" }}
+                >
+                  ({value.exchange})
+                </Typography> */}
+              </ListItem>
+            );
+          })}
+          {search.length === 0 &&
+            defaultSearch.data.map((value) => {
+              return (
+                <ListItem key={crypto.randomUUID()}>
+                  <ListItemButton>
+                    <ListItemText
+                      primary={`${value.symbol} - ${value.name}`}
+                      secondary={value.exchange}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          {/* {emails.map((email) => (
+            <ListItem disableGutters key={email}>
+              <ListItemButton onClick={() => handleListItemClick(email)}>
+                <ListItemAvatar>
+                  <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
+                    <PersonIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary={email} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem disableGutters>
+            <ListItemButton
+              autoFocus
+              onClick={() => handleListItemClick("addAccount")}
+            >
               <ListItemAvatar>
-                <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
-                  <PersonIcon />
+                <Avatar>
+                  <AddIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary={email} />
+              <ListItemText primary="Add account" />
             </ListItemButton>
-          </ListItem>
-        ))}
-        <ListItem disableGutters>
-          <ListItemButton
-            autoFocus
-            onClick={() => handleListItemClick("addAccount")}
-          >
-            <ListItemAvatar>
-              <Avatar>
-                <AddIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Add account" />
-          </ListItemButton>
-        </ListItem>
-      </List>
+          </ListItem> */}
+        </List>
+      </Box>
     </Dialog>
   );
 }
