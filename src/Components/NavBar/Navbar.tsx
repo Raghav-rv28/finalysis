@@ -29,7 +29,7 @@ import logoOnly from "../../../public/media/logo/logoOnly.png";
 import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
 import MaterialUISwitch from "./MaterialUISwitch";
 import TickerTape from "./TickerTape";
-import stockData from "../../app/api/data/stocks.json";
+import stockData from "../../app/api/data/global/stocks.json";
 import { SearchDialog } from "./SearchDialog";
 // Search Design
 
@@ -74,28 +74,25 @@ export default function NavBar({ mode, setMode }: PageProps) {
   //   }
   // }, [searchQuery, searchRef]);
 
-  const getSearchResults = React.useCallback(
-    (query: string) => {
-      const temp: Array<any> = [];
-      if (query === "") {
-        setSearchResults(temp);
-        return;
-      }
-      let counter = 10;
-      stockData?.data.map((value, index) => {
-        if (counter === 0) {
-          return temp;
-        }
-        if (value.symbol.includes(query.toUpperCase())) {
-          console.log(value);
-          temp.push(value);
-          counter -= 1;
-        }
-      });
+  const getSearchResults = React.useCallback((query: string) => {
+    const temp: Array<any> = [];
+    if (query === "") {
       setSearchResults(temp);
-    },
-    [searchQuery]
-  );
+      return;
+    }
+    let counter = 10;
+    stockData?.data.map((value, index) => {
+      if (counter === 0) {
+        return temp;
+      }
+      if (value.symbol.includes(query.toUpperCase())) {
+        console.log(value);
+        temp.push(value);
+        counter -= 1;
+      }
+    });
+    setSearchResults(temp);
+  }, []);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -248,36 +245,6 @@ export default function NavBar({ mode, setMode }: PageProps) {
             open={searchOpen}
             onClose={handleSearchClose}
           />
-          {/* <Menu
-            id="basic-menu"
-            anchorEl={anchorSearchEl}
-            open={searchListOpen}
-            onClose={handleSearchClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            {searchResults.map((value) => {
-              return (
-                <MenuItem key={crypto.randomUUID()}>
-                  <Typography variant="subtitle1">{value.symbol} - </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ paddingLeft: "0.5rem" }}
-                  >
-                    {value.name}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    fontSize={10}
-                    sx={{ marginLeft: "1rem" }}
-                  >
-                    ({value.exchange})
-                  </Typography>
-                </MenuItem>
-              );
-            })}
-          </Menu> */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"

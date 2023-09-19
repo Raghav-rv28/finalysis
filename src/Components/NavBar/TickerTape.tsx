@@ -3,7 +3,7 @@ import { Pause, PlayArrow } from "@mui/icons-material";
 import { Box, Grid, Button, Typography } from "@mui/material";
 import React, { Suspense, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import data from "../../app/api/data/indexquote.json";
+import data from "../../app/api/data/global/indexquote.json";
 export default function TickerTape({ tickers }) {
   const [tickerData, setTickerData] = React.useState<any>();
   const [play, setPlay] = React.useState<boolean>(true);

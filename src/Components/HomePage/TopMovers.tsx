@@ -12,8 +12,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import data from "../../app/api/data/topmovers.json";
+import data from "../../app/api/data/global/topmovers.json";
 import millify from "millify";
+import React from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -26,10 +27,19 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 export default function TopMovers() {
+  const [expanded, setExpanded] = React.useState<string | false>("panel1");
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : false);
+    };
   return (
     <Box>
       {/* TOP GAINERS */}
-      <Accordion>
+      <Accordion
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel1")}
+      >
         <AccordionSummary
           sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
@@ -56,7 +66,7 @@ export default function TopMovers() {
               <TableBody>
                 {data.top_gainers.map((row) => (
                   <TableRow
-                    key={row.name}
+                    key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <StyledTableCell component="th" scope="row">
@@ -77,7 +87,10 @@ export default function TopMovers() {
         </AccordionDetails>
       </Accordion>
       {/* TOP LOSERS */}
-      <Accordion>
+      <Accordion
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel2")}
+      >
         <AccordionSummary
           sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
@@ -109,7 +122,7 @@ export default function TopMovers() {
               <TableBody>
                 {data.top_losers.map((row) => (
                   <TableRow
-                    key={row.name}
+                    key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <StyledTableCell component="th" scope="row">
@@ -130,7 +143,10 @@ export default function TopMovers() {
         </AccordionDetails>
       </Accordion>
       {/* ACTIVELY TRADED  */}
-      <Accordion>
+      <Accordion
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel3")}
+      >
         <AccordionSummary
           sx={{ backgroundColor: "primary.main" }}
           expandIcon={<ExpandMoreIcon />}
@@ -157,7 +173,7 @@ export default function TopMovers() {
               <TableBody>
                 {data.most_actively_traded.map((row) => (
                   <TableRow
-                    key={row.name}
+                    key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <StyledTableCell component="th" scope="row">

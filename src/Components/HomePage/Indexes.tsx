@@ -2,7 +2,7 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useCallback, useEffect } from "react";
-import chartData from "../../app/api/data/chartdata.json";
+import chartData from "../../app/api/data/stock/chartdata.json";
 import { Sparklines, SparklinesBars } from "react-sparklines-typescript";
 export default function Indexes({ indexes }) {
   const getCard = useCallback((index: any) => {

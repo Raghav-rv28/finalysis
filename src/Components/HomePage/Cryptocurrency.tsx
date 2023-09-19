@@ -44,7 +44,7 @@ export default function CryptoCurrency() {
     </Sparklines>
   );
   const [columnData, setColumnData] = useState<Array<any>>([
-    { field: "rank", headerName: "# Rank" },
+    { field: "rank", width: 25, headerName: "# Rank" },
     {
       field: "name",
       cellRenderer: getCryptoName,

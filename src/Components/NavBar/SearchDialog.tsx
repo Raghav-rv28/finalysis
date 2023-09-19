@@ -12,7 +12,7 @@ import Dialog from "@mui/material/Dialog";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
-import defaultSearch from "../../app/api/data/samplesearch.json";
+import defaultSearch from "../../app/api/data/global/samplesearch.json";
 import { useTheme } from "@mui/material/styles";
 export interface SearchDialogProps {
   open: boolean;

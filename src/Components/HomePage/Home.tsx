@@ -106,7 +106,7 @@ export default function Home() {
           <Grid
             item
             alignSelf="baseline"
-            sx={{ justifyContent: "center" }}
+            sx={{ paddingTop: "2rem", justifyContent: "center" }}
             lg={4}
             md={4}
             sm={4}
