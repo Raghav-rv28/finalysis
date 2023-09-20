@@ -56,13 +56,10 @@ interface PageProps {
 }
 export default function NavBar({ mode, setMode }: PageProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [anchorSearchEl, setAnchorSearchEl] =
-    React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
   const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
   const [searchResults, setSearchResults] = React.useState<Array<any>>([]);
-  const [searchQuery, setSearchQuery] = React.useState<string>("");
   const theme = useTheme();
   const lessThanSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isMenuOpen = Boolean(anchorEl);

@@ -10,7 +10,7 @@ export default function RootLayout(props: {
 }) {
   const { session, children } = props;
   const [mode, setMode] = useState<string>();
-  // const mode = localStorage.getItem("mode");
+
   useEffect(() => {
     setMode(localStorage.getItem("mode"));
   }, []);

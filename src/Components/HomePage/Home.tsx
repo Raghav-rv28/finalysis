@@ -3,12 +3,15 @@
 import TopMovers from "./TopMovers";
 // MUI IMPORTS
 import Container from "@mui/material/Container";
-import Indexes from "./Indexes";
 import Grid from "@mui/material/Grid";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import React from "react";
 import NewsList from "./NewsList";
 import CryptoCurrency from "./Cryptocurrency";
@@ -39,9 +42,16 @@ function CustomTabPanel(props: TabPanelProps) {
 
 export default function Home() {
   const [value, setValue] = React.useState(0);
+  const [open, setOpen] = React.useState<boolean>(true);
+  // Local Functions
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const handleClose = React.useCallback(() => {
+    setOpen(false);
+  }, []);
+
   return (
     <div>
       <Container
@@ -114,6 +124,31 @@ export default function Home() {
             <TopMovers />
           </Grid>
         </Grid>
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          action={
+            <React.Fragment>
+              <Button color="secondary" size="small" onClick={handleClose}>
+                UNDO
+              </Button>
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                sx={{ p: 0.5 }}
+                onClick={handleClose}
+              >
+                <CloseIcon />
+              </IconButton>
+            </React.Fragment>
+          }
+        >
+          <Alert severity="error" variant="filled" sx={{ width: "100%" }}>
+            Website Under Construction
+          </Alert>
+        </Snackbar>
       </Container>
     </div>
   );
