@@ -1,3 +1,4 @@
+"use client";
 import { AgGridReact } from "ag-grid-react";
 import { useState, useEffect, useRef } from "react";
 import SampleCoinData from "../../app/api/data/samplecoindata.json";

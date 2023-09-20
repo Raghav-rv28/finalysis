@@ -1,3 +1,4 @@
+"use client";
 import Grid from "@mui/material/Grid";
 import News from "../../app/api/data/global/latestnews.json";
 import Stack from "@mui/material/Stack";
@@ -7,16 +8,15 @@ import Marquee from "react-fast-marquee";
 import { IconButton, Typography } from "@mui/material";
 import { Info } from "@mui/icons-material";
 
-const Item = styled(Paper)(({ theme }) => ({
-  maxWidth: "350px",
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
 export default function MovingNews() {
+  const Item = styled(Paper)(({ theme }) => ({
+    maxWidth: "350px",
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
   return (
     <Marquee>
       <Grid

@@ -1,3 +1,4 @@
+"use client";
 import Accordion from "@mui/material/Accordion";
 import { styled } from "@mui/material/styles";
 import AccordionSummary from "@mui/material/AccordionSummary";
