@@ -15,6 +15,7 @@ import Paper from "@mui/material/Paper";
 import data from "../../app/api/data/global/topmovers.json";
 import millify from "millify";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -29,6 +30,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export default function TopMovers() {
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
 
+  const router = useRouter();
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);
@@ -66,6 +68,7 @@ export default function TopMovers() {
               <TableBody>
                 {data.top_gainers.map((row) => (
                   <TableRow
+                    onClick={() => router.push(`/stocks/${row.ticker}`)}
                     key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
@@ -88,7 +91,7 @@ export default function TopMovers() {
       </Accordion>
       {/* TOP LOSERS */}
       <Accordion
-        expanded={expanded === "panel1"}
+        expanded={expanded === "panel2"}
         onChange={handleChange("panel2")}
       >
         <AccordionSummary
@@ -144,7 +147,7 @@ export default function TopMovers() {
       </Accordion>
       {/* ACTIVELY TRADED  */}
       <Accordion
-        expanded={expanded === "panel1"}
+        expanded={expanded === "panel3"}
         onChange={handleChange("panel3")}
       >
         <AccordionSummary

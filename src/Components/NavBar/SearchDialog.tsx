@@ -14,6 +14,7 @@ import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import defaultSearch from "../../app/api/data/global/samplesearch.json";
 import { useTheme } from "@mui/material/styles";
+import { useRouter } from "next/navigation";
 export interface SearchDialogProps {
   open: boolean;
   getSearchResults: any;
@@ -24,8 +25,10 @@ export interface SearchDialogProps {
 export function SearchDialog(props: SearchDialogProps) {
   const { onClose, getSearchResults, search, open } = props;
 
+  const router = useRouter();
   const theme = useTheme();
   const handleListItemClick = (value: string) => {
+    router.push(`/stocks/${value}`);
     onClose(value);
   };
 
@@ -60,7 +63,9 @@ export function SearchDialog(props: SearchDialogProps) {
           {search.map((value) => {
             return (
               <ListItem key={crypto.randomUUID()}>
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => handleListItemClick(value.symbol)}
+                >
                   <ListItemText
                     primary={`${value.symbol} - ${value.name}`}
                     secondary={value.exchange}
@@ -90,7 +95,9 @@ export function SearchDialog(props: SearchDialogProps) {
             defaultSearch.data.map((value) => {
               return (
                 <ListItem key={crypto.randomUUID()}>
-                  <ListItemButton>
+                  <ListItemButton
+                    onClick={() => handleListItemClick(value.symbol)}
+                  >
                     <ListItemText
                       primary={`${value.symbol} - ${value.name}`}
                       secondary={value.exchange}

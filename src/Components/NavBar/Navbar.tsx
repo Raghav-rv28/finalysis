@@ -31,6 +31,7 @@ import MaterialUISwitch from "./MaterialUISwitch";
 import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/global/stocks.json";
 import { SearchDialog } from "./SearchDialog";
+import Link from "next/link";
 // Search Design
 
 const Search = styled("div")(({ theme }) => ({
@@ -215,20 +216,23 @@ export default function NavBar({ mode, setMode }: PageProps) {
         position="static"
       >
         <Toolbar>
-          {/* {lessThanSmall ? (
-            <Image
-              src={logoOnly}
-              width={84}
-              alt="Logo Only"
-              color="secondary"
-            />
-          ) : ( */}
-          <Image
-            src={logoWithSlogan}
-            alt="Logo With Slogan"
-            color="secondary"
-          />
-          {/* )} */}
+          <Link href="/">
+            {lessThanSmall ? (
+              <Image
+                src={logoOnly}
+                width={84}
+                alt="Logo Only"
+                color="secondary"
+              />
+            ) : (
+              <Image
+                src={logoWithSlogan}
+                alt="Logo With Slogan"
+                color="secondary"
+              />
+            )}
+          </Link>
+
           <Box sx={{ flexGrow: 1 }} />
           <Search>
             <IconButton
