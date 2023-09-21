@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import ThemeRegistry from "../lib/Theme/themeRegistry";
 import NavBar from "../Components/NavBar/Navbar";
 import type { Session } from "next-auth";
+import { NextAuthProvider } from "../lib/NextAuthProvider";
 export default function RootLayout(props: {
   session: Session;
   children: React.ReactNode;
@@ -24,10 +25,10 @@ export default function RootLayout(props: {
     <html lang="en">
       <body>
         <ThemeRegistry options={{ key: "mui" }} mode={mode}>
-          <SessionProvider session={session}>
+          <NextAuthProvider session={session}>
             <NavBar setMode={setMode} mode={mode} />
             {children}
-          </SessionProvider>
+          </NextAuthProvider>
         </ThemeRegistry>
       </body>
     </html>

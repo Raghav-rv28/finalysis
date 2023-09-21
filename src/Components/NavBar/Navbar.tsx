@@ -65,7 +65,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
-  const searchRef = React.useRef();
+
   // Effects
   // React.useEffect(() => {
   //   if (searchQuery !== "" && searchRef.current !== undefined) {
