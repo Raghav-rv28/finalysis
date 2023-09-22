@@ -11,6 +11,7 @@ import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import HeatMap from "./HeatMap";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -67,7 +68,7 @@ export default function HomeContent({}: Props) {
           <Tab label="CryptoCurrency" />
           <Tab label="Indexes" />
           <Tab label="News" />
-          <Tab label="WatchList" />
+          <Tab label="HeatMap" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -80,7 +81,7 @@ export default function HomeContent({}: Props) {
         <NewsList />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        WatchList
+        <HeatMap />
       </CustomTabPanel>
       <Snackbar
         open={open}

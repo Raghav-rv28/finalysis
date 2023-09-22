@@ -11,7 +11,7 @@ import React from "react";
 import { Typography } from "@mui/material";
 import millify from "millify";
 import { styled } from "@mui/material/styles";
-
+import TradingViewStockChart from "./TradingViewStockChart.jsx";
 type Props = { stockData: any };
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -477,6 +477,11 @@ export default function TabSection({ stockData }: Props) {
             </List>
           </Grid>
         </Grid>
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <TradingViewStockChart
+          symbol={`${stockData.Exchange}:${stockData.Symbol}`}
+        />
       </CustomTabPanel>
     </div>
   );
