@@ -43,15 +43,18 @@ export default async function Page({ params }: { params: { symbol: string } }) {
             }}
           >
             <Grid container direction="row">
-              <Typography variant="h4">
+              <Typography color="text.primary" variant="h4">
                 {`${stockData.Name} (${stockData.Symbol})`}{" "}
                 <IconButton>
                   <StarBorderOutlined />
                 </IconButton>
               </Typography>
             </Grid>
-            <Typography variant="h6">{`${stockData.Exchange} - Currency in ${stockData.Currency} (${stockData.Country})`}</Typography>
-            <Typography marginTop="1rem" variant="body2">
+            <Typography
+              color="text.primary"
+              variant="h6"
+            >{`${stockData.Exchange} - Currency in ${stockData.Currency} (${stockData.Country})`}</Typography>
+            <Typography color="text.primary" marginTop="1rem" variant="body2">
               {stockData.Description}
             </Typography>
           </Grid>

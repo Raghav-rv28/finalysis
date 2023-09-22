@@ -229,7 +229,6 @@ export default function NavBar({ mode, setMode }: PageProps) {
               />
             )}
           </Link>
-
           <Box sx={{ flexGrow: 1 }} />
           <Search>
             <IconButton
