@@ -2,9 +2,11 @@ import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import getConfig from "next/config";
 
+const { serverRuntimeConfig } = getConfig();
 const options: NextAuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET as string,
+  secret: serverRuntimeConfig.NEXTAUTH_SECRET as string,
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
