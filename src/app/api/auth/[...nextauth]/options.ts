@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
+console.log(`Testing: ${process.env.NEXTAUTH_SECRET}`);
 const options: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET as string,
   providers: [
