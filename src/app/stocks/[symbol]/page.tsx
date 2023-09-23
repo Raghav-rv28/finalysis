@@ -8,9 +8,10 @@ import { StarBorderOutlined } from "@mui/icons-material";
 import { getStockData } from "../../../lib/functions/getStockData";
 import React from "react";
 import TabSection from "../../../Components/StockPage/TabSection";
+import { getPeers } from "../../../lib/functions/finnhub";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
-  const data = [];
+  const data = await getPeers(params.symbol);
 
   // await getStockData(params.symbol);
   console.log(data);
