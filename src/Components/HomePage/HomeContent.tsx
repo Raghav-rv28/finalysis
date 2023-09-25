@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import HeatMap from "./HeatMap";
+import EarningsCalendar from "./EarningsCalendar";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -69,6 +70,7 @@ export default function HomeContent({}: Props) {
           <Tab label="Indexes" />
           <Tab label="News" />
           <Tab label="HeatMap" />
+          <Tab label="Earnings" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -82,6 +84,9 @@ export default function HomeContent({}: Props) {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
         <HeatMap />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
+        <EarningsCalendar />
       </CustomTabPanel>
       <Snackbar
         open={open}

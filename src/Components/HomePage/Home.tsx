@@ -18,15 +18,17 @@ export default async function Home() {
     itemType: string;
     watchlist: Array<string>;
   } | null = null;
+  let watchListData: Array<string> | null;
   if (session) {
     userData = await getUserData(session.user.email);
   }
 
   // get watchlist info
   console.log(userData);
-
-  const watchListData = await getWatchListDetails(userData.watchlist);
-  console.log(watchListData);
+  if (userData !== null) {
+    watchListData = await getWatchListDetails(userData.watchlist);
+    console.log(watchListData);
+  }
 
   return (
     <div>
