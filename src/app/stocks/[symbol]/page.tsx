@@ -17,7 +17,12 @@ export default async function Page({ params }: { params: { symbol: string } }) {
   const session = await getServerSession(options);
   const stockData = await getStockData(params.symbol);
 
-  if (session === undefined || session === null) {
+  if (
+    session === undefined ||
+    session === null ||
+    stockData === undefined ||
+    stockData === null
+  ) {
     return null;
   }
   const userData = await getUserData(session.user.email);
