@@ -28,8 +28,8 @@ function TradingViewWidget() {
           "isDataSetEnabled": false,
           "isZoomEnabled": true,
           "hasSymbolTooltip": true,
-          "width": 1000,
-          "height": 1000,
+          "width": "100%",
+          "height": "100%",
         }`;
     container.current.appendChild(script);
   }, []);

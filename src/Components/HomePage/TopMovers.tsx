@@ -25,6 +25,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     color: theme.palette.secondary.main,
     fontSize: 14,
+    cursor: "pointer",
+    ":hover": { fontWeight: 700 },
   },
 }));
 

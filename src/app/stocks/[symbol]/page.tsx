@@ -15,13 +15,13 @@ import options from "../../api/auth/[...nextauth]/options";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
   const session = await getServerSession(options);
-  const data = await getPeers(params.symbol);
+  // const data = await getPeers(params.symbol);
 
   if (session === undefined || session === null) {
     return null;
   }
   // await getStockData(params.symbol);
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       {/* TOP INTRO SECTION */}
