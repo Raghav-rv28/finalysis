@@ -3,25 +3,26 @@
 import { getServerSession } from "next-auth/next";
 
 import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import stockData from "../../api/data/stock/stockfundamentals.json";
-import { StarBorderOutlined } from "@mui/icons-material";
+// import stockData from "../../api/data/stock/stockfundamentals.json";
 import { getStockData } from "../../../lib/functions/getStockData";
 import React from "react";
 import TabSection from "../../../Components/StockPage/TabSection";
 import { getPeers } from "../../../lib/functions/finnhub";
 import options from "../../api/auth/[...nextauth]/options";
+import { getUserData } from "../../../lib/functions/database";
+import WatchlistButton from "../../../Components/StockPage/WatchlistButton";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
   const session = await getServerSession(options);
-  // const data = await getPeers(params.symbol);
+  const stockData = await getStockData(params.symbol);
 
   if (session === undefined || session === null) {
     return null;
   }
-  // await getStockData(params.symbol);
-  // console.log(data);
+  const userData = await getUserData(session.user.email);
+
+  // get watchlist info
   return (
     <div>
       {/* TOP INTRO SECTION */}
@@ -52,10 +53,12 @@ export default async function Page({ params }: { params: { symbol: string } }) {
           >
             <Grid container direction="row">
               <Typography color="text.primary" variant="h4">
-                {`${stockData.Name} (${stockData.Symbol})`}{" "}
-                <IconButton>
-                  <StarBorderOutlined />
-                </IconButton>
+                {`${stockData.Name} (${stockData.Symbol})`}
+                {/* Client Component */}
+                <WatchlistButton
+                  watchlist={userData.watchlist}
+                  symbol={stockData.Symbol}
+                />
               </Typography>
             </Grid>
             <Typography
@@ -73,6 +76,7 @@ export default async function Page({ params }: { params: { symbol: string } }) {
               backgroundColor: "primary.main",
             }}
           >
+            {/* Client Component */}
             <TabSection stockData={stockData} />
           </Grid>
         </Grid>

@@ -1,5 +1,5 @@
 // TradingViewWidget.jsx
-
+"use client";
 import React, { useEffect, useRef } from "react";
 
 let tvScriptLoadingPromise;
