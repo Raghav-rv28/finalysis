@@ -9,9 +9,10 @@ import { getUserData } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import { getWatchListDetails } from "../../lib/functions/twelveData";
 import Watchlist from "./Watchlist";
+import options from "../../app/api/auth/[...nextauth]/options";
 
 export default async function Home() {
-  const session = await getServerSession();
+  const session = await getServerSession(options);
   let userData: {
     itemId: string;
     itemType: string;
