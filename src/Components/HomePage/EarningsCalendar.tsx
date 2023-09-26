@@ -4,9 +4,13 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import React, { useCallback, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
-
+import startOfWeek from "date-fns/startOfWeek";
+import subDays from "date-fns/subDays";
+import addWeeks from "date-fns/addWeeks";
+import subWeeks from "date-fns/subWeeks";
+import nextMonday from "date-fns/nextMonday";
+import nextFriday from "date-fns/nextFriday";
 type Props = {};
-
 const months = [
   "January",
   "February",
@@ -40,42 +44,34 @@ function getNextDayOfTheWeek(
   return refDate;
 }
 
-function lastSunday(): Date {
-  var d = new Date();
-  console.log(d.toDateString());
-  d.setDate(d.getDate() - d.getDay() - 1);
-  console.log(d.toDateString());
-  return d;
-}
+const today = new Date();
 
 export default function EarningsCalendar({}: Props) {
-  const [weekStart, setWeekStart] = React.useState<Date>(new Date());
+  const [weekStart, setWeekStart] = React.useState<string>("");
   const [dateRange, setDateRange] = React.useState<string>("");
 
   useEffect(() => {
-    setWeekStart(lastSunday());
-  }, []);
-  useEffect(() => {
-    console.log(getNextDayOfTheWeek("mon", false, weekStart).toDateString());
+    const temp = subDays(startOfWeek(today), 2);
+    console.log(temp.toDateString());
+    console.log(nextMonday(temp).getDate());
+    console.log(nextFriday(temp).getDate());
     setDateRange(
-      `${months[weekStart.getMonth()]} ${getNextDayOfTheWeek(
-        "mon",
-        true,
-        weekStart
-      ).getDate()} - ${getNextDayOfTheWeek(
-        "friday",
-        true,
-        weekStart
+      `${months[temp.getMonth()]} ${nextMonday(temp).getDate()} - ${nextFriday(
+        temp
       ).getDate()}`
     );
-  }, [weekStart]);
+    setWeekStart(temp.toDateString());
+  }, []);
 
+  console.log(weekStart);
   const AddWeek = useCallback(() => {
-    setWeekStart(new Date(weekStart.setDate(weekStart.getDate() + 7)));
+    console.log("triggering");
+    setWeekStart((prev) => addWeeks(new Date(prev), 1).toDateString());
   }, []);
 
   const DecWeek = useCallback(() => {
-    setWeekStart(new Date(weekStart.setDate(weekStart.getDate() - 7)));
+    console.log("triggering");
+    setWeekStart((prev) => subWeeks(new Date(prev), 1).toDateString());
   }, []);
 
   return (
@@ -132,7 +128,11 @@ export default function EarningsCalendar({}: Props) {
               lg={2}
             >
               <Typography sx={{ width: "100%" }} align="center">
-                {getNextDayOfTheWeek(val, true, weekStart).toDateString()}
+                {getNextDayOfTheWeek(
+                  val,
+                  true,
+                  new Date(weekStart)
+                ).toDateString()}
               </Typography>
             </Grid>
           );
