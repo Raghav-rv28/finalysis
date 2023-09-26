@@ -20,7 +20,7 @@ import nextFriday from "date-fns/nextFriday";
 import data from "../../app/api/data/global/earnings.json";
 import isSameDay from "date-fns/isSameDay";
 type Props = {};
-type StockListEarningsProps = { date: Date; data: Array<any> };
+type StockListEarningsProps = { data: Array<any> };
 const months = [
   "January",
   "February",
@@ -54,7 +54,7 @@ function getNextDayOfTheWeek(
   return refDate;
 }
 
-function StockListEarnings({ date, data }: StockListEarningsProps) {
+function StockListEarnings({ data }: StockListEarningsProps) {
   return (
     <Grid
       p="1rem"
@@ -64,9 +64,9 @@ function StockListEarnings({ date, data }: StockListEarningsProps) {
       alignItems="flex-start"
     >
       <Grid item md={5}>
-        <Typography pt="1rem" pb="1rem">
+        <Typography fontSize={12} pt="1rem" pb="1rem">
           <LightMode style={{ verticalAlign: "middle" }} />
-          bmo
+          Before Open
         </Typography>
         <Stack>
           {data.map((value) => {
@@ -77,9 +77,9 @@ function StockListEarnings({ date, data }: StockListEarningsProps) {
         </Stack>
       </Grid>
       <Grid item md={5}>
-        <Typography pt="1rem" pb="1rem" align="center">
+        <Typography fontSize={12} pt="1rem" pb="1rem" align="center">
           <DarkMode style={{ verticalAlign: "middle" }} />
-          amc
+          After Close
         </Typography>
         <Stack>
           {data.map((value) => {
@@ -195,11 +195,23 @@ export default function EarningsCalendar({}: Props) {
         {["mon", "tue", "wed", "thu", "fri"].map((val) => {
           return (
             <Grid
+              sx={
+                isSameDay(
+                  new Date(),
+                  getNextDayOfTheWeek(val, true, new Date(weekStart))
+                )
+                  ? {
+                      backgroundColor: "rgba(255, 237, 160,0.25)",
+                    }
+                  : {
+                      border: 1,
+                      borderColor: "secondary.main",
+                      "&:hover": {
+                        backgroundColor: "rgba(255, 237, 160,0.25)",
+                      },
+                    }
+              }
               key={val}
-              sx={{
-                border: 1,
-                borderColor: "secondary.main",
-              }}
               item
               lg={2}
             >
@@ -209,7 +221,6 @@ export default function EarningsCalendar({}: Props) {
                 align="center"
               >
                 <StockListEarnings
-                  date={new Date(weekStart)}
                   data={data.earningsCalendar.filter((value) =>
                     isSameDay(
                       new Date(value.date),
