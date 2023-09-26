@@ -2,15 +2,25 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import Avatar from "@mui/material/Avatar";
 import React, { useCallback, useEffect } from "react";
-import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import {
+  ArrowLeft,
+  ArrowRight,
+  DarkMode,
+  LightMode,
+} from "@mui/icons-material";
 import startOfWeek from "date-fns/startOfWeek";
 import subDays from "date-fns/subDays";
 import addWeeks from "date-fns/addWeeks";
 import subWeeks from "date-fns/subWeeks";
 import nextMonday from "date-fns/nextMonday";
 import nextFriday from "date-fns/nextFriday";
+import data from "../../app/api/data/global/earnings.json";
+import isSameDay from "date-fns/isSameDay";
 type Props = {};
+type StockListEarningsProps = { date: Date; data: Array<any> };
 const months = [
   "January",
   "February",
@@ -44,6 +54,45 @@ function getNextDayOfTheWeek(
   return refDate;
 }
 
+function StockListEarnings({ date, data }: StockListEarningsProps) {
+  return (
+    <Grid
+      p="1rem"
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="flex-start"
+    >
+      <Grid item md={5}>
+        <Typography pt="1rem" pb="1rem">
+          <LightMode style={{ verticalAlign: "middle" }} />
+          bmo
+        </Typography>
+        <Stack>
+          {data.map((value) => {
+            if (value.hour === "bmo") {
+              return <Typography key={value.symbol}>{value.symbol}</Typography>;
+            }
+          })}
+        </Stack>
+      </Grid>
+      <Grid item md={5}>
+        <Typography pt="1rem" pb="1rem" align="center">
+          <DarkMode style={{ verticalAlign: "middle" }} />
+          amc
+        </Typography>
+        <Stack>
+          {data.map((value) => {
+            if (value.hour === "amc") {
+              return <Typography key={value.symbol}>{value.symbol}</Typography>;
+            }
+          })}
+        </Stack>
+      </Grid>
+    </Grid>
+  );
+}
+
 const today = new Date();
 
 export default function EarningsCalendar({}: Props) {
@@ -52,9 +101,6 @@ export default function EarningsCalendar({}: Props) {
 
   useEffect(() => {
     const temp = subDays(startOfWeek(today), 2);
-    console.log(temp.toDateString());
-    console.log(nextMonday(temp).getDate());
-    console.log(nextFriday(temp).getDate());
     setDateRange(
       `${months[temp.getMonth()]} ${nextMonday(temp).getDate()} - ${nextFriday(
         temp
@@ -62,8 +108,25 @@ export default function EarningsCalendar({}: Props) {
     );
     setWeekStart(temp.toDateString());
   }, []);
+  useEffect(() => {
+    const temp = new Date(weekStart);
+    if (nextMonday(temp).getMonth() === nextFriday(temp).getMonth()) {
+      setDateRange(
+        `${months[nextMonday(temp).getMonth()]} ${nextMonday(
+          temp
+        ).getDate()} - ${nextFriday(temp).getDate()}`
+      );
+    } else {
+      setDateRange(
+        `${months[nextMonday(temp).getMonth()]} ${nextMonday(
+          temp
+        ).getDate()} - ${months[nextFriday(temp).getMonth()]} ${nextFriday(
+          temp
+        ).getDate()}`
+      );
+    }
+  }, [weekStart]);
 
-  console.log(weekStart);
   const AddWeek = useCallback(() => {
     console.log("triggering");
     setWeekStart((prev) => addWeeks(new Date(prev), 1).toDateString());
@@ -76,7 +139,12 @@ export default function EarningsCalendar({}: Props) {
 
   return (
     <div>
-      <Typography variant="h5" align="center" sx={{ width: "100%" }}>
+      <Typography
+        color="secondary"
+        variant="h5"
+        align="center"
+        sx={{ width: "100%" }}
+      >
         Most Important Earnings Releases
       </Typography>
       <Box
@@ -91,7 +159,11 @@ export default function EarningsCalendar({}: Props) {
         <IconButton onClick={() => DecWeek()}>
           <ArrowLeft />
         </IconButton>
-        <Typography sx={{ width: "200", p: "1rem" }} variant="h6">
+        <Typography
+          color="secondary"
+          sx={{ width: "200", p: "1rem" }}
+          variant="h6"
+        >
           {dateRange}
         </Typography>
         <IconButton onClick={() => AddWeek()}>
@@ -110,7 +182,11 @@ export default function EarningsCalendar({}: Props) {
               item
               lg={2}
             >
-              <Typography sx={{ width: "100%" }} align="center">
+              <Typography
+                color="secondary"
+                sx={{ width: "100%" }}
+                align="center"
+              >
                 {val}
               </Typography>
             </Grid>
@@ -127,12 +203,20 @@ export default function EarningsCalendar({}: Props) {
               item
               lg={2}
             >
-              <Typography sx={{ width: "100%" }} align="center">
-                {getNextDayOfTheWeek(
-                  val,
-                  true,
-                  new Date(weekStart)
-                ).toDateString()}
+              <Typography
+                color="secondary"
+                sx={{ width: "100%" }}
+                align="center"
+              >
+                <StockListEarnings
+                  date={new Date(weekStart)}
+                  data={data.earningsCalendar.filter((value) =>
+                    isSameDay(
+                      new Date(value.date),
+                      getNextDayOfTheWeek(val, true, new Date(weekStart))
+                    )
+                  )}
+                />
               </Typography>
             </Grid>
           );

@@ -251,7 +251,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
               aria-label="show 17 new notifications"
               color="secondary"
             >
-              <Badge badgeContent={17} color="secondary">
+              <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon fontSize="large" />
               </Badge>
             </IconButton>
