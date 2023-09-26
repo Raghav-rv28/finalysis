@@ -10,6 +10,7 @@ import { getServerSession } from "next-auth/next";
 import { getWatchListDetails } from "../../lib/functions/twelveData";
 import Watchlist from "./Watchlist";
 import options from "../../app/api/auth/[...nextauth]/options";
+import { Box, Button } from "@mui/material";
 
 export default async function Home() {
   const session = await getServerSession(options);
@@ -20,7 +21,7 @@ export default async function Home() {
   } | null = null;
   let watchListData: Array<string> | null;
   if (session) {
-    userData = await getUserData(session.user.email);
+    // userData = await getUserData(session.user.email);
   }
 
   // get watchlist info
@@ -86,13 +87,26 @@ export default async function Home() {
               md={4}
               sm={4}
             >
-              <Watchlist
-                watchlist={
-                  watchListData !== undefined && watchListData !== null
-                    ? Object.values(watchListData)
-                    : []
-                }
-              />
+              {session ? (
+                <Watchlist
+                  watchlist={
+                    watchListData !== undefined && watchListData !== null
+                      ? Object.values(watchListData)
+                      : []
+                  }
+                />
+              ) : (
+                <Box
+                  sx={{
+                    width: "100%",
+                    justifyContent: "center",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button color="secondary">Sign In</Button>
+                </Box>
+              )}
               <TopMovers />
             </Grid>
           </Grid>
