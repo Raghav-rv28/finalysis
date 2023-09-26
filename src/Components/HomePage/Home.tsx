@@ -67,7 +67,7 @@ export default async function Home() {
                 alignItems="flex-start"
                 wrap="nowrap"
               >
-                <Grid item sx={{ marginTop: "1rem", overflow: "hidden" }}>
+                <Grid item sx={{ margin: "1rem", overflow: "hidden" }}>
                   <MovingNews />
                 </Grid>
               </Grid>

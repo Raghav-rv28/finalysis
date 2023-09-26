@@ -57,34 +57,48 @@ function getNextDayOfTheWeek(
 function StockListEarnings({ data }: StockListEarningsProps) {
   return (
     <Grid
-      p="1rem"
+      padding="1rem"
       container
       direction="row"
       justifyContent="center"
       alignItems="flex-start"
     >
       <Grid item md={5}>
-        <Typography fontSize={12} pt="1rem" pb="1rem">
+        <Typography color="secondary" fontSize={12} pt="1rem" pb="1rem">
           <LightMode style={{ verticalAlign: "middle" }} />
           Before Open
         </Typography>
-        <Stack>
+        <Stack justifyContent="center" alignItems="center">
           {data.map((value) => {
             if (value.hour === "bmo") {
-              return <Typography key={value.symbol}>{value.symbol}</Typography>;
+              return (
+                <Typography color="secondary" key={value.symbol}>
+                  {value.symbol}
+                </Typography>
+              );
             }
           })}
         </Stack>
       </Grid>
       <Grid item md={5}>
-        <Typography fontSize={12} pt="1rem" pb="1rem" align="center">
+        <Typography
+          color="secondary"
+          fontSize={12}
+          pt="1rem"
+          pb="1rem"
+          align="center"
+        >
           <DarkMode style={{ verticalAlign: "middle" }} />
           After Close
         </Typography>
-        <Stack>
+        <Stack justifyContent="center" alignItems="center">
           {data.map((value) => {
             if (value.hour === "amc") {
-              return <Typography key={value.symbol}>{value.symbol}</Typography>;
+              return (
+                <Typography color="secondary" key={value.symbol}>
+                  {value.symbol}
+                </Typography>
+              );
             }
           })}
         </Stack>
@@ -97,7 +111,9 @@ const today = new Date();
 
 export default function EarningsCalendar({}: Props) {
   const [weekStart, setWeekStart] = React.useState<string>("");
+  // Date Range is for the Weekly
   const [dateRange, setDateRange] = React.useState<string>("");
+  const [dateSelected, setDateSelected] = React.useState<string>("");
 
   useEffect(() => {
     const temp = subDays(startOfWeek(today), 2);
@@ -107,7 +123,9 @@ export default function EarningsCalendar({}: Props) {
       ).getDate()}`
     );
     setWeekStart(temp.toDateString());
+    setDateSelected(today.toDateString());
   }, []);
+
   useEffect(() => {
     const temp = new Date(weekStart);
     if (nextMonday(temp).getMonth() === nextFriday(temp).getMonth()) {
@@ -139,6 +157,7 @@ export default function EarningsCalendar({}: Props) {
 
   return (
     <div>
+      {weekStart}
       <Typography
         color="secondary"
         variant="h5"
@@ -147,6 +166,7 @@ export default function EarningsCalendar({}: Props) {
       >
         Most Important Earnings Releases
       </Typography>
+      {/* WEEKLY DESIGN */}
       <Box
         m="auto"
         sx={{
@@ -215,24 +235,43 @@ export default function EarningsCalendar({}: Props) {
               item
               lg={2}
             >
-              <Typography
-                color="secondary"
-                sx={{ width: "100%" }}
-                align="center"
-              >
-                <StockListEarnings
-                  data={data.earningsCalendar.filter((value) =>
-                    isSameDay(
-                      new Date(value.date),
-                      getNextDayOfTheWeek(val, true, new Date(weekStart))
-                    )
-                  )}
-                />
-              </Typography>
+              <StockListEarnings
+                data={data.earningsCalendar.filter((value) =>
+                  isSameDay(
+                    new Date(value.date),
+                    getNextDayOfTheWeek(val, true, new Date(weekStart))
+                  )
+                )}
+              />
             </Grid>
           );
         })}
       </Grid>
+      {/* DAILY DESIGN */}
+
+      <Box
+        m="auto"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        <IconButton onClick={() => DecWeek()}>
+          <ArrowLeft />
+        </IconButton>
+        <Typography
+          color="secondary"
+          sx={{ width: "200", p: "1rem" }}
+          variant="h6"
+        >
+          {dateSelected}
+        </Typography>
+        <IconButton onClick={() => AddWeek()}>
+          <ArrowRight />
+        </IconButton>
+      </Box>
     </div>
   );
 }
