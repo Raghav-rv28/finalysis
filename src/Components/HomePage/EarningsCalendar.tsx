@@ -42,16 +42,21 @@ function getNextDayOfTheWeek(
 
 function lastSunday(): Date {
   var d = new Date();
-  d.setDate(d.getDate() - d.getDay());
+  console.log(d.toDateString());
+  d.setDate(d.getDate() - d.getDay() - 1);
+  console.log(d.toDateString());
   return d;
 }
 
 export default function EarningsCalendar({}: Props) {
-  const [weekStart, setWeekStart] = React.useState<Date>(lastSunday());
+  const [weekStart, setWeekStart] = React.useState<Date>(new Date());
   const [dateRange, setDateRange] = React.useState<string>("");
-  console.log(dateRange);
 
   useEffect(() => {
+    setWeekStart(lastSunday());
+  }, []);
+  useEffect(() => {
+    console.log(getNextDayOfTheWeek("mon", false, weekStart).toDateString());
     setDateRange(
       `${months[weekStart.getMonth()]} ${getNextDayOfTheWeek(
         "mon",
@@ -90,7 +95,9 @@ export default function EarningsCalendar({}: Props) {
         <IconButton onClick={() => DecWeek()}>
           <ArrowLeft />
         </IconButton>
-        <Typography variant="h6">{dateRange}</Typography>
+        <Typography sx={{ width: "200", p: "1rem" }} variant="h6">
+          {dateRange}
+        </Typography>
         <IconButton onClick={() => AddWeek()}>
           <ArrowRight />
         </IconButton>
@@ -109,6 +116,23 @@ export default function EarningsCalendar({}: Props) {
             >
               <Typography sx={{ width: "100%" }} align="center">
                 {val}
+              </Typography>
+            </Grid>
+          );
+        })}
+        {["mon", "tue", "wed", "thu", "fri"].map((val) => {
+          return (
+            <Grid
+              key={val}
+              sx={{
+                border: 1,
+                borderColor: "secondary.main",
+              }}
+              item
+              lg={2}
+            >
+              <Typography sx={{ width: "100%" }} align="center">
+                {getNextDayOfTheWeek(val, true, weekStart).toDateString()}
               </Typography>
             </Grid>
           );
