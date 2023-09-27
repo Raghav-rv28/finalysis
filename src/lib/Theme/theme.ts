@@ -1,3 +1,4 @@
+import { purple, yellow } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
@@ -13,12 +14,12 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffeda0",
+      main: yellow[300],
       light: "#ffe98a",
       dark: "#ffdf57",
     },
     secondary: {
-      main: "#280b45",
+      main: purple[900],
       light: "#411271",
       dark: "#0e0419",
     },
@@ -36,7 +37,7 @@ const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#280b45",
+      main: purple[900],
       light: "#411271",
       dark: "#0e0419",
     },
@@ -45,7 +46,7 @@ const darkTheme = createTheme({
       secondary: "#808080",
     },
     secondary: {
-      main: "#ffe98a",
+      main: yellow[300],
       light: "rgb(255,237,160)",
       dark: "#ffdf57",
     },
