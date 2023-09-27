@@ -48,6 +48,8 @@ export default function CryptoCurrency() {
     { field: "rank", width: 25, headerName: "# Rank" },
     {
       field: "name",
+      width: 175,
+      suppressSizeToFit: true,
       cellRenderer: getCryptoName,
     },
     {
@@ -72,6 +74,7 @@ export default function CryptoCurrency() {
       cellRenderer: sparklineGenerator,
       resizable: false,
       suppressSizeToFit: true,
+      width: 300,
     },
   ]);
 
@@ -89,7 +92,7 @@ export default function CryptoCurrency() {
           ? "ag-theme-alpine-dark"
           : "ag-theme-alpine"
       }
-      style={{ width: "100%", height: "70vh" }}
+      style={{ width: "100%", height: "100vh" }}
     >
       <AgGridReact
         ref={gridRef}

@@ -13,6 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import HeatMap from "./HeatMap";
 import EarningsCalendar from "./EarningsCalendar";
+import { Stack } from "@mui/material";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -52,11 +53,7 @@ export default function HomeContent({}: Props) {
   };
   return (
     <div>
-      <Box
-        sx={{
-          maxWidth: { xs: 350, sm: 480, md: 640, lg: 960 },
-        }}
-      >
+      <Box>
         <Tabs
           textColor="secondary"
           indicatorColor="secondary"
@@ -69,7 +66,6 @@ export default function HomeContent({}: Props) {
           <Tab label="CryptoCurrency" />
           <Tab label="Indexes" />
           <Tab label="News" />
-          <Tab label="HeatMap" />
           <Tab label="Earnings" />
         </Tabs>
       </Box>
@@ -77,15 +73,22 @@ export default function HomeContent({}: Props) {
         <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <TradingViewChart />
+        <Stack
+          direction={{ lg: "column", xl: "row" }}
+          justifyContent="space-between"
+          alignItems="flex-start"
+          useFlexGap
+          flexWrap="wrap"
+          spacing={2}
+        >
+          <TradingViewChart />
+          <HeatMap />
+        </Stack>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <NewsList />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <HeatMap />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
         <EarningsCalendar />
       </CustomTabPanel>
       <Snackbar

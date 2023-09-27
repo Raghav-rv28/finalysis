@@ -45,8 +45,14 @@ export default function TickerTape({ tickers }) {
   };
 
   return (
-    <Grid container columns={50} sx={{ backgroundColor: "primary.main" }}>
-      <Grid item lg={48}>
+    <Grid
+      direction="row"
+      wrap="nowrap"
+      container
+      columns={50}
+      sx={{ backgroundColor: "primary.main" }}
+    >
+      <Grid item md={45} lg={48} sx={{ overflow: "hidden" }}>
         <Suspense fallback={<>...Loading</>}>
           <Marquee play={play}>
             {Object.values(tickerData).map(
@@ -64,7 +70,7 @@ export default function TickerTape({ tickers }) {
           </Marquee>
         </Suspense>
       </Grid>
-      <Grid item lg={2}>
+      <Grid item md={5} lg={2}>
         <Button
           onClick={() => setPlay((prev) => !prev)}
           color="secondary"

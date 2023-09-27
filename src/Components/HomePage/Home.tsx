@@ -32,7 +32,7 @@ export default async function Home() {
   }
 
   return (
-    <div>
+    <div style={{ height: "100%" }}>
       <Grid
         container
         sx={{
@@ -51,7 +51,7 @@ export default async function Home() {
           {/* INDEXES/MARKETS CHART SECTION */}
 
           <Grid
-            justifyContent="center"
+            justifyContent="space-evenly"
             alignItems="center"
             container
             columns={15}
@@ -59,27 +59,25 @@ export default async function Home() {
             direction="row"
           >
             {/* TAB SECTION */}
-            <Grid alignSelf="baseline" item sm={11} xs={12}>
-              <Grid
-                container
-                direction="row"
-                alignItems="flex-start"
-                wrap="nowrap"
-              >
-                <Grid item sx={{ margin: "1rem", overflow: "hidden" }}>
-                  <MovingNews />
-                </Grid>
-              </Grid>
-              <HomeContent />
+            <Grid
+              sx={{
+                borderRight: 1,
+                borderColor: "secondary.main",
+              }}
+              alignSelf="baseline"
+              item
+              lg={11}
+            >
+              <Box>
+                {/* <MovingNews /> */}
+                <HomeContent />
+              </Box>
             </Grid>
-            {/* TOP MOVERS SECTION */}
             <Grid
               item
               alignSelf="start"
               sx={{
                 paddingTop: "2rem",
-                borderLeft: 1,
-                borderColor: "secondary.main",
               }}
               lg={4}
               md={4}
@@ -108,6 +106,7 @@ export default async function Home() {
               <TopMovers />
             </Grid>
           </Grid>
+          {/* TOP MOVERS SECTION */}
         </Grid>
         <Grid
           sx={{ backgroundColor: "background.paper" }}
