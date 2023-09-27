@@ -25,10 +25,10 @@ export default async function Home() {
   }
 
   // get watchlist info
-  console.log(userData);
+  // console.log(userData);
   if (userData !== null) {
-    watchListData = await getWatchListDetails(userData.watchlist);
-    console.log(watchListData);
+    // watchListData = await getWatchListDetails(userData.watchlist);
+    // console.log(watchListData);
   }
 
   return (

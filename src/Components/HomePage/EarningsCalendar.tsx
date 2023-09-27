@@ -24,6 +24,8 @@ import data from "../../app/api/data/global/earnings.json";
 import isSameDay from "date-fns/isSameDay";
 import { addBusinessDays, subBusinessDays } from "date-fns";
 import millify from "millify";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 type Props = {};
 type StockListEarningsProps = { data: Array<any> };
 const months = [
@@ -123,6 +125,9 @@ export default function EarningsCalendar({}: Props) {
   const [dateSelected, setDateSelected] = React.useState<string>("");
   const [showEPSEstimate, setShowEPSEstimate] = React.useState<boolean>(false);
 
+  const theme = useTheme();
+  const lessThanLarge = useMediaQuery(theme.breakpoints.down("lg"));
+
   useEffect(() => {
     const temp = startOfWeek(today);
     setDateRange(
@@ -179,12 +184,7 @@ export default function EarningsCalendar({}: Props) {
   return (
     <div>
       {weekStart}
-      <Typography
-        color="secondary"
-        variant="h5"
-        align="center"
-        sx={{ width: "100%" }}
-      >
+      <Typography color="secondary" variant="h5" align="center">
         Most Important Earnings Releases
       </Typography>
       {/* WEEKLY DESIGN */}
@@ -211,33 +211,50 @@ export default function EarningsCalendar({}: Props) {
           <ArrowRight />
         </IconButton>
       </Box>
-      {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((val) => {
-        return (
-          <Grid
-            key={val}
-            sx={{
-              border: 1,
-              borderColor: "secondary.main",
-            }}
-            item
-            lg={2}
-          >
-            <Typography color="secondary" sx={{ width: "100%" }} align="center">
-              {val}
-            </Typography>
-          </Grid>
-        );
-      })}
+      {!lessThanLarge && (
+        <Grid
+          sx={{ width: "100%" }}
+          container
+          direction="row"
+          columns={10}
+          justifyContent="center"
+        >
+          {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
+            (val) => {
+              return (
+                <Grid
+                  key={val}
+                  sx={{
+                    border: 1,
+                    borderColor: "secondary.main",
+                  }}
+                  item
+                  lg={2}
+                >
+                  <Typography
+                    color="secondary"
+                    sx={{ width: "100%" }}
+                    align="center"
+                  >
+                    {val}
+                  </Typography>
+                </Grid>
+              );
+            }
+          )}
+        </Grid>
+      )}
       <Grid
+        sx={{ width: "100%" }}
         container
         justifyContent="center"
-        alignItems="flex-start"
+        alignItems={{ md: "flex-start", lg: "center" }}
         columns={10}
       >
         {["mon", "tue", "wed", "thu", "fri"].map((val) => {
           return (
             <Grid
-              height="50vh"
+              height={{ lg: "50vh", md: "auto" }}
               sx={
                 isSameDay(
                   new Date(),
@@ -274,11 +291,11 @@ export default function EarningsCalendar({}: Props) {
       {/* DAILY DESIGN */}
       <Box
         m="auto"
+        mt="1rem"
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100%",
         }}
       >
         <IconButton onClick={() => DecBDay()}>
@@ -287,7 +304,7 @@ export default function EarningsCalendar({}: Props) {
         <Typography
           color="secondary"
           sx={{ width: "200", p: "1rem" }}
-          variant="h6"
+          variant="h5"
         >
           {dateSelected}
         </Typography>
@@ -301,6 +318,7 @@ export default function EarningsCalendar({}: Props) {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
           minWidth: 350,
         }}
       >
@@ -317,7 +335,6 @@ export default function EarningsCalendar({}: Props) {
                 return (
                   <ListItem
                     sx={{
-                      width: "100%",
                       borderRadius: "2%",
                       border: 2,
                       borderColor: "secondary.main",
@@ -326,7 +343,7 @@ export default function EarningsCalendar({}: Props) {
                   >
                     <Grid
                       container
-                      sx={{ width: "100%" }}
+                      sx={{ width: "80%" }}
                       direction="row"
                       justifyContent="space-between"
                       alignItems="center"
