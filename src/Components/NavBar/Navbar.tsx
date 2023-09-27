@@ -26,7 +26,7 @@ import Typography from "@mui/material/Typography";
 
 // Media & Files
 import logoOnly from "../../../public/media/logo/logoOnly.png";
-import logoWithSlogan from "../../../public/media/logo/logoWithSlogan.png";
+import logoWithSlogan from "../../../public/media/logo/logoWithSloganBGRemoved.png";
 import MaterialUISwitch from "./MaterialUISwitch";
 import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/global/stocks.json";

@@ -36,7 +36,6 @@ export default async function Home() {
       <Grid
         container
         sx={{
-          height: "100vh",
           backgroundColor: "primary.main",
           border: "0.1rem #000",
           borderStyle: "solid none none none",
@@ -81,7 +80,6 @@ export default async function Home() {
                 paddingTop: "2rem",
                 borderLeft: 1,
                 borderColor: "secondary.main",
-                height: "100vh",
               }}
               lg={4}
               md={4}

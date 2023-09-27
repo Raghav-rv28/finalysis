@@ -3,6 +3,9 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import List from "@mui/material/List";
 import Avatar from "@mui/material/Avatar";
 import React, { useCallback, useEffect } from "react";
 import {
@@ -19,6 +22,8 @@ import nextMonday from "date-fns/nextMonday";
 import nextFriday from "date-fns/nextFriday";
 import data from "../../app/api/data/global/earnings.json";
 import isSameDay from "date-fns/isSameDay";
+import { addBusinessDays, subBusinessDays } from "date-fns";
+import millify from "millify";
 type Props = {};
 type StockListEarningsProps = { data: Array<any> };
 const months = [
@@ -57,6 +62,7 @@ function getNextDayOfTheWeek(
 function StockListEarnings({ data }: StockListEarningsProps) {
   return (
     <Grid
+      sx={{ overflow: "hidden" }}
       padding="1rem"
       container
       direction="row"
@@ -111,12 +117,14 @@ const today = new Date();
 
 export default function EarningsCalendar({}: Props) {
   const [weekStart, setWeekStart] = React.useState<string>("");
-  // Date Range is for the Weekly
+  // Date Range Text is for the Weekly
   const [dateRange, setDateRange] = React.useState<string>("");
+  // for Daily Component
   const [dateSelected, setDateSelected] = React.useState<string>("");
+  const [showEPSEstimate, setShowEPSEstimate] = React.useState<boolean>(false);
 
   useEffect(() => {
-    const temp = subDays(startOfWeek(today), 2);
+    const temp = startOfWeek(today);
     setDateRange(
       `${months[temp.getMonth()]} ${nextMonday(temp).getDate()} - ${nextFriday(
         temp
@@ -148,6 +156,19 @@ export default function EarningsCalendar({}: Props) {
   const AddWeek = useCallback(() => {
     console.log("triggering");
     setWeekStart((prev) => addWeeks(new Date(prev), 1).toDateString());
+  }, []);
+
+  const AddBDay = useCallback(() => {
+    console.log("triggering");
+    setDateSelected((prev) =>
+      addBusinessDays(new Date(prev), 1).toDateString()
+    );
+  }, []);
+  const DecBDay = useCallback(() => {
+    console.log("triggering");
+    setDateSelected((prev) =>
+      subBusinessDays(new Date(prev), 1).toDateString()
+    );
   }, []);
 
   const DecWeek = useCallback(() => {
@@ -190,7 +211,12 @@ export default function EarningsCalendar({}: Props) {
           <ArrowRight />
         </IconButton>
       </Box>
-      <Grid container columns={10}>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="flex-start"
+        columns={10}
+      >
         {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((val) => {
           return (
             <Grid
@@ -215,6 +241,7 @@ export default function EarningsCalendar({}: Props) {
         {["mon", "tue", "wed", "thu", "fri"].map((val) => {
           return (
             <Grid
+              height="50vh"
               sx={
                 isSameDay(
                   new Date(),
@@ -234,6 +261,7 @@ export default function EarningsCalendar({}: Props) {
               key={val}
               item
               lg={2}
+              md={6}
             >
               <StockListEarnings
                 data={data.earningsCalendar.filter((value) =>
@@ -248,7 +276,6 @@ export default function EarningsCalendar({}: Props) {
         })}
       </Grid>
       {/* DAILY DESIGN */}
-
       <Box
         m="auto"
         sx={{
@@ -258,7 +285,7 @@ export default function EarningsCalendar({}: Props) {
           width: "100%",
         }}
       >
-        <IconButton onClick={() => DecWeek()}>
+        <IconButton onClick={() => DecBDay()}>
           <ArrowLeft />
         </IconButton>
         <Typography
@@ -268,9 +295,78 @@ export default function EarningsCalendar({}: Props) {
         >
           {dateSelected}
         </Typography>
-        <IconButton onClick={() => AddWeek()}>
+        <IconButton onClick={() => AddBDay()}>
           <ArrowRight />
         </IconButton>
+      </Box>
+      <Box
+        m="1rem"
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          minWidth: 350,
+        }}
+      >
+        <List sx={{ width: "80%" }}>
+          {data.earningsCalendar
+            .filter((value) =>
+              isSameDay(
+                new Date(value.date),
+                getNextDayOfTheWeek(dateSelected, true, new Date(weekStart))
+              )
+            )
+            .map((val) => {
+              if (val.epsEstimate !== null || showEPSEstimate) {
+                return (
+                  <ListItem
+                    sx={{
+                      width: "100%",
+                      borderRadius: "2%",
+                      border: 2,
+                      borderColor: "secondary.main",
+                    }}
+                    key={val.symbol}
+                  >
+                    <Grid
+                      container
+                      sx={{ width: "100%" }}
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Grid item md>
+                        <Typography component="span">{val.symbol}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          component="span"
+                          sx={{
+                            fontWeight: 600,
+                            color: String(val.epsEstimate).includes("-")
+                              ? "red"
+                              : "lightgreen",
+                          }}
+                        >
+                          {val.epsEstimate}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>{val.quarter}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>{`${
+                          val.revenueEstimate !== null
+                            ? millify(val.revenueEstimate)
+                            : "-"
+                        }`}</Typography>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
+                );
+              }
+            })}
+        </List>
       </Box>
     </div>
   );
