@@ -211,33 +211,29 @@ export default function EarningsCalendar({}: Props) {
           <ArrowRight />
         </IconButton>
       </Box>
+      {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((val) => {
+        return (
+          <Grid
+            key={val}
+            sx={{
+              border: 1,
+              borderColor: "secondary.main",
+            }}
+            item
+            lg={2}
+          >
+            <Typography color="secondary" sx={{ width: "100%" }} align="center">
+              {val}
+            </Typography>
+          </Grid>
+        );
+      })}
       <Grid
         container
         justifyContent="center"
         alignItems="flex-start"
         columns={10}
       >
-        {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((val) => {
-          return (
-            <Grid
-              key={val}
-              sx={{
-                border: 1,
-                borderColor: "secondary.main",
-              }}
-              item
-              lg={2}
-            >
-              <Typography
-                color="secondary"
-                sx={{ width: "100%" }}
-                align="center"
-              >
-                {val}
-              </Typography>
-            </Grid>
-          );
-        })}
         {["mon", "tue", "wed", "thu", "fri"].map((val) => {
           return (
             <Grid
