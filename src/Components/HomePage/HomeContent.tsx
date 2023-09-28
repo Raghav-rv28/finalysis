@@ -13,8 +13,9 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import HeatMap from "./HeatMap";
 import EarningsCalendar from "./EarningsCalendar";
-import { Stack } from "@mui/material";
-
+import Grid from "@mui/material/Grid";
+import StockGrid from "./StockGrid";
+import { Chart } from "react-google-charts";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -36,7 +37,13 @@ function CustomTabPanel(props: TabPanelProps) {
     </div>
   );
 }
+function getRandomNumber() {
+  return Math.random() * 100;
+}
 
+export function getValue() {
+  return 26;
+}
 type Props = {};
 
 export default function HomeContent({}: Props) {
@@ -53,6 +60,40 @@ export default function HomeContent({}: Props) {
   };
   return (
     <div>
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        direction="row"
+      >
+        <Grid item>
+          <StockGrid />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Chart
+            chartType="Gauge"
+            width="100%"
+            height="150px"
+            data={[
+              ["Label", "Value"],
+              ["F&G Index", getValue()],
+            ]}
+            options={{
+              minorTicks: 5,
+            }}
+          />
+        </Grid>
+        <Grid item sx={{ width: 450, backgroundColor: "#121212" }}>
+          Crypto Grid
+        </Grid>
+      </Grid>
       <Box>
         <Tabs
           textColor="secondary"
@@ -73,17 +114,21 @@ export default function HomeContent({}: Props) {
         <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Stack
-          direction={{ lg: "column", xl: "row" }}
+        <Grid
+          container
+          direction="row"
           justifyContent="space-between"
-          alignItems="flex-start"
-          useFlexGap
+          alignItems="center"
           flexWrap="wrap"
           spacing={2}
         >
-          <TradingViewChart />
-          <HeatMap />
-        </Stack>
+          <Grid item lg={8}>
+            <TradingViewChart />
+          </Grid>
+          <Grid item lg={4}>
+            <HeatMap />
+          </Grid>
+        </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <NewsList />
