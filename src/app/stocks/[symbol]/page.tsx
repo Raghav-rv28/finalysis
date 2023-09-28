@@ -25,6 +25,7 @@ export default async function Page({ params }: { params: { symbol: string } }) {
   ) {
     return null;
   }
+  console.log(JSON.stringify(session));
   const userData = await getUserData(session.user.email);
 
   // get watchlist info

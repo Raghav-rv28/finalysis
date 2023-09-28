@@ -1,5 +1,7 @@
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
+import CognitoProvider from "next-auth/providers/cognito";
+
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -8,6 +10,11 @@ const options: NextAuthOptions = {
     (process.env.NEXTAUTH_SECRET as string) ||
     (process.env.NEXT_PUBLIC_SECRET as string),
   providers: [
+    CognitoProvider({
+      clientId: process.env.COGNITO_CLIENT_ID,
+      clientSecret: process.env.COGNITO_CLIENT_SECRET,
+      issuer: process.env.COGNITO_ISSUER,
+    }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,

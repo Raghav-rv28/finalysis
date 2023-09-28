@@ -113,7 +113,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
     if (status === "authenticated") {
       signOut();
     } else {
-      signIn();
+      signIn("cognito");
     }
 
     handleMenuClose();
