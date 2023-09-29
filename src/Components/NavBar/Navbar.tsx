@@ -84,7 +84,6 @@ export default function NavBar({ mode, setMode }: PageProps) {
         return temp;
       }
       if (value.symbol.includes(query.toUpperCase())) {
-        console.log(value);
         temp.push(value);
         counter -= 1;
       }
@@ -240,6 +239,8 @@ export default function NavBar({ mode, setMode }: PageProps) {
             </IconButton>
           </Search>
           <SearchDialog
+            watchListData={undefined}
+            handleAdd={undefined}
             search={searchResults}
             getSearchResults={getSearchResults}
             open={searchOpen}

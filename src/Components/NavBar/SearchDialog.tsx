@@ -9,21 +9,24 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-import Typography from "@mui/material/Typography";
+import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
-import { TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import defaultSearch from "../../app/api/data/global/samplesearch.json";
 import { useTheme } from "@mui/material/styles";
 import { useRouter } from "next/navigation";
 export interface SearchDialogProps {
   open: boolean;
   getSearchResults: any;
+  watchListData: Array<any> | undefined;
+  handleAdd: any | undefined;
   search: Array<any>;
   onClose: (value: string) => void;
 }
 
 export function SearchDialog(props: SearchDialogProps) {
-  const { onClose, getSearchResults, search, open } = props;
+  const { onClose, getSearchResults, search, open, watchListData, handleAdd } =
+    props;
 
   const router = useRouter();
   const theme = useTheme();
@@ -62,7 +65,20 @@ export function SearchDialog(props: SearchDialogProps) {
         <List dense>
           {search.map((value) => {
             return (
-              <ListItem key={crypto.randomUUID()}>
+              <ListItem
+                key={crypto.randomUUID()}
+                secondaryAction={
+                  watchListData === undefined ? null : (
+                    <IconButton
+                      onClick={() => handleAdd(value.symbol)}
+                      edge="end"
+                      aria-label="delete"
+                    >
+                      <AddIcon />
+                    </IconButton>
+                  )
+                }
+              >
                 <ListItemButton
                   onClick={() => handleListItemClick(value.symbol)}
                 >
@@ -94,7 +110,20 @@ export function SearchDialog(props: SearchDialogProps) {
           {search.length === 0 &&
             defaultSearch.data.map((value) => {
               return (
-                <ListItem key={crypto.randomUUID()}>
+                <ListItem
+                  key={crypto.randomUUID()}
+                  secondaryAction={
+                    watchListData === undefined ? null : (
+                      <IconButton
+                        onClick={() => handleAdd(value.symbol)}
+                        edge="end"
+                        aria-label="delete"
+                      >
+                        <AddIcon />
+                      </IconButton>
+                    )
+                  }
+                >
                   <ListItemButton
                     onClick={() => handleListItemClick(value.symbol)}
                   >

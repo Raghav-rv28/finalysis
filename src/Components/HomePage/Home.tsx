@@ -19,16 +19,16 @@ export default async function Home() {
     itemType: string;
     watchlist: Array<string>;
   } | null = null;
-  let watchListData: Array<string> | null;
+  let watchListData: any;
   if (session) {
-    // userData = await getUserData(session.user.email);
+    console.log(session);
+    userData = await getUserData(session.user.email);
   }
 
   // get watchlist info
-  // console.log(userData);
+  console.log(userData);
   if (userData !== null) {
-    // watchListData = await getWatchListDetails(userData.watchlist);
-    // console.log(watchListData);
+    watchListData = await getWatchListDetails(userData.watchlist);
   }
 
   return (
@@ -83,26 +83,13 @@ export default async function Home() {
               md={4}
               sm={4}
             >
-              {session ? (
-                <Watchlist
-                  watchlist={
-                    watchListData !== undefined && watchListData !== null
-                      ? Object.values(watchListData)
-                      : []
-                  }
-                />
-              ) : (
-                <Box
-                  sx={{
-                    width: "100%",
-                    justifyContent: "center",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <Button color="secondary">Sign In</Button>
-                </Box>
-              )}
+              <Watchlist
+                watchlist={
+                  watchListData !== undefined && watchListData !== null
+                    ? Object.values(watchListData)
+                    : []
+                }
+              />
               <TopMovers />
             </Grid>
           </Grid>
