@@ -84,19 +84,21 @@ export default function Watchlist({ watchlist }: Props) {
 
   const handleAdd = (value: string) => {
     console.log(value);
-    if (!data.includes(value)) {
-      // (async () => {
-      //   await fetch(
-      //     `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
-      //     {
-      //       method: "POST",
-      //       headers: {},
-      //       body: JSON.stringify({
-      //         watchlist: watchlist.map((val) => val.symbol).concat([value]),
-      //       }),
-      //     }
-      //   );
-      // })();
+    const valueCheck = data.map((value) => value.symbol);
+    if (!valueCheck.includes(value) && value !== undefined) {
+      (async () => {
+        await fetch(
+          `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              itemId: session.data.user.email,
+              watchlist: watchlist.map((val) => val.symbol).concat([value]),
+            }),
+          }
+        );
+      })();
+
       setData((prev) =>
         prev.concat([
           {
@@ -109,6 +111,7 @@ export default function Watchlist({ watchlist }: Props) {
       );
     }
   };
+
   return (
     <div>
       <Accordion expanded={expanded} onChange={handleChange}>
