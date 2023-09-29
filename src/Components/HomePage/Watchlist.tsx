@@ -10,16 +10,20 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
+import CloseIcon from "@mui/icons-material/Close";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import AddIcon from "@mui/icons-material/Add";
 import Paper from "@mui/material/Paper";
 import { useSession } from "next-auth/react";
 import stockData from "../../app/api/data/global/stocks.json";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { SearchDialog } from "../NavBar/SearchDialog";
+import Stack from "@mui/material/Stack";
+import { IconButton } from "@mui/material";
 
 type Props = { watchlist: Array<any> };
 
@@ -34,7 +38,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     ":hover": { fontWeight: 700 },
   },
 }));
-
 export default function Watchlist({ watchlist }: Props) {
   const [searchResults, setSearchResults] = React.useState<Array<any>>([]);
   const [data, setData] = React.useState<Array<any>>([]);
@@ -45,10 +48,11 @@ export default function Watchlist({ watchlist }: Props) {
   );
   const router = useRouter();
   const session = useSession();
+  console.log(session);
 
   useEffect(() => {
     const dataTemp = [];
-
+    console.log(watchlist);
     watchlist.forEach((value) => {
       const { close, symbol, average_volume, percent_change, change } = value;
       dataTemp.push({ close, symbol, percent_change, change, average_volume });
@@ -82,22 +86,44 @@ export default function Watchlist({ watchlist }: Props) {
     setAddOpen(false);
   };
 
+  const handleDelete = (value: string) => {
+    const valueCheck = [];
+    data.forEach((val) => {
+      if (val.symbol !== value) {
+        valueCheck.push(val);
+      }
+    });
+    // (async () => {
+    //   await fetch(
+    //     `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
+    //     {
+    //       method: "POST",
+    //       body: JSON.stringify({
+    //         itemId: session.data.user.email,
+    //         watchlist: valueCheck,
+    //       }),
+    //     }
+    //   );
+    // })();
+    setData(valueCheck);
+  };
+
   const handleAdd = (value: string) => {
     console.log(value);
     const valueCheck = data.map((value) => value.symbol);
     if (!valueCheck.includes(value) && value !== undefined) {
-      (async () => {
-        await fetch(
-          `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
-          {
-            method: "POST",
-            body: JSON.stringify({
-              itemId: session.data.user.email,
-              watchlist: watchlist.map((val) => val.symbol).concat([value]),
-            }),
-          }
-        );
-      })();
+      // (async () => {
+      //   await fetch(
+      //     `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
+      //     {
+      //       method: "POST",
+      //       body: JSON.stringify({
+      //         itemId: session.data.user.email,
+      //         watchlist: watchlist.map((val) => val.symbol).concat([value]),
+      //       }),
+      //     }
+      //   );
+      // })();
 
       setData((prev) =>
         prev.concat([
@@ -144,13 +170,16 @@ export default function Watchlist({ watchlist }: Props) {
                     console.log(watchlist);
                     return (
                       <TableRow
-                        onClick={() => router.push(`/stocks/${row.symbol}`)}
                         key={row.symbol}
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}
                       >
-                        <StyledTableCell component="th" scope="row">
+                        <StyledTableCell
+                          onClick={() => router.push(`/stocks/${row.symbol}`)}
+                          component="th"
+                          scope="row"
+                        >
                           {row.symbol}
                         </StyledTableCell>
                         <StyledTableCell align="left">
@@ -162,6 +191,9 @@ export default function Watchlist({ watchlist }: Props) {
                         <StyledTableCell align="left">
                           {millify(Number(row.average_volume))}
                         </StyledTableCell>
+                        <StyledTableCell align="left">
+                          <CloseIcon onClick={() => handleDelete(row.symbol)} />
+                        </StyledTableCell>
                       </TableRow>
                     );
                   })}
@@ -169,33 +201,31 @@ export default function Watchlist({ watchlist }: Props) {
               </Table>
             </TableContainer>
           )}
-          {(!listEmpty || session.status === "authenticated") && (
-            <Box
-              sx={{
-                width: "100%",
-                justifyContent: "center",
-                display: "flex",
-                alignItems: "center",
+          <Box
+            sx={{
+              width: "100%",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              color="secondary"
+              onClick={() => {
+                if (session.status === "authenticated") setAddOpen(true);
               }}
             >
-              <Button
-                color="secondary"
-                onClick={() => {
-                  setAddOpen(true);
-                }}
-              >
-                {session.status === "authenticated" ? "Add  +" : "Sign In"}
-              </Button>
-              <SearchDialog
-                search={searchResults}
-                getSearchResults={getSearchResults}
-                open={addOpen}
-                onClose={handleAddClose}
-                watchListData={watchlist}
-                handleAdd={handleAdd}
-              />
-            </Box>
-          )}
+              {session.status === "authenticated" ? "Add  +" : "Sign In"}
+            </Button>
+            <SearchDialog
+              search={searchResults}
+              getSearchResults={getSearchResults}
+              open={addOpen}
+              onClose={handleAddClose}
+              watchListData={watchlist}
+              handleAdd={handleAdd}
+            />
+          </Box>
         </AccordionDetails>
       </Accordion>
     </div>

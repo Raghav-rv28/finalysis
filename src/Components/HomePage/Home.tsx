@@ -9,6 +9,7 @@ import { getUserData } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import { getWatchListDetails } from "../../lib/functions/twelveData";
 import Watchlist from "./Watchlist";
+import watchlist from "../../app/api/data/global/watchlist.json";
 import options from "../../app/api/auth/[...nextauth]/options";
 import { Box, Button } from "@mui/material";
 
@@ -22,13 +23,13 @@ export default async function Home() {
   let watchListData: any;
   if (session) {
     console.log(session);
-    userData = await getUserData(session.user.email);
+    // userData = await getUserData(session.user.email);
   }
 
   // get watchlist info
   console.log(userData);
   if (userData !== null) {
-    watchListData = await getWatchListDetails(userData.watchlist);
+    // watchListData = await getWatchListDetails(userData.watchlist);
   }
 
   return (
@@ -87,7 +88,7 @@ export default async function Home() {
                 watchlist={
                   watchListData !== undefined && watchListData !== null
                     ? Object.values(watchListData)
-                    : []
+                    : Object.values(watchlist)
                 }
               />
               <TopMovers />
