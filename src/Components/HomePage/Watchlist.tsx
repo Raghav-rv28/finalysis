@@ -48,11 +48,9 @@ export default function Watchlist({ watchlist }: Props) {
   );
   const router = useRouter();
   const session = useSession();
-  console.log(session);
 
   useEffect(() => {
     const dataTemp = [];
-    console.log(watchlist);
     watchlist.forEach((value) => {
       const { close, symbol, average_volume, percent_change, change } = value;
       dataTemp.push({ close, symbol, percent_change, change, average_volume });

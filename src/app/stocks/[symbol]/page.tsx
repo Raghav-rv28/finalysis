@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth/next";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-// import stockData from "../../api/data/stock/stockfundamentals.json";
+import stockData from "../../api/data/stock/stockfundamentals.json";
 import { getStockData } from "../../../lib/functions/getStockData";
 import React from "react";
 import TabSection from "../../../Components/StockPage/TabSection";
@@ -15,7 +15,7 @@ import WatchlistButton from "../../../Components/StockPage/WatchlistButton";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
   const session = await getServerSession(options);
-  const stockData = await getStockData(params.symbol);
+  // const stockData = await getStockData(params.symbol);
 
   if (
     session === undefined ||
