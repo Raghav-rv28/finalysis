@@ -2,21 +2,20 @@
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import CryptoCurrency from "./Cryptocurrency";
-import NewsList from "./NewsList";
-import TradingViewChart from "./TradingViewChart";
+import CryptoCurrency from "./Tab Section/Cryptocurrency";
+import NewsList from "./Tab Section/NewsList";
 import React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import HeatMap from "./HeatMap";
-import EarningsCalendar from "./EarningsCalendar";
+import EarningsCalendar from "./Tab Section/EarningsCalendar";
 import Grid from "@mui/material/Grid";
-import StockGrid from "./StockGrid";
+import StockGrid from "./Top Section/StockGrid";
 import GaugeComponent from "@studioriccardolardi/react-gauge-chart-pr132";
-import CryptoGrid from "./CryptoGrid";
+import CryptoGrid from "./Top Section/CryptoGrid";
+import MarketOverview from "./Tab Section/MarketOverview";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -42,9 +41,9 @@ function CustomTabPanel(props: TabPanelProps) {
 export function getValue() {
   return 26;
 }
-type Props = {};
+type Props = { globalSectorData: any };
 
-export default function HomeContent({}: Props) {
+export default function HomeContent({ globalSectorData }: Props) {
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState<boolean>(true);
   // Local Functions
@@ -112,7 +111,7 @@ export default function HomeContent({}: Props) {
           allowScrollButtonsMobile
         >
           <Tab label="CryptoCurrency" />
-          <Tab label="Indexes" />
+          <Tab label="Mkt. Overview" />
           <Tab label="News" />
           <Tab label="Earnings" />
         </Tabs>
@@ -121,21 +120,7 @@ export default function HomeContent({}: Props) {
         <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          flexWrap="wrap"
-          spacing={2}
-        >
-          <Grid item md={6} lg={8}>
-            <TradingViewChart />
-          </Grid>
-          <Grid item md={6} lg={4}>
-            <HeatMap />
-          </Grid>
-        </Grid>
+        <MarketOverview globalSectorData={globalSectorData} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <NewsList />

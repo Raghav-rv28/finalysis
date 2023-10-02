@@ -1,6 +1,6 @@
 "use client";
 import Grid from "@mui/material/Grid";
-import News from "../../app/api/data/global/latestnews.json";
+import News from "../../../app/api/data/global/latestnews.json";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";

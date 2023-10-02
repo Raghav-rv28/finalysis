@@ -21,7 +21,7 @@ import addWeeks from "date-fns/addWeeks";
 import subWeeks from "date-fns/subWeeks";
 import nextMonday from "date-fns/nextMonday";
 import nextFriday from "date-fns/nextFriday";
-import data from "../../app/api/data/global/earnings.json";
+import data from "../../../app/api/data/global/earnings.json";
 import isSameDay from "date-fns/isSameDay";
 import { addBusinessDays, subBusinessDays } from "date-fns";
 import millify from "millify";

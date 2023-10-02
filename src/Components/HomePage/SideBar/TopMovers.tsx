@@ -13,7 +13,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import data from "../../app/api/data/global/topmovers.json";
+import data from "../../../app/api/data/global/topmovers.json";
 import millify from "millify";
 import React from "react";
 import { useRouter } from "next/navigation";

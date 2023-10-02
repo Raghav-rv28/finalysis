@@ -1,0 +1,418 @@
+{
+  "XLU": {
+    "M": {
+      "symbol": { "S": "XLU" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "0.10000" },
+      "volume": { "S": "22865000" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "59.82000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "0.32000" },
+          "high": { "S": "73.79000" },
+          "low_change_percent": { "S": "0.54598" },
+          "low": { "S": "58.61000" },
+          "range": { "S": "58.610001 - 73.790001" },
+          "high_change": { "S": "-14.86000" },
+          "high_change_percent": { "S": "-20.13823" }
+        }
+      },
+      "low": { "S": "58.61000" },
+      "previous_close": { "S": "58.83000" },
+      "average_volume": { "S": "17975460" },
+      "name": { "S": "Utilities Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "58.93000" },
+      "percent_change": { "S": "0.16998" },
+      "open": { "S": "59.34000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLV": {
+    "M": {
+      "symbol": { "S": "XLV" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.98000" },
+      "volume": { "S": "12692300" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "130.12000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "8.79001" },
+          "high": { "S": "141.77000" },
+          "low_change_percent": { "S": "7.32806" },
+          "low": { "S": "119.95000" },
+          "range": { "S": "119.949997 - 141.770004" },
+          "high_change": { "S": "-13.03000" },
+          "high_change_percent": { "S": "-9.19094" }
+        }
+      },
+      "low": { "S": "128.53999" },
+      "previous_close": { "S": "129.72000" },
+      "average_volume": { "S": "8166920" },
+      "name": { "S": "Health Care Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "128.74001" },
+      "percent_change": { "S": "-0.75547" },
+      "open": { "S": "130.00000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLY": {
+    "M": {
+      "symbol": { "S": "XLY" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "0.84999" },
+      "volume": { "S": "6558300" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "163.08000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "34.98000" },
+          "high": { "S": "177.80000" },
+          "low_change_percent": { "S": "27.76190" },
+          "low": { "S": "126.00000" },
+          "range": { "S": "126.000000 - 177.800003" },
+          "high_change": { "S": "-16.82001" },
+          "high_change_percent": { "S": "-9.46007" }
+        }
+      },
+      "low": { "S": "160.09000" },
+      "previous_close": { "S": "160.13000" },
+      "average_volume": { "S": "5405820" },
+      "name": { "S": "Consumer Discretionary Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "160.98000" },
+      "percent_change": { "S": "0.53081" },
+      "open": { "S": "162.46001" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLRE": {
+    "M": {
+      "symbol": { "S": "XLRE" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "0.12000" },
+      "volume": { "S": "7305700" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "34.54000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "0.94500" },
+          "high": { "S": "42.21000" },
+          "low_change_percent": { "S": "2.85283" },
+          "low": { "S": "33.12500" },
+          "range": { "S": "33.125000 - 42.209999" },
+          "high_change": { "S": "-8.14000" },
+          "high_change_percent": { "S": "-19.28453" }
+        }
+      },
+      "low": { "S": "33.89000" },
+      "previous_close": { "S": "33.95000" },
+      "average_volume": { "S": "6177440" },
+      "name": { "S": "The Real Estate Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "34.07000" },
+      "percent_change": { "S": "0.35346" },
+      "open": { "S": "34.47000" },
+      "timestamp": { "N": "1696017597" }
+    }
+  },
+  "XLC": {
+    "M": {
+      "symbol": { "S": "XLC" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.37000" },
+      "volume": { "S": "6325900" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "66.59000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "20.71000" },
+          "high": { "S": "69.22000" },
+          "low_change_percent": { "S": "46.16585" },
+          "low": { "S": "44.86000" },
+          "range": { "S": "44.860001 - 69.220001" },
+          "high_change": { "S": "-3.65000" },
+          "high_change_percent": { "S": "-5.27304" }
+        }
+      },
+      "low": { "S": "65.37000" },
+      "previous_close": { "S": "65.94000" },
+      "average_volume": { "S": "5053550" },
+      "name": { "S": "Communication Services Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "65.57000" },
+      "percent_change": { "S": "-0.56112" },
+      "open": { "S": "66.38000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLB": {
+    "M": {
+      "symbol": { "S": "XLB" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.13000" },
+      "volume": { "S": "5857200" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "79.44000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "11.69000" },
+          "high": { "S": "85.90000" },
+          "low_change_percent": { "S": "17.48430" },
+          "low": { "S": "66.86000" },
+          "range": { "S": "66.860001 - 85.900002" },
+          "high_change": { "S": "-7.35000" },
+          "high_change_percent": { "S": "-8.55646" }
+        }
+      },
+      "low": { "S": "78.34000" },
+      "previous_close": { "S": "78.68000" },
+      "average_volume": { "S": "5088550" },
+      "name": { "S": "Materials Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "78.55000" },
+      "percent_change": { "S": "-0.16522" },
+      "open": { "S": "79.43000" },
+      "timestamp": { "N": "1696017598" }
+    }
+  },
+  "XLE": {
+    "M": {
+      "symbol": { "S": "XLE" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-1.86000" },
+      "volume": { "S": "24181800" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "92.47000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "19.59000" },
+          "high": { "S": "94.71000" },
+          "low_change_percent": { "S": "27.66949" },
+          "low": { "S": "70.80000" },
+          "range": { "S": "70.800003 - 94.709999" },
+          "high_change": { "S": "-4.32000" },
+          "high_change_percent": { "S": "-4.56129" }
+        }
+      },
+      "low": { "S": "90.05000" },
+      "previous_close": { "S": "92.25000" },
+      "average_volume": { "S": "20152290" },
+      "name": { "S": "Energy Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "90.39000" },
+      "percent_change": { "S": "-2.01626" },
+      "open": { "S": "92.11000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLF": {
+    "M": {
+      "symbol": { "S": "XLF" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.31000" },
+      "volume": { "S": "52853400" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "33.69000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "3.58000" },
+          "high": { "S": "37.11000" },
+          "low_change_percent": { "S": "12.09868" },
+          "low": { "S": "29.59000" },
+          "range": { "S": "29.590000 - 37.110001" },
+          "high_change": { "S": "-3.94000" },
+          "high_change_percent": { "S": "-10.61709" }
+        }
+      },
+      "low": { "S": "33.09000" },
+      "previous_close": { "S": "33.48000" },
+      "average_volume": { "S": "44206960" },
+      "name": { "S": "Financial Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "33.17000" },
+      "percent_change": { "S": "-0.92593" },
+      "open": { "S": "33.64000" },
+      "timestamp": { "N": "1696017598" }
+    }
+  },
+  "XLI": {
+    "M": {
+      "symbol": { "S": "XLI" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.54000" },
+      "volume": { "S": "11041900" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "102.63000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "18.63000" },
+          "high": { "S": "111.12000" },
+          "low_change_percent": { "S": "22.51359" },
+          "low": { "S": "82.75000" },
+          "range": { "S": "82.750000 - 111.120003" },
+          "high_change": { "S": "-9.74001" },
+          "high_change_percent": { "S": "-8.76530" }
+        }
+      },
+      "low": { "S": "101.04000" },
+      "previous_close": { "S": "101.92000" },
+      "average_volume": { "S": "9436580" },
+      "name": { "S": "Industrial Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "101.38000" },
+      "percent_change": { "S": "-0.52983" },
+      "open": { "S": "102.54000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLK": {
+    "M": {
+      "symbol": { "S": "XLK" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "0.56000" },
+      "volume": { "S": "7941400" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "166.50999" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "50.95999" },
+          "high": { "S": "181.46001" },
+          "low_change_percent": { "S": "45.10931" },
+          "low": { "S": "112.97000" },
+          "range": { "S": "112.970001 - 181.460007" },
+          "high_change": { "S": "-17.53001" },
+          "high_change_percent": { "S": "-9.66054" }
+        }
+      },
+      "low": { "S": "163.37000" },
+      "previous_close": { "S": "163.37000" },
+      "average_volume": { "S": "6096890" },
+      "name": { "S": "Technology Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "163.92999" },
+      "percent_change": { "S": "0.34278" },
+      "open": { "S": "164.98000" },
+      "timestamp": { "N": "1696017599" }
+    }
+  },
+  "XLSR": {
+    "M": {
+      "symbol": { "S": "XLSR" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.10000" },
+      "volume": { "S": "37900" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "41.72700" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "6.17000" },
+          "high": { "S": "44.68000" },
+          "low_change_percent": { "S": "17.57835" },
+          "low": { "S": "35.10000" },
+          "range": { "S": "35.099998 - 44.680000" },
+          "high_change": { "S": "-3.41000" },
+          "high_change_percent": { "S": "-7.63205" }
+        }
+      },
+      "low": { "S": "41.17900" },
+      "previous_close": { "S": "41.37000" },
+      "average_volume": { "S": "68870" },
+      "name": { "S": "SPDR SSGA U.S. Sector Rotation ETF" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "41.27000" },
+      "percent_change": { "S": "-0.24172" },
+      "open": { "S": "41.67000" },
+      "timestamp": { "N": "1696017540" }
+    }
+  },
+  "XLP": {
+    "M": {
+      "symbol": { "S": "XLP" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-0.20000" },
+      "volume": { "S": "11797500" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "69.34000" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "2.63000" },
+          "high": { "S": "77.82000" },
+          "low_change_percent": { "S": "3.97401" },
+          "low": { "S": "66.18000" },
+          "range": { "S": "66.180000 - 77.820000" },
+          "high_change": { "S": "-9.01000" },
+          "high_change_percent": { "S": "-11.57800" }
+        }
+      },
+      "low": { "S": "68.44000" },
+      "previous_close": { "S": "69.01000" },
+      "average_volume": { "S": "10828250" },
+      "name": { "S": "Consumer Staples Select Sector SPDR Fund" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "68.81000" },
+      "percent_change": { "S": "-0.28982" },
+      "open": { "S": "69.23000" },
+      "timestamp": { "N": "1696017598" }
+    }
+  },
+  "SPY": {
+    "M": {
+      "symbol": { "S": "SPY" },
+      "mic_code": { "S": "ARCX" },
+      "change": { "S": "-1.03998" },
+      "volume": { "S": "115078500" },
+      "datetime": { "S": "2023-09-29" },
+      "high": { "S": "431.85001" },
+      "fifty_two_week": {
+        "M": {
+          "low_change": { "S": "79.37003" },
+          "high": { "S": "459.44000" },
+          "low_change_percent": { "S": "22.80027" },
+          "low": { "S": "348.10999" },
+          "range": { "S": "348.109985 - 459.440002" },
+          "high_change": { "S": "-31.95999" },
+          "high_change_percent": { "S": "-6.95629" }
+        }
+      },
+      "low": { "S": "425.91000" },
+      "previous_close": { "S": "428.51999" },
+      "average_volume": { "S": "88864890" },
+      "name": { "S": "SPDR S&P 500 ETF Trust" },
+      "is_market_open": { "BOOL": false },
+      "exchange": { "S": "NYSE" },
+      "currency": { "S": "USD" },
+      "close": { "S": "427.48001" },
+      "percent_change": { "S": "-0.24269" },
+      "open": { "S": "431.67001" },
+      "timestamp": { "N": "1696017540" }
+    }
+  }
+}

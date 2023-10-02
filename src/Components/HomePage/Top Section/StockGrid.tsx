@@ -8,7 +8,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import data from "../../app/api/data/global/indexquote.json";
+import data from "../../../app/api/data/global/indexquote.json";
 type Props = {};
 
 export default function StockGrid({}: Props) {

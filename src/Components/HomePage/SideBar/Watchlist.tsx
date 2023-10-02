@@ -18,10 +18,10 @@ import TableRow from "@mui/material/TableRow";
 import AddIcon from "@mui/icons-material/Add";
 import Paper from "@mui/material/Paper";
 import { useSession } from "next-auth/react";
-import stockData from "../../app/api/data/global/stocks.json";
+import stockData from "../../../app/api/data/global/stocks.json";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { SearchDialog } from "../NavBar/SearchDialog";
+import { SearchDialog } from "../../NavBar/SearchDialog";
 import Stack from "@mui/material/Stack";
 import { IconButton } from "@mui/material";
 

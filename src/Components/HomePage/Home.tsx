@@ -1,14 +1,14 @@
 "use server";
-import TopMovers from "./TopMovers";
+import TopMovers from "./SideBar/TopMovers";
 // MUI IMPORTS
 import Grid from "@mui/material/Grid";
 import React from "react";
-import MovingNews from "./MovingNews";
+import MovingNews from "./Top Section/MovingNews";
 import HomeContent from "./HomeContent";
-import { getUserData } from "../../lib/functions/database";
+import { getItem } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import { getWatchListDetails } from "../../lib/functions/twelveData";
-import Watchlist from "./Watchlist";
+import Watchlist from "./SideBar/Watchlist";
 import watchlist from "../../app/api/data/global/watchlist.json";
 import options from "../../app/api/auth/[...nextauth]/options";
 import { Box, Button } from "@mui/material";
@@ -21,14 +21,16 @@ export default async function Home() {
     watchlist: Array<string>;
   } | null = null;
   let watchListData: any;
+  let globalSectorData: any;
   if (session) {
     console.log(session);
-    // userData = await getUserData(session.user.email);
+    userData = await getItem(session.user.email, "User");
   }
 
   // get watchlist info
   console.log(userData);
   if (userData !== null) {
+    globalSectorData = await getItem("GLOBAL", "GLOBAL-SECTOR-LATEST");
     // watchListData = await getWatchListDetails(userData.watchlist);
   }
 
@@ -70,7 +72,7 @@ export default async function Home() {
               lg={11}
             >
               <Box>
-                <HomeContent />
+                <HomeContent globalSectorData={globalSectorData} />
               </Box>
             </Grid>
             <Grid

@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import React from "react";
-import data from "../../app/api/data/global/globalcoinmetrics.json";
+import data from "../../../app/api/data/global/globalcoinmetrics.json";
 import millify from "millify";
 import { Sparklines, SparklinesLine } from "react-sparklines-typescript";
 type Props = {};
