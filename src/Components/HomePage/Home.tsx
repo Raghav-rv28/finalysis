@@ -70,7 +70,6 @@ export default async function Home() {
               lg={11}
             >
               <Box>
-                {/* <MovingNews /> */}
                 <HomeContent />
               </Box>
             </Grid>

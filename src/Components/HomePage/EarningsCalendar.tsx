@@ -8,6 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import Avatar from "@mui/material/Avatar";
 import React, { useCallback, useEffect } from "react";
+import { isSunday } from "date-fns";
 import {
   ArrowLeft,
   ArrowRight,
@@ -129,7 +130,7 @@ export default function EarningsCalendar({}: Props) {
   const lessThanLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   useEffect(() => {
-    const temp = startOfWeek(today);
+    const temp = isSunday(today) ? today : startOfWeek(today);
     setDateRange(
       `${months[temp.getMonth()]} ${nextMonday(temp).getDate()} - ${nextFriday(
         temp
@@ -159,31 +160,26 @@ export default function EarningsCalendar({}: Props) {
   }, [weekStart]);
 
   const AddWeek = useCallback(() => {
-    console.log("triggering");
     setWeekStart((prev) => addWeeks(new Date(prev), 1).toDateString());
   }, []);
 
   const AddBDay = useCallback(() => {
-    console.log("triggering");
     setDateSelected((prev) =>
       addBusinessDays(new Date(prev), 1).toDateString()
     );
   }, []);
   const DecBDay = useCallback(() => {
-    console.log("triggering");
     setDateSelected((prev) =>
       subBusinessDays(new Date(prev), 1).toDateString()
     );
   }, []);
 
   const DecWeek = useCallback(() => {
-    console.log("triggering");
     setWeekStart((prev) => subWeeks(new Date(prev), 1).toDateString());
   }, []);
 
   return (
     <div>
-      {weekStart}
       <Typography color="secondary" variant="h5" align="center">
         Most Important Earnings Releases
       </Typography>
@@ -261,9 +257,11 @@ export default function EarningsCalendar({}: Props) {
                   getNextDayOfTheWeek(val, true, new Date(weekStart))
                 )
                   ? {
+                      overflow: "hidden",
                       backgroundColor: "rgba(255, 237, 160,0.25)",
                     }
                   : {
+                      overflow: "hidden",
                       border: 1,
                       borderColor: "secondary.main",
                       "&:hover": {
@@ -277,12 +275,15 @@ export default function EarningsCalendar({}: Props) {
               md={6}
             >
               <StockListEarnings
-                data={data.earningsCalendar.filter((value) =>
-                  isSameDay(
+                data={data.earningsCalendar.filter((value) => {
+                  console.log(
+                    getNextDayOfTheWeek(val, true, new Date(weekStart))
+                  );
+                  return isSameDay(
                     new Date(value.date),
                     getNextDayOfTheWeek(val, true, new Date(weekStart))
-                  )
-                )}
+                  );
+                })}
               />
             </Grid>
           );

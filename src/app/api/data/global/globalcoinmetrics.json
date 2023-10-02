@@ -7,34 +7,6 @@
     "credit_count": 1,
     "notice": null
   },
-  "fear_and_greed_index": {
-    "lastUpdated": {
-      "epochUnixSeconds": 1695829397,
-      "humanDate": "2023-09-27T15:43:17.000Z"
-    },
-    "fgi": {
-      "now": {
-        "value": 26,
-        "valueText": "Fear"
-      },
-      "previousClose": {
-        "value": 26,
-        "valueText": "Fear"
-      },
-      "oneWeekAgo": {
-        "value": 48,
-        "valueText": "Neutral"
-      },
-      "oneMonthAgo": {
-        "value": 46,
-        "valueText": "Neutral"
-      },
-      "oneYearAgo": {
-        "value": 16,
-        "valueText": "Extreme Fear"
-      }
-    }
-  },
   "data": {
     "active_cryptocurrencies": 9092,
     "total_cryptocurrencies": 26864,

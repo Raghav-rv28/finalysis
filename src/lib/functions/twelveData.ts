@@ -4,17 +4,35 @@
  * @returns quote details for the list of stocks.
  */
 export async function getWatchListDetails(watchlist: Array<string>) {
-  const response = await fetch(
-    `https://api.twelvedata.com/quote?symbol=${watchlist.join(",")}&apikey=${
-      process.env.TWELVE_DATA_ACCESS_KEY
-    }`,
-    { method: "GET" }
-  );
-
-  if (response.ok) {
-    const data = await response.json();
-
-    return data;
-  }
-  return null;
+  const forex = ["EUR/USD", "USD/JPY", "GBP/USD", "AUD/USD", "USD/CAD"];
+  const sectors = [
+    "XLB",
+    "XLC",
+    "XLE",
+    "XLF",
+    "XLI",
+    "XLK",
+    "XLP",
+    "XLRE",
+    "XLSR",
+    "XLU",
+    "XLV",
+    "XLY",
+  ];
+  const indices = ["^GSPC", "QQQ", "^DJI", "^VIX", "^FTSE"];
+  const promises = sectors.concat(indices).map(async (value) => {
+    const response = await fetch(
+      `https://finnhub.io/api/v1/quote?symbol=${value}&token=${process.env.FINNHUB_ACCESS_KEY}`,
+      { method: "GET" }
+    );
+    if (response.ok) {
+      const data = await response.json();
+      setTimeout(() => {
+        console.log({ symbol: value, ...data });
+      }, 2000);
+      return { symbol: value, ...data };
+    }
+  });
+  const data = await Promise.all(promises);
+  return data;
 }

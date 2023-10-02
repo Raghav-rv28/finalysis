@@ -51,6 +51,7 @@ export default function Watchlist({ watchlist }: Props) {
 
   useEffect(() => {
     const dataTemp = [];
+    console.log(watchlist);
     watchlist.forEach((value) => {
       const { close, symbol, average_volume, percent_change, change } = value;
       dataTemp.push({ close, symbol, percent_change, change, average_volume });

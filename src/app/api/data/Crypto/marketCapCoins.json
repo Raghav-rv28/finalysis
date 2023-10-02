@@ -1,0 +1,4426 @@
+{
+  "data": {
+    "quotes": [
+      {
+        "timestamp": "2022-10-09T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 371208670070.9497
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 160879456291.89902
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 68378030342.50456
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 44448007825.040474
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 25426257223.224377
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 46063703730.80915
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 11614113782.019608
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 14404026066.214783
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8141301249.682791
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5729530275.868952
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 180607999837.8666
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 936901096696.08
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-10-16T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 366980246488.20123
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 157142037457.1052
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 68438227376.81719
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 43541183457.85206
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24224461260.836998
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 45014858442.171104
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 10675480771.233603
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12549996889.854033
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 7833890258.443049
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5712496959.240223
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 174890634555.28534
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 917003513917.04
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-10-23T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 368481467300.6992
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 160630025301.91434
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 68456435226.93931
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 43275768437.567215
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 22997204747.84461
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43922423558.3368
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 10161428390.268034
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12137851366.225603
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 7911578084.225629
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5704579014.381839
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 179851735704.20743
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 923530497132.61
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-10-30T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 398522987606.6875
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 198254083782.13574
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 69119139264.37085
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 49101710449.84863
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 23404996072.950043
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43709124894.10636
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 11794990841.194654
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 14316242985.560015
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 17677366409.890373
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5920152073.833269
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 193961744212.51257
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1025782538593.09
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-11-06T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 407586460397.1952
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 198164734226.31558
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 69366751366.58447
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 56168174457.34881
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24619577130.660793
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 42059763305.95342
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 12943262306.548046
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 14616332552.550688
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 16548016473.698435
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5867357547.543254
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 206850435790.81128
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1054790865555.21
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-11-13T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 324374916474.54486
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 155293864751.18436
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66339777184.01279
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 45636023782.064026
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 18430999392.328827
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44120960974.47826
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 5262702469.393914
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11848466446.732473
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11993101934.902401
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5128279833.85292
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 162738161245.46518
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 851167254488.96
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-11-20T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 320734762102.3141
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 149299260143.31418
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 65882516913.549324
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 43776726701.27245
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19758587762.17016
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44431882323.897
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4761367847.305761
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11347895522.817543
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11299311725.843233
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 4811107367.377216
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 160606008001.70905
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 836709426411.57
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-11-27T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 317750892853.0706
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 148794269303.36652
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 65334369704.36359
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 50471218680.9046
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 20126724164.058033
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44114172228.731
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 5185199742.500788
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10851967983.54475
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 12018700032.07171
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 4896168686.514162
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 160820237227.91425
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 840363920607.04
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-12-04T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 326448681734.4889
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 154109710833.37094
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 65499257224.45333
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 46739204860.34123
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19641262492.961533
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43303747047.965
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4890625715.2561
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11109107072.145027
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 13571405665.740108
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 4975383790.450992
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 162697449449.90683
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 852985835887.08
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-12-11T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 330145883990.71106
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 155800493320.75644
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 65711231431.943115
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 46499196141.33567
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19539287498.00166
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 42751739849.910065
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4993942413.267212
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10813361027.494026
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 12862180799.529448
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5052719846.1442375
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 162690898151.09705
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 856860934470.19
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-12-18T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 322614908202.87726
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 145828724786.9333
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66164300467.06564
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 39507854675.31209
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 17820518908.410107
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44954674206.335625
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4588608068.190171
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9280971753.102037
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10574204141.90401
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5056161274.368901
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 145422852109.97086
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 811813778594.47
+          }
+        ]
+      },
+      {
+        "timestamp": "2022-12-25T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 324054224917.4635
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 149500222419.96008
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66246499511.5125
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 39252284849.64031
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 17594647707.93068
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44228509977.38137
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4209921831.4055357
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8948663313.450676
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10247734056.179226
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5032929546.651619
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 141965186499.6045
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 811280824631.18
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-01-01T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 318398843945.3802
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 146117724117.10242
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66244931238.88713
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 39193653544.181244
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 17013957132.335567
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 44540984449.96991
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 3638076082.9021745
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8457109035.171973
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9249945628.138994
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5029495924.587059
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 136473993049.31335
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 794358714147.97
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-01-08T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 326304283091.1889
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 154514531887.4754
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66266528877.4581
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 41759896188.3363
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 17266987564.98514
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43826585642.313995
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 4939592145.659141
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9542292781.104788
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9537109108.305065
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 4756746708.213091
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 144982792946.52008
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 823697346941.56
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-01-15T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 399455642258.9763
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 186904692333.79083
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66366823761.09822
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 47828291688.297104
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19763374138.446686
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43782194144.02777
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8524228572.403143
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11982980369.116571
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11269060975.462177
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5679150364.36243
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 172004735204.94873
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 973561173810.93
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-01-22T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 438428161691.0571
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 198529790357.94193
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 66495309075.67519
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 47436165802.36485
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 20558757816.426804
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43375100714.68525
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9291056293.237333
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12587296743.592823
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11317747176.15293
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5623782734.260538
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 182926888352.05527
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1036570056757.45
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-01-29T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 446926491952.3563
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 195065139024.64627
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 67638102170.415596
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 48603683967.66503
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 20856620562.825455
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43113333459.33286
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8942405054.887695
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13358064149.210855
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11771299795.583336
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5805309782.997184
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 194946623937.85938
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1057027073857.78
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-02-05T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 450099918121.9253
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 203396372796.92258
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 68078246554.18201
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 52035863352.15596
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 20773520322.133804
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 41957380029.6944
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9045959482.135176
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13761319850.897522
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 12566967057.396389
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5883950668.917967
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 205285008226.6589
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1082884506463.02
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-02-12T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 420465883032.72253
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 187396375063.41425
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 68402084231.6359
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 48441728971.51617
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19380240559.6747
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 41303403011.77402
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7760035310.494268
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12667392827.336458
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10860220343.411171
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5845446051.735122
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 194476569014.28543
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1016999378418
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-02-19T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 476582299658.02734
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 207562606223.3199
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 70308092711.59175
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 49825768825.114784
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19912800666.901257
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 41847048264.35418
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8827610152.151173
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13965438998.974936
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11773409647.731585
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6404762010.8899
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 211740537648.5032
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1118750374807.56
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-02-26T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 448103960902.4454
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 196093101468.70294
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 70858338841.29953
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 47908541670.38644
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19280935110.86019
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 42566063670.096054
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8563671647.950059
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12536511101.485529
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10785026895.975462
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6271062168.191107
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 199271753501.6473
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1062238966979.04
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-03-05T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 433595272160.23285
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 192174683116.05908
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 71448385329.07776
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 45976010136.734314
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19094809789.764965
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 43823449812.051735
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8171510368.15944
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11811877206.64866
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10033711720.734673
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6153690236.230767
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 186455011200.9757
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1028738411076.67
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-03-12T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 398670851796.18115
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 181224414500.97955
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 72837154584.32095
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 44111035491.266495
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 18669969762.098133
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 40139920969.5366
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 6938952860.286815
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10688257184.413967
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8856129166.552284
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5424786415.825762
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 166062118464.3983
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 953623591195.86
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-03-19T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 526132712758.8868
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 218312299623.7629
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 76409706840.47897
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 52786929343.6486
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 19276734187.28111
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 36234013098.05457
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8386510055.666867
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11922553647.97726
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9942584968.69657
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6061523638.337635
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 193046549718.85873
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1158512117881.65
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-03-26T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 532277917608.5625
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 214160057906.98737
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 79086242820.90524
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 51112467389.031746
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 22874777326.63416
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 33909573774.38327
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7940796338.938222
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12325637531.116594
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9868936041.903343
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5863788619.075149
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 181979875291.2724
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1151400070648.81
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-04-02T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 550490658209.6443
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 219042473271.0941
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 79696404132.7555
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 49863334255.0049
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26595866817.54756
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 32517086820.451904
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8103537217.324626
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13448970129.839586
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11724319560.883663
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6071453298.101418
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 188773666902.5125
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1186327770615.16
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-04-09T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 542517423181.1372
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 223402889312.4359
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 80259948906.1087
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 49161116369.01443
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26215201590.215595
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 32598862815.26621
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7808427414.361812
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13497733875.863369
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11395738408.186037
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6035237360.686381
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 186339030648.34436
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1179231609881.62
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-04-16T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 585898187090.6241
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 250258907277.88065
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 80980972129.54095
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 51814969267.59433
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26823548516.893284
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 31826753074.683502
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9547556069.172707
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 15643491182.732702
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 12460635607.047869
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6000110893.375372
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 198557679586.16452
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1269812810695.71
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-04-23T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 534055887764.45465
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 224546686539.11517
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 81460155060.55702
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 51491307859.33235
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24203602196.51832
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 30782116881.95524
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8531829307.587807
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13652713051.742239
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11166015384.005058
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 5985134939.420199
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 180661067229.66196
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1166536516214.35
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-04-30T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 565451530586.5199
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 228456890938.9506
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 81757602025.59738
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 50062595818.95586
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24604429958.267693
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 30509435841.98558
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9113205512.590408
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13933835838.941713
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11296167028.72459
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6139019985.681138
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 181648821472.47522
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1202973535008.69
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-05-07T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 559324375506.6598
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 228304618716.19623
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82226307320.38734
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 50434232123.96596
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 23742627494.89191
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 30396676653.363194
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8669964794.467716
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13245514733.917923
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10722077745.894342
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6345665273.804299
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 172459730463.82135
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1185871790827.37
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-05-14T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 520088099782.15137
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 221543665148.96494
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82825025424.13753
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 48549942705.39692
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 22098495902.828243
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 29975208768.447075
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8283003478.0182905
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12823976990.738203
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10016802282.28018
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6300362441.532316
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 160329127033.29498
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1122833709957.79
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-05-21T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 526610868404.13965
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 218540099022.1773
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82948031620.80927
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 48386825555.283066
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24301918456.62159
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 29558457813.167477
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8020861108.901417
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 12736119070.034945
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10280605885.15664
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6544949494.746795
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 164261361527.6619
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1132190097958.7
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-05-28T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 527876574251.09827
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 222962967185.81274
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83152957506.81786
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 48184981964.039696
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24629357786.42412
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 29068627499.777336
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8129422249.391603
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13034527362.22833
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10184472822.966202
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7002491863.728955
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 163936446738.58487
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1138162827230.87
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-06-04T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 525137091614.5775
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 227945260563.6231
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83165406571.22368
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 47708908046.13332
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 27146216270.950874
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 28902975549.166794
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8449374606.755888
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 13232563324.899603
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10153502549.941757
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7383244123.988693
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 165458190205.82877
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1144682733427.09
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-06-11T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 498590427747.1066
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 210400054251.58975
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83394381628.84897
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 36808519532.4998
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26325818243.68281
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 28372100996.166027
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 6212186403.596385
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9208815039.627329
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8613747825.92203
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6219592667.46136
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 134662411704.72891
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1048808056041.23
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-06-18T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 514676077456.6837
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 207755359883.58783
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83539459599.81354
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 38168873169.04722
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 25008061776.203587
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 28351417529.346752
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 6220567932.216112
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9312502446.431868
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8662234019.63101
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6465193689.546583
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 141313701721.36176
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1069473449223.87
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-06-25T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 600917286528.7765
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 229284622462.49487
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83240183383.06322
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 37317098335.061
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 25630778835.566505
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 28472143745.243603
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 6842646091.445404
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10405322588.289743
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9493634671.55934
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6570084247.275959
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 160608353484.10382
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1198782154372.88
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-02T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 592700820638.9705
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 230267683643.331
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83345253412.37727
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 38011839135.94725
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 25605326099.96259
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 27396927753.49425
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7560265685.882965
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10130888444.274199
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9387111325.559639
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6855425806.877845
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 163160211392.66248
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1194421753339.34
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-09T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 588542731256.562
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 224638094583.3077
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83379396167.4551
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 36819404925.69144
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 24597412848.78113
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 27507766263.07661
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8718246669.511213
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10123259249.532278
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9264327226.964378
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7222444905.031669
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 159655666590.76642
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1180468750686.68
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-16T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 586677254003.8053
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 231315589849.51318
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83663978645.85637
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 38691025546.26194
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 37409837899.42767
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 27280178065.075317
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 10944568441.338966
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11213161845.557375
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9921327669.750227
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7193179901.648639
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 165430023244.18503
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1209740125112.42
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-23T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 580575790777.8387
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 224874547088.332
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83797587679.22495
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 37230989865.12384
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 38783274215.292366
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26855005549.69551
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9985414230.667786
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 11030483271.585594
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9983612314.596825
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7525061420.844604
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 165304922281.82782
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1195946688695.03
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-30T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 570023271685.5133
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 227187969617.18417
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83823373791.79652
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 37302619090.50087
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 37435800957.05585
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26547938439.89997
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 10120433076.286394
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10993596624.259918
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 11250055275.859047
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7454126258.1585
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 165114374288.3255
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1187253559104.84
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-08-06T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 564596288761.8539
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 220249870101.7992
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83801201573.00389
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 37586995340.49304
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 33477148450.410454
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26044101269.84088
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 9275960266.657017
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10319393369.06798
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10629201571.843172
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6929465212.637066
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 159831604223.02344
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1162741230140.63
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-08-13T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 571603803688.0377
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 222091471556.9392
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83371439233.9097
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 36971311944.615005
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 33197099485.51755
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26169351696.71532
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 10076544550.638311
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 10193363700.370808
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 10740809678.201677
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6922204195.366776
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 162188630936.20792
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1173526030666.52
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-08-20T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 508338011790.3663
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 200619717057.80362
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82829896190.3155
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 33353611255.857964
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 27416724166.54296
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 25982781671.304836
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8891114926.832474
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9357020699.362064
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 9012242007.37351
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6643507584.985475
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 144331805764.3253
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1056776433115.07
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-08-27T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 506420245547.7467
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 198023881753.98404
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82812767295.70824
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 33259216537.04013
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 27800298278.907814
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26014948158.773327
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8284653690.40807
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 9146933623.418093
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8847552381.567663
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6903729698.977251
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 141285873926.43863
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1048800100892.97
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-09-03T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 503870976348.9888
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 196721017566.6836
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 82894974824.10321
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 32947755451.22813
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26566915770.56413
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26158782803.03278
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8001616607.143667
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8960408888.564524
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8953741599.611574
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 6860217707.828888
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 140732733686.24072
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1042669141253.99
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-09-10T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 503575283688.48114
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 195826802704.97934
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83004995125.41869
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 32897956213.949116
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26593252635.598747
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26158330780.55016
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7742507948.898575
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8784983100.260506
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8862300208.616764
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7034418373.980422
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 139605623741.0966
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1040086454521.83
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-09-17T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 516916603539.87585
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 195795835270.67752
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83071663276.56862
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 33051589184.306004
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 26448045917.49844
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 26167599223.051105
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 7814563249.822962
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8734348214.582733
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8749273248.888517
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7424288324.63135
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 142314938269.3569
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1056488747719.26
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-09-24T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 518088199921.8353
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 191499569856.13925
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83210164523.6484
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 32332478437.54108
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 27078675542.726967
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 25774360148.29743
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8074166998.168102
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8615847121.857103
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8691729433.701084
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7466517097.885667
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 143245953966.99957
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1054077663048.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-10-01T04:20:00.000Z",
+        "quote": [
+          {
+            "id": "1",
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "rank": 1,
+            "marketCap": 527222324391.03424
+          },
+          {
+            "id": "1027",
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "rank": 2,
+            "marketCap": 201266744424.8603
+          },
+          {
+            "id": "825",
+            "name": "Tether USDt",
+            "symbol": "USDT",
+            "rank": 3,
+            "marketCap": 83266268282.59451
+          },
+          {
+            "id": "1839",
+            "name": "BNB",
+            "symbol": "BNB",
+            "rank": 4,
+            "marketCap": 33103451240.21323
+          },
+          {
+            "id": "52",
+            "name": "XRP",
+            "symbol": "XRP",
+            "rank": 5,
+            "marketCap": 27519188806.849213
+          },
+          {
+            "id": "3408",
+            "name": "USDC",
+            "symbol": "USDC",
+            "rank": 6,
+            "marketCap": 25110914484.81283
+          },
+          {
+            "id": "5426",
+            "name": "Solana",
+            "symbol": "SOL",
+            "rank": 7,
+            "marketCap": 8760560401.747147
+          },
+          {
+            "id": "2010",
+            "name": "Cardano",
+            "symbol": "ADA",
+            "rank": 8,
+            "marketCap": 8988166435.598358
+          },
+          {
+            "id": "74",
+            "name": "Dogecoin",
+            "symbol": "DOGE",
+            "rank": 9,
+            "marketCap": 8765234477.41783
+          },
+          {
+            "id": "1958",
+            "name": "TRON",
+            "symbol": "TRX",
+            "rank": 10,
+            "marketCap": 7862328091.896215
+          },
+          {
+            "id": "otherTotalMarketCap",
+            "name": "others",
+            "marketCap": 147237994788.0661
+          },
+          {
+            "id": "global",
+            "name": "global",
+            "marketCap": 1079103175825.09
+          }
+        ]
+      }
+    ]
+  }
+}

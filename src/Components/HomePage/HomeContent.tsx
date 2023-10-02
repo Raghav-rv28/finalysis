@@ -16,6 +16,8 @@ import EarningsCalendar from "./EarningsCalendar";
 import Grid from "@mui/material/Grid";
 import StockGrid from "./StockGrid";
 import { Chart } from "react-google-charts";
+import GaugeChart from "react-gauge-chart";
+import CryptoGrid from "./CryptoGrid";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -36,9 +38,6 @@ function CustomTabPanel(props: TabPanelProps) {
       <Box sx={{ p: 3, margin: "auto" }}>{children}</Box>
     </div>
   );
-}
-function getRandomNumber() {
-  return Math.random() * 100;
 }
 
 export function getValue() {
@@ -62,36 +61,24 @@ export default function HomeContent({}: Props) {
     <div>
       <Grid
         container
-        justifyContent="space-between"
+        justifyContent="space-evenly"
         alignItems="center"
         direction="row"
+        sx={{ mb: "1rem", mt: "1rem" }}
       >
         <Grid item>
           <StockGrid />
         </Grid>
-        <Grid
-          item
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Chart
-            chartType="Gauge"
-            width="100%"
-            height="150px"
-            data={[
-              ["Label", "Value"],
-              ["F&G Index", getValue()],
-            ]}
-            options={{
-              minorTicks: 5,
-            }}
+        <Grid item>
+          <GaugeChart
+            nrOfLevels={10}
+            arcPadding={0.1}
+            cornerRadius={3}
+            percent={0.6}
           />
         </Grid>
         <Grid item sx={{ width: 450, backgroundColor: "#121212" }}>
-          Crypto Grid
+          <CryptoGrid />
         </Grid>
       </Grid>
       <Box>
@@ -122,10 +109,10 @@ export default function HomeContent({}: Props) {
           flexWrap="wrap"
           spacing={2}
         >
-          <Grid item lg={8}>
+          <Grid item md={6} lg={8}>
             <TradingViewChart />
           </Grid>
-          <Grid item lg={4}>
+          <Grid item md={6} lg={4}>
             <HeatMap />
           </Grid>
         </Grid>
