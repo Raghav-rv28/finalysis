@@ -275,15 +275,13 @@ export default function EarningsCalendar({}: Props) {
               md={6}
             >
               <StockListEarnings
-                data={data.earningsCalendar.filter((value) => {
-                  console.log(
-                    getNextDayOfTheWeek(val, true, new Date(weekStart))
-                  );
-                  return isSameDay(
-                    new Date(value.date),
-                    getNextDayOfTheWeek(val, true, new Date(weekStart))
-                  );
-                })}
+                data={[]}
+                // data.earningsCalendar.filter((value) => {
+                //   return isSameDay(
+                //     new Date(value.date),
+                //     getNextDayOfTheWeek(val, true, new Date(weekStart))
+                //   );
+                // })
               />
             </Grid>
           );

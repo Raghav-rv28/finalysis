@@ -15,8 +15,7 @@ import HeatMap from "./HeatMap";
 import EarningsCalendar from "./EarningsCalendar";
 import Grid from "@mui/material/Grid";
 import StockGrid from "./StockGrid";
-import { Chart } from "react-google-charts";
-import GaugeChart from "react-gauge-chart";
+import GaugeComponent from "@studioriccardolardi/react-gauge-chart-pr132";
 import CryptoGrid from "./CryptoGrid";
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -70,11 +69,32 @@ export default function HomeContent({}: Props) {
           <StockGrid />
         </Grid>
         <Grid item>
-          <GaugeChart
-            nrOfLevels={10}
-            arcPadding={0.1}
-            cornerRadius={3}
-            percent={0.6}
+          <GaugeComponent
+            arc={{
+              subArcs: [
+                {
+                  limit: 20,
+                  color: "#EA4228",
+                  showTick: true,
+                },
+                {
+                  limit: 40,
+                  color: "#F58B19",
+                  showTick: true,
+                },
+                {
+                  limit: 60,
+                  color: "#F5CD19",
+                  showTick: true,
+                },
+                {
+                  limit: 100,
+                  color: "#5BE12C",
+                  showTick: true,
+                },
+              ],
+            }}
+            value={45}
           />
         </Grid>
         <Grid item sx={{ width: 450, backgroundColor: "#121212" }}>
