@@ -10,7 +10,7 @@ import React from "react";
 import TabSection from "../../../Components/StockPage/TabSection";
 import { getPeers } from "../../../lib/functions/finnhub";
 import options from "../../api/auth/[...nextauth]/options";
-import { getUserData } from "../../../lib/functions/database";
+import { getItem } from "../../../lib/functions/database";
 import WatchlistButton from "../../../Components/StockPage/WatchlistButton";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { symbol: string } }) {
   ) {
     return null;
   }
-  const userData = await getUserData(session.user.email);
+  const userData = await getItem(session.user.email, "User");
 
   // get watchlist info
   return (
