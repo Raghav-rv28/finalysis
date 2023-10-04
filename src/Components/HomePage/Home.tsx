@@ -3,13 +3,9 @@ import TopMovers from "./SideBar/TopMovers";
 // MUI IMPORTS
 import Grid from "@mui/material/Grid";
 import React, { Suspense } from "react";
-import MovingNews from "./Top Section/MovingNews";
 import HomeContent from "./HomeContent";
 import { getItem, queryItems } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
-import { getWatchListDetails } from "../../lib/functions/twelveData";
-import Watchlist from "./SideBar/Watchlist";
-import watchlist from "../../app/api/data/global/watchlist.json";
 import options from "../../app/api/auth/[...nextauth]/options";
 import { Box, Button } from "@mui/material";
 import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
