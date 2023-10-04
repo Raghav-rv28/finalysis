@@ -1,5 +1,9 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, UpdateCommand } from "@aws-sdk/lib-dynamodb";
+import {
+  DynamoDBDocumentClient,
+  PutCommand,
+  GetCommand,
+} from "@aws-sdk/lib-dynamodb";
 import setDate from "date-fns/setDate";
 import subYears from "date-fns/subYears";
 const client = new DynamoDBClient({
@@ -16,24 +20,34 @@ date.setHours(0, 0, 0, 0);
 const tableName = "finalysis-sam";
 
 const updateDatabase = async (symbols, email, fetchedData) => {
+  console.log(fetchedData);
   try {
-    const res = await ddbDocClient.send(
-      new UpdateCommand({
+    const data = await ddbDocClient.send(
+      new GetCommand({
         TableName: tableName,
         Key: {
           itemId: "USER",
           itemType: `USER-WATCHLIST-${email}`,
         },
-        UpdateExpression: "set data = :data AND Symbols = :symbols",
-        ExpressionAttributeValues: {
-          ":data": fetchedData,
-          ":symbols": symbols,
-        },
-        ReturnValues: "ALL_NEW",
       })
     );
-    console.log("Success - item Added code:", res.$metadata.httpStatusCode);
-    return JSON.stringify(res.Attributes);
+    console.log(data);
+    if (data.$metadata.httpStatusCode === 200) {
+      const res = await ddbDocClient.send(
+        new PutCommand({
+          TableName: tableName,
+          Item: {
+            itemId: "USER",
+            itemType: `USER-WATCHLIST-${email}`,
+            data: fetchedData,
+            symbols,
+            ...data.Item,
+          },
+        })
+      );
+      console.log("Success - item Added code:", res.$metadata.httpStatusCode);
+      return;
+    }
   } catch (err) {
     console.log("Error", err.stack);
   }
@@ -74,31 +88,41 @@ const waitAndDo = async (email, fetchedData, newSymbols, symbol, times) => {
     if (Quotes.code === undefined) {
       fetchedData[symbol] = stockData;
     }
-    console.log(fetchedData);
-    return waitAndDo(
+    waitAndDo(
       email,
       fetchedData,
       newSymbols,
       newSymbols[newSymbols.indexOf(symbol) + 1],
       times - 1
     );
-  }, 10000);
+  }, 6000);
 };
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const email = searchParams.get("email");
-  const Symbols = searchParams.get("Symbols");
-
+  const s = searchParams.get("Symbols");
+  const Symbols = s.split(",");
+  console.log(`getting trig, ${Symbols}`);
   try {
-    const watchlistData = await waitAndDo(
-      email,
-      {},
-      Symbols,
-      Symbols[0],
-      Symbols.length
+    const res = await fetch(
+      `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          userEmail: email,
+          watchlist: Symbols,
+        }),
+      }
     );
-    return Response.json({ watchlistData });
+    console.log(res);
+    if (res.ok) {
+      await waitAndDo(email, {}, Symbols, Symbols[0] || "", Symbols.length);
+
+      return new Response("", {
+        status: 200,
+      });
+    }
   } catch (err) {
     console.log(err);
   }

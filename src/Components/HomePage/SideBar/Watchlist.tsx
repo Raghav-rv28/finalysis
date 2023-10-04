@@ -87,32 +87,18 @@ export default function Watchlist({ watchlist }: Props) {
   };
 
   const handleDelete = (value: string) => {
-    const valueCheck = [];
-    data.forEach((val) => {
-      if (val.symbol !== value) {
-        valueCheck.push(val);
-      }
-    });
+    const valueCheck = data.filter((val) => val !== value);
+
     (async () => {
-      const res = await fetch(
-        `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
+      const watchListData = await fetch(
+        `/api/database?email=${
+          session.data.user.email
+        }&Symbols=${valueCheck.join(",")}`,
         {
-          method: "POST",
-          body: JSON.stringify({
-            userEmail: session.data.user.email,
-            watchlist: valueCheck,
-          }),
+          method: "GET",
         }
       );
-      if (res.ok) {
-        const watchListData = await fetch(
-          `/api/database?email=${session.data.user.email}&${valueCheck}`,
-          {
-            method: "GET",
-          }
-        );
-        console.log(watchListData);
-      }
+      console.log(watchListData);
     })();
     setData(valueCheck);
   };
@@ -122,37 +108,31 @@ export default function Watchlist({ watchlist }: Props) {
     const valueCheck = data.map((value) => value.symbol);
     if (!valueCheck.includes(value) && value !== undefined) {
       (async () => {
-        const res = await fetch(
-          `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
-          {
-            method: "POST",
-            body: JSON.stringify({
-              userEmail: session.data.user.email,
-              watchlist: valueCheck,
-            }),
-          }
-        );
-        if (res.ok) {
+        try {
           const watchListData = await fetch(
-            `/api/database?email=${session.data.user.email}&${valueCheck}`,
+            `/api/database?email=${session.data.user.email}&Symbols=${valueCheck
+              .concat([value])
+              .join(",")}`,
             {
               method: "GET",
             }
           );
-          console.log(watchListData);
+          if (watchListData.status === 200) {
+            setData((prev) =>
+              prev.concat([
+                {
+                  symbol: value,
+                  close: "434.2",
+                  percent_change: "2.4%",
+                  average_volume: 3253253253,
+                },
+              ])
+            );
+          }
+        } catch (err) {
+          console.log(err);
         }
       })();
-
-      setData((prev) =>
-        prev.concat([
-          {
-            symbol: value,
-            close: "434.2",
-            percent_change: "2.4%",
-            average_volume: 3253253253,
-          },
-        ])
-      );
     }
   };
 

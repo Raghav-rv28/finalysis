@@ -15,7 +15,6 @@ import Grid from "@mui/material/Grid";
 import StockGrid from "./Top Section/StockGrid";
 import GaugeComponent from "@studioriccardolardi/react-gauge-chart-pr132";
 import CryptoGrid from "./Top Section/CryptoGrid";
-import MOServerWrapper from "./Tab Section/MOServerWrapper";
 import { Session } from "next-auth";
 import Loading from "../../app/loading";
 interface TabPanelProps {

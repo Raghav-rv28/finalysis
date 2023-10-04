@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { symbol: string } }) {
   ) {
     return null;
   }
-  const userData = await getItem(session.user.email, "User");
+  const userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
 
   // get watchlist info
   return (
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { symbol: string } }) {
                 {`${stockData.Name} (${stockData.Symbol})`}
                 {/* Client Component */}
                 <WatchlistButton
-                  watchlist={userData.watchlist}
+                  watchlist={userData?.watchlist}
                   symbol={stockData.Symbol}
                 />
               </Typography>
