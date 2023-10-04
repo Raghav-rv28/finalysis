@@ -93,18 +93,24 @@ export default function Watchlist({ watchlist }: Props) {
         valueCheck.push(val);
       }
     });
-    // (async () => {
-    //   await fetch(
-    //     `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
-    //     {
-    //       method: "POST",
-    //       body: JSON.stringify({
-    //         itemId: session.data.user.email,
-    //         watchlist: valueCheck,
-    //       }),
-    //     }
-    //   );
-    // })();
+    (async () => {
+      console.log(
+        JSON.stringify({
+          userEmail: session.data.user.email,
+          watchlist: valueCheck,
+        })
+      );
+      await fetch(
+        `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            userEmail: session.data.user.email,
+            watchlist: valueCheck,
+          }),
+        }
+      );
+    })();
     setData(valueCheck);
   };
 
@@ -112,9 +118,18 @@ export default function Watchlist({ watchlist }: Props) {
     console.log(value);
     const valueCheck = data.map((value) => value.symbol);
     if (!valueCheck.includes(value) && value !== undefined) {
-      // (async () => {
-
-      // })();
+      (async () => {
+        await fetch(
+          `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              userEmail: session.data.user.email,
+              watchlist: valueCheck,
+            }),
+          }
+        );
+      })();
 
       setData((prev) =>
         prev.concat([
@@ -158,7 +173,6 @@ export default function Watchlist({ watchlist }: Props) {
                 </TableHead>
                 <TableBody>
                   {data?.map((row) => {
-                    console.log(row);
                     return (
                       <TableRow
                         key={row.symbol}

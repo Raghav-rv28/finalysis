@@ -19,9 +19,11 @@ export default async function Home() {
     watchlist: Array<string>;
   } | null = null;
   let globalSectorData: any;
+  let globalTopMoversData: any;
+  let globalCryptoData: any;
   if (session) {
     console.log(session);
-    userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
+    // userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
   }
 
   // get watchlist info
@@ -29,6 +31,8 @@ export default async function Home() {
   if (userData !== null && userData !== undefined) {
     // querying will generate multiple items.
     globalSectorData = await getItem("GLOBAL", "GLOBAL-SECTOR-LATEST");
+    globalTopMoversData = await getItem("GLOBAL", "GLOBAL-TOP-MOVERS-LATEST");
+    globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
   }
 
   return (
