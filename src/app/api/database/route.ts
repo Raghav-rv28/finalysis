@@ -2,7 +2,13 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, UpdateCommand } from "@aws-sdk/lib-dynamodb";
 import setDate from "date-fns/setDate";
 import subYears from "date-fns/subYears";
-const client = new DynamoDBClient({});
+const client = new DynamoDBClient({
+  region: "us-east-2",
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY_ID as string,
+    secretAccessKey: process.env.ACCESS_KEY_SECRET as string,
+  },
+});
 const ddbDocClient = DynamoDBDocumentClient.from(client);
 
 const date = new Date();
