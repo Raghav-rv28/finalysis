@@ -94,13 +94,7 @@ export default function Watchlist({ watchlist }: Props) {
       }
     });
     (async () => {
-      console.log(
-        JSON.stringify({
-          userEmail: session.data.user.email,
-          watchlist: valueCheck,
-        })
-      );
-      await fetch(
+      const res = await fetch(
         `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
         {
           method: "POST",
@@ -110,6 +104,15 @@ export default function Watchlist({ watchlist }: Props) {
           }),
         }
       );
+      if (res.ok) {
+        const watchListData = await fetch(
+          `/api/database?email=${session.data.user.email}&${valueCheck}`,
+          {
+            method: "GET",
+          }
+        );
+        console.log(watchListData);
+      }
     })();
     setData(valueCheck);
   };
@@ -119,7 +122,7 @@ export default function Watchlist({ watchlist }: Props) {
     const valueCheck = data.map((value) => value.symbol);
     if (!valueCheck.includes(value) && value !== undefined) {
       (async () => {
-        await fetch(
+        const res = await fetch(
           `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/watchlist`,
           {
             method: "POST",
@@ -129,6 +132,15 @@ export default function Watchlist({ watchlist }: Props) {
             }),
           }
         );
+        if (res.ok) {
+          const watchListData = await fetch(
+            `/api/database?email=${session.data.user.email}&${valueCheck}`,
+            {
+              method: "GET",
+            }
+          );
+          console.log(watchListData);
+        }
       })();
 
       setData((prev) =>

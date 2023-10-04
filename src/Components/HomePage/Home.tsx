@@ -4,12 +4,13 @@ import TopMovers from "./SideBar/TopMovers";
 import Grid from "@mui/material/Grid";
 import React, { Suspense } from "react";
 import HomeContent from "./HomeContent";
-import { getItem, queryItems } from "../../lib/functions/database";
+import { getItem } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import options from "../../app/api/auth/[...nextauth]/options";
 import { Box, Button } from "@mui/material";
 import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
 import Loading from "../../app/loading";
+import MOServerWrapper from "./Tab Section/MOServerWrapper";
 
 export default async function Home() {
   const session = await getServerSession(options);
@@ -30,7 +31,6 @@ export default async function Home() {
   console.log(userData);
   if (userData !== null && userData !== undefined) {
     // querying will generate multiple items.
-    globalSectorData = await getItem("GLOBAL", "GLOBAL-SECTOR-LATEST");
     globalTopMoversData = await getItem("GLOBAL", "GLOBAL-TOP-MOVERS-LATEST");
     globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
   }
@@ -73,13 +73,9 @@ export default async function Home() {
               lg={11}
             >
               <Box>
-                <HomeContent
-                  globalSectorData={
-                    globalSectorData !== undefined && globalSectorData !== null
-                      ? globalSectorData
-                      : {}
-                  }
-                />
+                <HomeContent>
+                  <MOServerWrapper session={session} />
+                </HomeContent>
               </Box>
             </Grid>
             <Grid

@@ -4,7 +4,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import CryptoCurrency from "./Tab Section/Cryptocurrency";
 import NewsList from "./Tab Section/NewsList";
-import React from "react";
+import React, { Suspense } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
@@ -15,7 +15,9 @@ import Grid from "@mui/material/Grid";
 import StockGrid from "./Top Section/StockGrid";
 import GaugeComponent from "@studioriccardolardi/react-gauge-chart-pr132";
 import CryptoGrid from "./Top Section/CryptoGrid";
-import MarketOverview from "./Tab Section/MarketOverview";
+import MOServerWrapper from "./Tab Section/MOServerWrapper";
+import { Session } from "next-auth";
+import Loading from "../../app/loading";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -41,9 +43,9 @@ function CustomTabPanel(props: TabPanelProps) {
 export function getValue() {
   return 26;
 }
-type Props = { globalSectorData: any };
+type Props = { children: React.ReactNode };
 
-export default function HomeContent({ globalSectorData }: Props) {
+export default function HomeContent({ children }: Props) {
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState<boolean>(true);
   // Local Functions
@@ -120,7 +122,7 @@ export default function HomeContent({ globalSectorData }: Props) {
         <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <MarketOverview globalSectorData={globalSectorData} />
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <NewsList />
