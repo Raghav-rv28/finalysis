@@ -4,23 +4,7 @@
  * @returns quote details for the list of stocks.
  */
 export async function getWatchListDetails(watchlist: Array<string>) {
-  const forex = ["EUR/USD", "USD/JPY", "GBP/USD", "AUD/USD", "USD/CAD"];
-  const sectors = [
-    "XLB",
-    "XLC",
-    "XLE",
-    "XLF",
-    "XLI",
-    "XLK",
-    "XLP",
-    "XLRE",
-    "XLSR",
-    "XLU",
-    "XLV",
-    "XLY",
-  ];
-  const indices = ["^GSPC", "QQQ", "^DJI", "^VIX", "^FTSE"];
-  const promises = sectors.concat(indices).map(async (value) => {
+  const promises = watchlist.map(async (value) => {
     const response = await fetch(
       `https://finnhub.io/api/v1/quote?symbol=${value}&token=${process.env.FINNHUB_ACCESS_KEY}`,
       { method: "GET" }

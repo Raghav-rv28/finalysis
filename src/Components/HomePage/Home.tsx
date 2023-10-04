@@ -2,16 +2,18 @@
 import TopMovers from "./SideBar/TopMovers";
 // MUI IMPORTS
 import Grid from "@mui/material/Grid";
-import React from "react";
+import React, { Suspense } from "react";
 import MovingNews from "./Top Section/MovingNews";
 import HomeContent from "./HomeContent";
-import { getItem } from "../../lib/functions/database";
+import { getItem, queryItems } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import { getWatchListDetails } from "../../lib/functions/twelveData";
 import Watchlist from "./SideBar/Watchlist";
 import watchlist from "../../app/api/data/global/watchlist.json";
 import options from "../../app/api/auth/[...nextauth]/options";
 import { Box, Button } from "@mui/material";
+import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
+import Loading from "../../app/loading";
 
 export default async function Home() {
   const session = await getServerSession(options);
@@ -20,18 +22,17 @@ export default async function Home() {
     itemType: string;
     watchlist: Array<string>;
   } | null = null;
-  let watchListData: any;
   let globalSectorData: any;
   if (session) {
     console.log(session);
-    userData = await getItem(session.user.email, "User");
+    userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
   }
 
   // get watchlist info
   console.log(userData);
-  if (userData !== null) {
+  if (userData !== null && userData !== undefined) {
+    // querying will generate multiple items.
     globalSectorData = await getItem("GLOBAL", "GLOBAL-SECTOR-LATEST");
-    // watchListData = await getWatchListDetails(userData.watchlist);
   }
 
   return (
@@ -72,7 +73,13 @@ export default async function Home() {
               lg={11}
             >
               <Box>
-                <HomeContent globalSectorData={globalSectorData} />
+                <HomeContent
+                  globalSectorData={
+                    globalSectorData !== undefined && globalSectorData !== null
+                      ? globalSectorData
+                      : {}
+                  }
+                />
               </Box>
             </Grid>
             <Grid
@@ -85,13 +92,9 @@ export default async function Home() {
               md={4}
               sm={4}
             >
-              <Watchlist
-                watchlist={
-                  watchListData !== undefined && watchListData !== null
-                    ? Object.values(watchListData)
-                    : Object.values(watchlist)
-                }
-              />
+              <Suspense fallback={<Loading />}>
+                <WatchlistServerWrapper session={session} />
+              </Suspense>
               <TopMovers />
             </Grid>
           </Grid>

@@ -13,11 +13,9 @@ const currentYear = getYear(new Date());
 function getMonthlyChange(params, month, year): string {
   let result: number = 0;
   params.data.data.t.forEach((d, i) => {
-    console.log(getMonth(d * 1000), getYear(d * 1000));
     if (month === getMonth(d * 1000) && getYear(d * 1000) === year) {
       const prevMonthClose = params.data.data.c[i - 1];
       const MonthClose = params.data.data.c[i];
-      console.log(prevMonthClose, MonthClose);
       if (prevMonthClose - MonthClose !== 0)
         result = ((prevMonthClose - MonthClose) / MonthClose) * 100;
     }
@@ -54,9 +52,6 @@ export default function MarketOverview({ globalSectorData }: Props) {
   >([]);
 
   useEffect(() => {
-    console.log(
-      Object.values(globalSectorData.data).map((val: any) => val.quote)
-    );
     setRowData(
       Object.values(globalSectorData.data).map((val: any) => val.quote)
     );
@@ -96,7 +91,6 @@ export default function MarketOverview({ globalSectorData }: Props) {
           headerName: val,
           width: "100",
           cellStyle: (params) => {
-            console.log(params.value);
             if (params.value.includes("-")) {
               return { backgroundColor: "#82222b" };
             }
@@ -121,10 +115,10 @@ export default function MarketOverview({ globalSectorData }: Props) {
         flexWrap="wrap"
         spacing={2}
       >
-        <Grid item xs={12} md={6} xl={8}>
+        <Grid item xs={12} md={6}>
           <TradingViewChart />
         </Grid>
-        <Grid item xs={12} md={6} xl={4}>
+        <Grid item xs={12} md={6}>
           <HeatMap />
         </Grid>
         <Grid item xs={12} md={6}>

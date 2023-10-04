@@ -50,10 +50,11 @@ export default function Watchlist({ watchlist }: Props) {
   const session = useSession();
 
   useEffect(() => {
-    const dataTemp = [];
     console.log(watchlist);
+    const dataTemp = [];
     watchlist.forEach((value) => {
-      const { close, symbol, average_volume, percent_change, change } = value;
+      const { close, symbol, average_volume, percent_change, change } =
+        value.quote;
       dataTemp.push({ close, symbol, percent_change, change, average_volume });
     });
     setData(dataTemp);
@@ -112,16 +113,7 @@ export default function Watchlist({ watchlist }: Props) {
     const valueCheck = data.map((value) => value.symbol);
     if (!valueCheck.includes(value) && value !== undefined) {
       // (async () => {
-      //   await fetch(
-      //     `https://i3bz0ybp1h.execute-api.us-east-2.amazonaws.com/Prod/`,
-      //     {
-      //       method: "POST",
-      //       body: JSON.stringify({
-      //         itemId: session.data.user.email,
-      //         watchlist: watchlist.map((val) => val.symbol).concat([value]),
-      //       }),
-      //     }
-      //   );
+
       // })();
 
       setData((prev) =>
@@ -166,7 +158,7 @@ export default function Watchlist({ watchlist }: Props) {
                 </TableHead>
                 <TableBody>
                   {data?.map((row) => {
-                    console.log(watchlist);
+                    console.log(row);
                     return (
                       <TableRow
                         key={row.symbol}
