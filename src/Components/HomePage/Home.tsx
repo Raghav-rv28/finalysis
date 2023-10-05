@@ -19,20 +19,20 @@ export default async function Home() {
     itemType: string;
     watchlist: Array<string>;
   } | null = null;
-  let globalSectorData: any;
+  // let globalSectorData: any;
   let globalTopMoversData: any;
-  let globalCryptoData: any;
+  // let globalCryptoData: any;
   if (session) {
     console.log(session);
-    // userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
+    userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
   }
 
-  // get watchlist info
-  console.log(userData);
+  // // get watchlist info
+  // console.log(userData);
   if (userData !== null && userData !== undefined) {
-    // querying will generate multiple items.
+    //   // querying will generate multiple items.
     globalTopMoversData = await getItem("GLOBAL", "GLOBAL-TOP-MOVERS-LATEST");
-    globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
+    //   globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
   }
 
   return (
@@ -72,11 +72,9 @@ export default async function Home() {
               item
               lg={11}
             >
-              <Box>
-                <HomeContent>
-                  <MOServerWrapper session={session} />
-                </HomeContent>
-              </Box>
+              <HomeContent>
+                <MOServerWrapper session={session} />
+              </HomeContent>
             </Grid>
             <Grid
               item
@@ -91,7 +89,9 @@ export default async function Home() {
               <Suspense fallback={<Loading />}>
                 <WatchlistServerWrapper session={session} />
               </Suspense>
-              <TopMovers />
+              <Suspense fallback={<Loading />}>
+                <TopMovers data={globalTopMoversData} />
+              </Suspense>
             </Grid>
           </Grid>
           {/* TOP MOVERS SECTION */}

@@ -111,17 +111,17 @@ export default function HomeContent({ children }: Props) {
           scrollButtons="auto"
           allowScrollButtonsMobile
         >
-          <Tab label="CryptoCurrency" />
           <Tab label="Mkt. Overview" />
+          <Tab label="CryptoCurrency" />
           <Tab label="News" />
           <Tab label="Earnings" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <CryptoCurrency />
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <NewsList />

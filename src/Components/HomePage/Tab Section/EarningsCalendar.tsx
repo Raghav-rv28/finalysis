@@ -8,7 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import Avatar from "@mui/material/Avatar";
 import React, { useCallback, useEffect } from "react";
-import { isSunday } from "date-fns";
+import { Day, getDay, isSunday, nextDay, previousDay, setDay } from "date-fns";
 import {
   ArrowLeft,
   ArrowRight,
@@ -119,7 +119,6 @@ function StockListEarnings({ data }: StockListEarningsProps) {
 const today = new Date();
 
 export default function EarningsCalendar({}: Props) {
-  const [weekStart, setWeekStart] = React.useState<string>("");
   // Date Range Text is for the Weekly
   const [dateRange, setDateRange] = React.useState<string>("");
   // for Daily Component
@@ -130,18 +129,20 @@ export default function EarningsCalendar({}: Props) {
   const lessThanLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   useEffect(() => {
-    const temp = isSunday(today) ? today : startOfWeek(today);
+    setDateSelected(today.toDateString());
+    // get current's week monday and friday.
+    const weekStart = setDay(today, 0);
     setDateRange(
-      `${months[temp.getMonth()]} ${nextMonday(temp).getDate()} - ${nextFriday(
-        temp
+      `${months[nextMonday(weekStart).getMonth()]} ${nextMonday(
+        weekStart
+      ).getDate()} - ${months[nextFriday(weekStart).getMonth()]} ${nextFriday(
+        weekStart
       ).getDate()}`
     );
-    setWeekStart(temp.toDateString());
-    setDateSelected(today.toDateString());
   }, []);
 
   useEffect(() => {
-    const temp = new Date(weekStart);
+    const temp = setDay(new Date(dateSelected), 0);
     if (nextMonday(temp).getMonth() === nextFriday(temp).getMonth()) {
       setDateRange(
         `${months[nextMonday(temp).getMonth()]} ${nextMonday(
@@ -157,10 +158,12 @@ export default function EarningsCalendar({}: Props) {
         ).getDate()}`
       );
     }
-  }, [weekStart]);
+  }, [dateSelected]);
 
   const AddWeek = useCallback(() => {
-    setWeekStart((prev) => addWeeks(new Date(prev), 1).toDateString());
+    setDateSelected((prev) =>
+      addBusinessDays(new Date(prev), 5).toDateString()
+    );
   }, []);
 
   const AddBDay = useCallback(() => {
@@ -175,7 +178,9 @@ export default function EarningsCalendar({}: Props) {
   }, []);
 
   const DecWeek = useCallback(() => {
-    setWeekStart((prev) => subWeeks(new Date(prev), 1).toDateString());
+    setDateSelected((prev) =>
+      subBusinessDays(new Date(prev), 5).toDateString()
+    );
   }, []);
 
   return (
@@ -247,21 +252,28 @@ export default function EarningsCalendar({}: Props) {
         alignItems={{ md: "flex-start", lg: "center" }}
         columns={10}
       >
-        {["mon", "tue", "wed", "thu", "fri"].map((val) => {
+        {[1, 2, 3, 4, 5].map((val: number) => {
+          const date = new Date(dateSelected);
+          const currentDay = getDay(date);
+
+          const getDateForWeekDay =
+            val !== currentDay
+              ? currentDay > val
+                ? previousDay(date, val)
+                : nextDay(date, val as Day)
+              : date;
+          console.log(currentDay, getDateForWeekDay);
           return (
             <Grid
               height={{ lg: "50vh", md: "auto" }}
               sx={
-                isSameDay(
-                  new Date(),
-                  getNextDayOfTheWeek(val, true, new Date(weekStart))
-                )
+                val === currentDay
                   ? {
-                      overflow: "hidden",
+                      overflow: "scroll",
                       backgroundColor: "rgba(255, 237, 160,0.25)",
                     }
                   : {
-                      overflow: "hidden",
+                      overflow: "scroll",
                       border: 1,
                       borderColor: "secondary.main",
                       "&:hover": {
@@ -274,15 +286,23 @@ export default function EarningsCalendar({}: Props) {
               lg={2}
               md={6}
             >
-              <StockListEarnings
-                data={[]}
-                // data.earningsCalendar.filter((value) => {
-                //   return isSameDay(
-                //     new Date(value.date),
-                //     getNextDayOfTheWeek(val, true, new Date(weekStart))
-                //   );
-                // })
-              />
+              {![0, 6].includes(currentDay) && (
+                <StockListEarnings
+                  data={data.earningsCalendar.filter((value) => {
+                    // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
+                    console.log(
+                      `val1: ${
+                        value.date
+                      }, val2: ${getDateForWeekDay} bool:${isSameDay(
+                        new Date(value.date),
+                        getDateForWeekDay
+                      )}`
+                    );
+                    // }
+                    return isSameDay(new Date(value.date), getDateForWeekDay);
+                  })}
+                />
+              )}
             </Grid>
           );
         })}
@@ -324,10 +344,7 @@ export default function EarningsCalendar({}: Props) {
         <List sx={{ width: "80%" }}>
           {data.earningsCalendar
             .filter((value) =>
-              isSameDay(
-                new Date(value.date),
-                getNextDayOfTheWeek(dateSelected, true, new Date(weekStart))
-              )
+              isSameDay(new Date(value.date), new Date(dateSelected))
             )
             .map((val) => {
               if (val.epsEstimate !== null || showEPSEstimate) {

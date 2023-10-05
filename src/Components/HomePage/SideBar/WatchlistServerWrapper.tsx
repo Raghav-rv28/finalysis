@@ -16,8 +16,8 @@ export default async function WatchlistServerWrapper({ session }: Props) {
   }
 
   // get watchlist info
-  console.log(userData);
   watchListData = await queryItems("USER", "USER-WATCHLIST-");
+  console.log(watchListData.Items[0].data);
 
   return (
     <div>

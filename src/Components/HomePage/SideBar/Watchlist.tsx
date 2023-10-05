@@ -88,18 +88,18 @@ export default function Watchlist({ watchlist }: Props) {
 
   const handleDelete = (value: string) => {
     const valueCheck = data.filter((val) => val !== value);
-
-    (async () => {
-      const watchListData = await fetch(
-        `/api/database?email=${
-          session.data.user.email
-        }&Symbols=${valueCheck.join(",")}`,
-        {
-          method: "GET",
-        }
-      );
-      console.log(watchListData);
-    })();
+    console.log(valueCheck);
+    // (async () => {
+    //   const watchListData = await fetch(
+    //     `/api/database?email=${
+    //       session.data.user.email
+    //     }&Symbols=${valueCheck.join(",")}`,
+    //     {
+    //       method: "GET",
+    //     }
+    //   );
+    //   console.log(watchListData);
+    // })();
     setData(valueCheck);
   };
 

@@ -29,10 +29,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     ":hover": { fontWeight: 700 },
   },
 }));
-
-export default function TopMovers() {
+interface Props {
+  data: any;
+}
+export default function TopMovers({ data: d }: Props) {
+  const { data } = d;
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
-
   const router = useRouter();
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {

@@ -14,13 +14,12 @@ const client = new DynamoDBClient({
   },
 });
 const ddbDocClient = DynamoDBDocumentClient.from(client);
-
+let fetchedData = {};
 const date = new Date();
 date.setHours(0, 0, 0, 0);
 const tableName = "finalysis-sam";
 
-const updateDatabase = async (symbols, email, fetchedData) => {
-  console.log(fetchedData);
+const updateDatabase = async (symbols, email) => {
   try {
     const data = await ddbDocClient.send(
       new GetCommand({
@@ -31,21 +30,21 @@ const updateDatabase = async (symbols, email, fetchedData) => {
         },
       })
     );
-    console.log(data);
     if (data.$metadata.httpStatusCode === 200) {
+      console.log(JSON.stringify(Object.keys(fetchedData)));
       const res = await ddbDocClient.send(
         new PutCommand({
           TableName: tableName,
           Item: {
-            itemId: "USER",
-            itemType: `USER-WATCHLIST-${email}`,
+            ...data.Item,
             data: fetchedData,
             symbols,
-            ...data.Item,
           },
+          ReturnValues: "ALL_OLD",
         })
       );
-      console.log("Success - item Added code:", res.$metadata.httpStatusCode);
+      console.log("Success - item Added code:", JSON.stringify(res));
+      fetchedData = {};
       return;
     }
   } catch (err) {
@@ -60,9 +59,9 @@ const updateDatabase = async (symbols, email, fetchedData) => {
  * @param times: No of times the recursive function will run before updating the dynamoDBitem. === (Symbols.length)
  */
 //
-const waitAndDo = async (email, fetchedData, newSymbols, symbol, times) => {
+const waitAndDo = async (email, newSymbols, symbol, times) => {
   if (times < 1) {
-    return updateDatabase(newSymbols, email, fetchedData);
+    return updateDatabase(newSymbols, email);
   }
 
   setTimeout(async function () {
@@ -90,7 +89,6 @@ const waitAndDo = async (email, fetchedData, newSymbols, symbol, times) => {
     }
     waitAndDo(
       email,
-      fetchedData,
       newSymbols,
       newSymbols[newSymbols.indexOf(symbol) + 1],
       times - 1
@@ -117,7 +115,7 @@ export async function GET(request: Request) {
     );
     console.log(res);
     if (res.ok) {
-      await waitAndDo(email, {}, Symbols, Symbols[0] || "", Symbols.length);
+      await waitAndDo(email, Symbols, Symbols[0] || "", Symbols.length);
 
       return new Response("", {
         status: 200,

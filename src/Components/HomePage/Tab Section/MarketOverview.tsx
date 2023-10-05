@@ -38,7 +38,7 @@ export default function MarketOverview({ globalSectorData }: Props) {
   const [SectorColumnData, setSectorColumnData] = React.useState<
     Array<{ [key: string]: string | number }>
   >([
-    { field: "symbol", width: "50" },
+    { field: "symbol", width: 50 },
     { field: "name", headerName: "Sector" },
     { field: "previous_close", headerName: "Last Price" },
     { field: "percent_change", headerName: "Change %" },
@@ -90,7 +90,7 @@ export default function MarketOverview({ globalSectorData }: Props) {
         }
         return {
           headerName: val,
-          width: "100",
+          width: 100,
           cellStyle: (params) => {
             if (params.value.includes("-")) {
               return { backgroundColor: "#82222b" };
