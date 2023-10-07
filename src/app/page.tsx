@@ -6,7 +6,7 @@ export default function Homepage() {
   return (
     <main style={{ height: "100%" }}>
       <Suspense fallback={<Loading />}>
-        <Home />
+        <Home mode={"dark"} />
       </Suspense>
     </main>
   );

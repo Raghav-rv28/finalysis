@@ -7,6 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import Avatar from "@mui/material/Avatar";
+import Paper from "@mui/material/Paper";
 import React, { useCallback, useEffect } from "react";
 import { Day, getDay, isSunday, nextDay, previousDay, setDay } from "date-fns";
 import {
@@ -112,6 +113,20 @@ function StockListEarnings({ data }: StockListEarningsProps) {
           })}
         </Stack>
       </Grid>
+      {data.length === 0 && (
+        <Grid item xs={12}>
+          <Typography
+            mt="1rem"
+            variant="h4"
+            color="secondary"
+            textAlign="center"
+            sx={{ width: "100%" }}
+          >
+            {" "}
+            NO DATA!
+          </Typography>
+        </Grid>
+      )}
     </Grid>
   );
 }
@@ -185,218 +200,248 @@ export default function EarningsCalendar({}: Props) {
 
   return (
     <div>
-      <Typography color="secondary" variant="h5" align="center">
-        Most Important Earnings Releases
-      </Typography>
-      {/* WEEKLY DESIGN */}
-      <Box
-        m="auto"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-        }}
+      <Paper
+        elevation={12}
+        variant="outlined"
+        sx={{ p: "1rem", backgroundColor: "inherit" }}
       >
-        <IconButton onClick={() => DecWeek()}>
-          <ArrowLeft />
-        </IconButton>
-        <Typography
-          color="secondary"
-          sx={{ width: "200", p: "1rem" }}
-          variant="h6"
-        >
-          {dateRange}
+        <Typography color="secondary" variant="h5" align="center">
+          Most Important Earnings Releases
         </Typography>
-        <IconButton onClick={() => AddWeek()}>
-          <ArrowRight />
-        </IconButton>
-      </Box>
-      {!lessThanLarge && (
+        {/* WEEKLY DESIGN */}
+        <Box
+          m="auto"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <IconButton onClick={() => DecWeek()}>
+            <ArrowLeft />
+          </IconButton>
+          <Typography
+            color="secondary"
+            sx={{ width: "200", p: "1rem" }}
+            variant="h6"
+          >
+            {dateRange}
+          </Typography>
+          <IconButton onClick={() => AddWeek()}>
+            <ArrowRight />
+          </IconButton>
+        </Box>
+        {!lessThanLarge && (
+          <Grid
+            sx={{ width: "100%" }}
+            container
+            direction="row"
+            columns={10}
+            justifyContent="center"
+          >
+            {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
+              (val) => {
+                return (
+                  <Grid
+                    key={val}
+                    sx={{
+                      border: 1,
+                      borderColor: "secondary.main",
+                    }}
+                    item
+                    lg={2}
+                  >
+                    <Typography
+                      color="secondary"
+                      sx={{ width: "100%" }}
+                      align="center"
+                    >
+                      {val}
+                    </Typography>
+                  </Grid>
+                );
+              }
+            )}
+          </Grid>
+        )}
         <Grid
           sx={{ width: "100%" }}
           container
-          direction="row"
-          columns={10}
           justifyContent="center"
+          alignItems={{ md: "flex-start", lg: "center" }}
+          columns={10}
         >
-          {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
-            (val) => {
-              return (
-                <Grid
-                  key={val}
-                  sx={{
-                    border: 1,
-                    borderColor: "secondary.main",
-                  }}
-                  item
-                  lg={2}
-                >
-                  <Typography
-                    color="secondary"
-                    sx={{ width: "100%" }}
-                    align="center"
-                  >
-                    {val}
-                  </Typography>
-                </Grid>
-              );
-            }
-          )}
-        </Grid>
-      )}
-      <Grid
-        sx={{ width: "100%" }}
-        container
-        justifyContent="center"
-        alignItems={{ md: "flex-start", lg: "center" }}
-        columns={10}
-      >
-        {[1, 2, 3, 4, 5].map((val: number) => {
-          const date = new Date(dateSelected);
-          const currentDay = getDay(date);
+          {[1, 2, 3, 4, 5].map((val: number) => {
+            const date = new Date(dateSelected);
+            const currentDay = getDay(date);
 
-          const getDateForWeekDay =
-            val !== currentDay
-              ? currentDay > val
-                ? previousDay(date, val)
-                : nextDay(date, val as Day)
-              : date;
-          console.log(currentDay, getDateForWeekDay);
-          return (
-            <Grid
-              height={{ lg: "50vh", md: "auto" }}
-              sx={
-                val === currentDay
-                  ? {
-                      overflow: "scroll",
-                      backgroundColor: "rgba(255, 237, 160,0.25)",
-                    }
-                  : {
-                      overflow: "scroll",
-                      border: 1,
-                      borderColor: "secondary.main",
-                      "&:hover": {
+            const getDateForWeekDay =
+              val !== currentDay
+                ? currentDay > val
+                  ? previousDay(date, val)
+                  : nextDay(date, val as Day)
+                : date;
+            console.log(currentDay, getDateForWeekDay);
+            return (
+              <Grid
+                height={{ lg: "50vh", md: "auto" }}
+                sx={
+                  val === currentDay
+                    ? {
+                        overflow: "scroll",
                         backgroundColor: "rgba(255, 237, 160,0.25)",
-                      },
-                    }
-              }
-              key={val}
-              item
-              lg={2}
-              md={6}
-            >
-              {![0, 6].includes(currentDay) && (
-                <StockListEarnings
-                  data={data.earningsCalendar.filter((value) => {
-                    // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
-                    console.log(
-                      `val1: ${
-                        value.date
-                      }, val2: ${getDateForWeekDay} bool:${isSameDay(
-                        new Date(value.date),
-                        getDateForWeekDay
-                      )}`
-                    );
-                    // }
-                    return isSameDay(new Date(value.date), getDateForWeekDay);
-                  })}
-                />
-              )}
-            </Grid>
-          );
-        })}
-      </Grid>
-      {/* DAILY DESIGN */}
-      <Box
-        m="auto"
-        mt="1rem"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <IconButton onClick={() => DecBDay()}>
-          <ArrowLeft />
-        </IconButton>
-        <Typography
-          color="secondary"
-          sx={{ width: "200", p: "1rem" }}
-          variant="h5"
+                      }
+                    : {
+                        overflow: "scroll",
+                        border: 1,
+                        borderColor: "secondary.main",
+                        "&:hover": {
+                          backgroundColor: "rgba(255, 237, 160,0.25)",
+                        },
+                      }
+                }
+                key={val}
+                item
+                lg={2}
+                md={6}
+              >
+                {![0, 6].includes(currentDay) && (
+                  <StockListEarnings
+                    data={data.earningsCalendar.filter((value) => {
+                      // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
+                      console.log(
+                        `val1: ${
+                          value.date
+                        }, val2: ${getDateForWeekDay} bool:${isSameDay(
+                          new Date(value.date),
+                          getDateForWeekDay
+                        )}`
+                      );
+                      // }
+                      return isSameDay(new Date(value.date), getDateForWeekDay);
+                    })}
+                  />
+                )}
+              </Grid>
+            );
+          })}
+        </Grid>
+        {/* DAILY DESIGN */}
+        <Box
+          m="auto"
+          mt="1rem"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          {dateSelected}
-        </Typography>
-        <IconButton onClick={() => AddBDay()}>
-          <ArrowRight />
-        </IconButton>
-      </Box>
-      <Box
-        m="1rem"
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minWidth: 350,
-        }}
-      >
-        <List sx={{ width: "80%" }}>
-          {data.earningsCalendar
-            .filter((value) =>
-              isSameDay(new Date(value.date), new Date(dateSelected))
-            )
-            .map((val) => {
-              if (val.epsEstimate !== null || showEPSEstimate) {
-                return (
-                  <ListItem
-                    sx={{
-                      borderRadius: "2%",
-                      border: 2,
-                      borderColor: "secondary.main",
-                    }}
-                    key={val.symbol}
-                  >
-                    <Grid
-                      container
-                      sx={{ width: "80%" }}
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
+          <IconButton onClick={() => DecBDay()}>
+            <ArrowLeft />
+          </IconButton>
+          <Typography
+            color="secondary"
+            sx={{ width: "200", p: "1rem" }}
+            variant="h5"
+          >
+            {dateSelected}
+          </Typography>
+          <IconButton onClick={() => AddBDay()}>
+            <ArrowRight />
+          </IconButton>
+        </Box>
+        <Box
+          m="1rem"
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minWidth: 350,
+          }}
+        >
+          <List sx={{ width: "80%" }}>
+            <ListItem>
+              <Grid
+                container
+                sx={{ width: "100%" }}
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={1}
+              >
+                <Grid item xs={3}>
+                  <Typography component="span">SYMBOL</Typography>
+                </Grid>
+                <Grid item xs={3}>
+                  <Typography component="span">EPS EST.</Typography>
+                </Grid>
+                <Grid item xs={2}>
+                  <Typography>QUARTER</Typography>
+                </Grid>
+                <Grid item xs={2}>
+                  <Typography>REVENUE EST.</Typography>
+                </Grid>
+              </Grid>
+            </ListItem>
+            {data.earningsCalendar
+              .filter((value) =>
+                isSameDay(new Date(value.date), new Date(dateSelected))
+              )
+              .map((val) => {
+                if (val.epsEstimate !== null || showEPSEstimate) {
+                  return (
+                    <ListItem
+                      sx={{
+                        borderRadius: "2%",
+                        border: 2,
+                        borderColor: "secondary.main",
+                      }}
+                      key={val.symbol}
                     >
-                      <Grid item md>
-                        <Typography component="span">{val.symbol}</Typography>
+                      <Grid
+                        spacing={1}
+                        container
+                        sx={{ width: "100%" }}
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Grid item xs={4}>
+                          <Typography component="span">{val.symbol}</Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                          <Typography
+                            component="span"
+                            sx={{
+                              fontWeight: 600,
+                              color: String(val.epsEstimate).includes("-")
+                                ? "red"
+                                : "lightgreen",
+                            }}
+                          >
+                            {val.epsEstimate}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Typography>{val.quarter}</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Typography>{`${
+                            val.revenueEstimate !== null
+                              ? millify(val.revenueEstimate)
+                              : "-"
+                          }`}</Typography>
+                        </Grid>
                       </Grid>
-                      <Grid item>
-                        <Typography
-                          component="span"
-                          sx={{
-                            fontWeight: 600,
-                            color: String(val.epsEstimate).includes("-")
-                              ? "red"
-                              : "lightgreen",
-                          }}
-                        >
-                          {val.epsEstimate}
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        <Typography>{val.quarter}</Typography>
-                      </Grid>
-                      <Grid item>
-                        <Typography>{`${
-                          val.revenueEstimate !== null
-                            ? millify(val.revenueEstimate)
-                            : "-"
-                        }`}</Typography>
-                      </Grid>
-                    </Grid>
-                  </ListItem>
-                );
-              }
-            })}
-        </List>
-      </Box>
+                    </ListItem>
+                  );
+                }
+              })}
+          </List>
+        </Box>
+      </Paper>
     </div>
   );
 }

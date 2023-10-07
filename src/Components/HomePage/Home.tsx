@@ -12,7 +12,7 @@ import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
 import Loading from "../../app/loading";
 import MOServerWrapper from "./Tab Section/MOServerWrapper";
 
-export default async function Home() {
+export default async function Home({ mode }: { mode: string }) {
   const session = await getServerSession(options);
   let userData: {
     itemId: string;
@@ -40,7 +40,10 @@ export default async function Home() {
       <Grid
         container
         sx={{
-          backgroundColor: "primary.main",
+          background:
+            mode === "dark"
+              ? "linear-gradient(to right bottom, #202020, #4a148c)"
+              : "linear-gradient(to right bottom, #fff, #fff176)",
           border: "0.1rem #000",
           borderStyle: "solid none none none",
         }}
@@ -80,6 +83,7 @@ export default async function Home() {
               item
               alignSelf="start"
               sx={{
+                background: "inherit",
                 paddingTop: "2rem",
               }}
               lg={4}

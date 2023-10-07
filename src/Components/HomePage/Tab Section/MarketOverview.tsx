@@ -109,6 +109,7 @@ export default function MarketOverview({ globalSectorData }: Props) {
   return (
     <div>
       <Grid
+        sx={{ overflow: "hidden" }}
         container
         direction="row"
         justifyContent="space-between"
@@ -119,7 +120,16 @@ export default function MarketOverview({ globalSectorData }: Props) {
         <Grid item xs={12} md={6}>
           <TradingViewChart />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          item
+          xs={12}
+          md={6}
+        >
           <HeatMap />
         </Grid>
         <Grid item xs={12} md={6}>
