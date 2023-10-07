@@ -20,20 +20,22 @@ export default async function Home({ mode }: { mode: string }) {
     watchlist: Array<string>;
   } | null = null;
   // let globalSectorData: any;
-  let globalTopMoversData: any;
   // let globalCryptoData: any;
   if (session) {
     console.log(session);
     userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
   }
+  const globalTopMoversData = await getItem(
+    "GLOBAL",
+    "GLOBAL-TOP-MOVERS-LATEST"
+  );
 
   // // get watchlist info
   // console.log(userData);
-  if (userData !== null && userData !== undefined) {
-    //   // querying will generate multiple items.
-    globalTopMoversData = await getItem("GLOBAL", "GLOBAL-TOP-MOVERS-LATEST");
-    //   globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
-  }
+  //   // querying will generate multiple items.
+  //   globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
+
+  console.log(globalTopMoversData);
 
   return (
     <div style={{ height: "100%" }}>

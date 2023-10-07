@@ -4,9 +4,7 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
-import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import React, { useCallback, useEffect } from "react";
 import { Day, getDay, isSunday, nextDay, previousDay, setDay } from "date-fns";
@@ -16,10 +14,6 @@ import {
   DarkMode,
   LightMode,
 } from "@mui/icons-material";
-import startOfWeek from "date-fns/startOfWeek";
-import subDays from "date-fns/subDays";
-import addWeeks from "date-fns/addWeeks";
-import subWeeks from "date-fns/subWeeks";
 import nextMonday from "date-fns/nextMonday";
 import nextFriday from "date-fns/nextFriday";
 import data from "../../../app/api/data/global/earnings.json";
@@ -310,14 +304,7 @@ export default function EarningsCalendar({}: Props) {
                   <StockListEarnings
                     data={data.earningsCalendar.filter((value) => {
                       // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
-                      console.log(
-                        `val1: ${
-                          value.date
-                        }, val2: ${getDateForWeekDay} bool:${isSameDay(
-                          new Date(value.date),
-                          getDateForWeekDay
-                        )}`
-                      );
+
                       // }
                       return isSameDay(new Date(value.date), getDateForWeekDay);
                     })}
