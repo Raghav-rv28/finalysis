@@ -53,9 +53,8 @@ export default function Watchlist({ watchlist }: Props) {
     console.log(watchlist);
     const dataTemp = [];
     watchlist.forEach((value) => {
-      const { close, symbol, average_volume, percent_change, change } =
-        value.quote;
-      dataTemp.push({ close, symbol, percent_change, change, average_volume });
+      const { c, symbol, dp, d, pc } = value;
+      dataTemp.push({ c, symbol, dp, d, pc });
     });
     setData(dataTemp);
   }, []);
@@ -89,17 +88,26 @@ export default function Watchlist({ watchlist }: Props) {
   const handleDelete = (value: string) => {
     const valueCheck = data.filter((val) => val !== value);
     console.log(valueCheck);
-    // (async () => {
-    //   const watchListData = await fetch(
-    //     `/api/database?email=${
-    //       session.data.user.email
-    //     }&Symbols=${valueCheck.join(",")}`,
-    //     {
-    //       method: "GET",
-    //     }
-    //   );
-    //   console.log(watchListData);
-    // })();
+    (async () => {
+      const watchListData = await fetch(
+        `/api/watchlist?email=${
+          session.data.user.email
+        }&symbol=${value}&action=${"delete"}`,
+        {
+          method: "GET",
+        }
+      );
+      const fetchedData = await watchListData.json();
+      if (watchListData.ok) {
+        const temp = [];
+        data.forEach((val) => {
+          if (val.symbol !== value) {
+            temp.push(val);
+          }
+        });
+        setData(temp);
+      }
+    })();
     setData(valueCheck);
   };
 
@@ -110,23 +118,18 @@ export default function Watchlist({ watchlist }: Props) {
       (async () => {
         try {
           const watchListData = await fetch(
-            `/api/database?email=${session.data.user.email}&Symbols=${valueCheck
-              .concat([value])
-              .join(",")}`,
+            `/api/watchlist?email=${
+              session.data.user.email
+            }&symbol=${value}&action=${"add"}`,
             {
               method: "GET",
             }
           );
-          if (watchListData.status === 200) {
+          if (watchListData.ok) {
+            const fetchedData = await watchListData.json();
+            console.log(fetchedData);
             setData((prev) =>
-              prev.concat([
-                {
-                  symbol: value,
-                  close: "434.2",
-                  percent_change: "2.4%",
-                  average_volume: 3253253253,
-                },
-              ])
+              prev.concat([{ symbol: value, ...fetchedData.data }])
             );
           }
         } catch (err) {
@@ -159,8 +162,8 @@ export default function Watchlist({ watchlist }: Props) {
                   <TableRow>
                     <StyledTableCell>Symbol</StyledTableCell>
                     <StyledTableCell align="left">Price</StyledTableCell>
+                    <StyledTableCell align="left">Change</StyledTableCell>
                     <StyledTableCell align="left">Change %</StyledTableCell>
-                    <StyledTableCell align="left">Avg Volume</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -179,15 +182,9 @@ export default function Watchlist({ watchlist }: Props) {
                         >
                           {row.symbol}
                         </StyledTableCell>
-                        <StyledTableCell align="left">
-                          {row.close}
-                        </StyledTableCell>
-                        <StyledTableCell align="left">
-                          {row.percent_change}
-                        </StyledTableCell>
-                        <StyledTableCell align="left">
-                          {millify(Number(row.average_volume))}
-                        </StyledTableCell>
+                        <StyledTableCell align="left">{row.c}</StyledTableCell>
+                        <StyledTableCell align="left">{row.d}</StyledTableCell>
+                        <StyledTableCell align="left">{row.dp}</StyledTableCell>
                         <StyledTableCell align="left">
                           <CloseIcon onClick={() => handleDelete(row.symbol)} />
                         </StyledTableCell>

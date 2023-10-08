@@ -16,12 +16,18 @@ export default async function WatchlistServerWrapper({ session }: Props) {
   }
 
   // get watchlist info
-  watchListData = await queryItems("USER", "USER-WATCHLIST-");
-  console.log(watchListData.Items[0].data);
-
+  const { Items } = await queryItems("USER", "USER-WATCHLIST-");
+  watchListData = Items[0]?.data;
+  // console.log(watchListData);
   return (
     <div>
-      <Watchlist watchlist={Object.values(watchListData.Items[0].data)} />
+      <Watchlist
+        watchlist={
+          watchListData !== null && watchListData !== undefined
+            ? Object.values(watchListData)
+            : []
+        }
+      />
     </div>
   );
 }

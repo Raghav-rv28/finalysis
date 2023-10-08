@@ -130,6 +130,7 @@ export default function TopMovers({ data: d }: Props) {
               <TableBody>
                 {data.top_losers.map((row) => (
                   <TableRow
+                    onClick={() => router.push(`/stocks/${row.ticker}`)}
                     key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
@@ -181,6 +182,7 @@ export default function TopMovers({ data: d }: Props) {
               <TableBody>
                 {data.most_actively_traded.map((row) => (
                   <TableRow
+                    onClick={() => router.push(`/stocks/${row.ticker}`)}
                     key={row.ticker}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
-    <Box sx={{ display: "flex", width: "100%", height: "100%" }}>
+    <Box sx={{ display: "flex", width: "100vw", height: "100vh" }}>
       <CircularProgress color="secondary" />
     </Box>
   );

@@ -30,3 +30,16 @@ export async function getOHLCV(
   }
   return null;
 }
+export async function getQuote(symbol: string) {
+  const response = await fetch(
+    `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${process.env.FINNHUB_ACCESS_KEY}`,
+    { method: "GET" }
+  );
+
+  if (response.ok) {
+    const data = await response.json();
+
+    return data;
+  }
+  return null;
+}

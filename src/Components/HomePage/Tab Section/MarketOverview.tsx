@@ -122,6 +122,7 @@ export default function MarketOverview({ globalSectorData }: Props) {
         </Grid>
         <Grid
           sx={{
+            height: "40vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

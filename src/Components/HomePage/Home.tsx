@@ -35,7 +35,7 @@ export default async function Home({ mode }: { mode: string }) {
   //   // querying will generate multiple items.
   //   globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
 
-  console.log(globalTopMoversData);
+  // console.log(globalTopMoversData);
 
   return (
     <div style={{ height: "100%" }}>

@@ -13,9 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import EarningsCalendar from "./Tab Section/EarningsCalendar";
 import Grid from "@mui/material/Grid";
 import StockGrid from "./Top Section/StockGrid";
-import GaugeComponent from "@studioriccardolardi/react-gauge-chart-pr132";
 import CryptoGrid from "./Top Section/CryptoGrid";
-import { Session } from "next-auth";
 import Loading from "../../app/loading";
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -68,35 +66,7 @@ export default function HomeContent({ children }: Props) {
         <Grid item>
           <StockGrid />
         </Grid>
-        <Grid item>
-          <GaugeComponent
-            arc={{
-              subArcs: [
-                {
-                  limit: 20,
-                  color: "#EA4228",
-                  showTick: true,
-                },
-                {
-                  limit: 40,
-                  color: "#F58B19",
-                  showTick: true,
-                },
-                {
-                  limit: 60,
-                  color: "#F5CD19",
-                  showTick: true,
-                },
-                {
-                  limit: 100,
-                  color: "#5BE12C",
-                  showTick: true,
-                },
-              ],
-            }}
-            value={45}
-          />
-        </Grid>
+        <Grid item></Grid>
         <Grid item sx={{ width: 450, backgroundColor: "#121212" }}>
           <CryptoGrid />
         </Grid>
@@ -121,6 +91,12 @@ export default function HomeContent({ children }: Props) {
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center"
+        ></Grid>
         <CryptoCurrency />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>

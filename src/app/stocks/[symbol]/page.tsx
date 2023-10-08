@@ -15,7 +15,7 @@ import WatchlistButton from "../../../Components/StockPage/WatchlistButton";
 
 export default async function Page({ params }: { params: { symbol: string } }) {
   const session = await getServerSession(options);
-  // const stockData = await getStockData(params.symbol);
+  const stockData = await getStockData(params.symbol);
 
   if (
     session === undefined ||

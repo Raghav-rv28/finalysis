@@ -13,11 +13,7 @@ function TradingViewWidget() {
     script.async = true;
     script.innerHTML = `
         {
-          "exchanges": [
-            "AMEX",
-            "NASDAQ",
-            "NYSE"
-          ],
+          "exchanges": [],
           "dataSource": "SPX500",
           "grouping": "sector",
           "blockSize": "market_cap_basic",
@@ -25,12 +21,12 @@ function TradingViewWidget() {
           "locale": "en",
           "symbolUrl": "",
           "colorTheme": "dark",
-          "hasTopBar": false,
-          "isDataSetEnabled": false,
+          "hasTopBar": true,
+          "isDataSetEnabled": true,
           "isZoomEnabled": true,
           "hasSymbolTooltip": true,
           "width": "100%",
-          "height": "100%",
+          "height": "100%"
         }`;
     container.current.appendChild(script);
   }, []);

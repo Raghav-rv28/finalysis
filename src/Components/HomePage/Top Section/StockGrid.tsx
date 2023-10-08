@@ -14,65 +14,70 @@ type Props = {};
 export default function StockGrid({}: Props) {
   return (
     <div>
-      <Paper sx={{ p: "1rem", ml: "1rem", overflow: "scroll", maxHeight: 200 }}>
-        <Grid container direction="column">
-          <Grid item>
-            <ButtonGroup color="secondary" variant="text">
-              <Button>US</Button>
-              <Button>Commodities</Button>
-              <Button>Forex</Button>
-              <Button>Economy</Button>
-            </ButtonGroup>
+      <Paper sx={{ ml: "1rem", overflow: "scroll", maxHeight: 200 }}>
+        <Grid container direction="row">
+          <Grid item container xs={6} direction="column">
+            <Grid item>
+              <ButtonGroup color="secondary" variant="text">
+                <Button>US</Button>
+                <Button>Commodities</Button>
+                <Button>Forex</Button>
+                <Button>Economy</Button>
+              </ButtonGroup>
+            </Grid>
+            <Grid item>
+              <TableContainer>
+                <Table size="small">
+                  <TableBody>
+                    {Object.values(data).map((row) => (
+                      <TableRow
+                        key={row.symbol}
+                        sx={{
+                          "&:last-child td, &:first-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell align="left">{row.symbol}</TableCell>
+                        <TableCell
+                          align="right"
+                          sx={{
+                            color: row.close.includes("-") ? "red" : "green",
+                          }}
+                        >
+                          {(Math.round(Number(row.close) * 100) / 100).toFixed(
+                            2
+                          )}
+                        </TableCell>
+                        <TableCell
+                          sx={{
+                            color: row.change.includes("-") ? "red" : "green",
+                          }}
+                          align="right"
+                        >
+                          {(Math.round(Number(row.change) * 100) / 100).toFixed(
+                            2
+                          )}
+                        </TableCell>
+                        <TableCell
+                          sx={{
+                            color: row.percent_change.includes("-")
+                              ? "red"
+                              : "green",
+                          }}
+                          align="right"
+                        >
+                          {(
+                            Math.round(Number(row.percent_change) * 100) / 100
+                          ).toFixed(2)}
+                          %
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Grid>
           </Grid>
-          <Grid item>
-            <TableContainer>
-              <Table size="small">
-                <TableBody>
-                  {Object.values(data).map((row) => (
-                    <TableRow
-                      key={row.symbol}
-                      sx={{
-                        "&:last-child td, &:first-child th": { border: 0 },
-                      }}
-                    >
-                      <TableCell align="left">{row.symbol}</TableCell>
-                      <TableCell
-                        align="right"
-                        sx={{
-                          color: row.close.includes("-") ? "red" : "green",
-                        }}
-                      >
-                        {(Math.round(Number(row.close) * 100) / 100).toFixed(2)}
-                      </TableCell>
-                      <TableCell
-                        sx={{
-                          color: row.change.includes("-") ? "red" : "green",
-                        }}
-                        align="right"
-                      >
-                        {(Math.round(Number(row.change) * 100) / 100).toFixed(
-                          2
-                        )}
-                      </TableCell>
-                      <TableCell
-                        sx={{
-                          color: row.percent_change.includes("-")
-                            ? "red"
-                            : "green",
-                        }}
-                        align="right"
-                      >
-                        {(
-                          Math.round(Number(row.percent_change) * 100) / 100
-                        ).toFixed(2)}
-                        %
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Grid>
+          <Grid item xs={6}></Grid>
         </Grid>
       </Paper>
     </div>
