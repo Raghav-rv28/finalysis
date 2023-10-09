@@ -154,9 +154,9 @@ export async function GET(request: Request) {
         })
       );
       if (dbUpdate.$metadata.httpStatusCode) {
-        return Response.json({ data });
+        return Response.json({ data }) as Response;
       } else {
-        return Response.json({ action: "add failed" });
+        return Response.json({ action: "add failed" }) as Response;
       }
     }
     if (Object.keys(WatchlistItem).includes(symbol) && action === "delete") {
@@ -178,9 +178,9 @@ export async function GET(request: Request) {
         })
       );
       if (dbUpdate.$metadata.httpStatusCode) {
-        return Response.json({ action: "delete successfully" });
+        return Response.json({ action: "delete successfully" }) as Response;
       } else {
-        return Response.json({ action: "delete failed" });
+        return Response.json({ action: "delete failed" }) as Response;
       }
     }
   } catch (err) {
