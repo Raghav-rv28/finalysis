@@ -131,9 +131,7 @@ export async function GET(request: Request) {
         })
       );
       if (dbUpdate.$metadata.httpStatusCode) {
-        return Response.json({ data });
-      } else {
-        return Response.json({ action: "add failed" });
+        return new Response(JSON.stringify({ data }));
       }
     } else if (
       !Object.keys(WatchlistItem).includes(symbol) &&
