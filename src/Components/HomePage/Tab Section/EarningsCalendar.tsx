@@ -58,6 +58,7 @@ function getNextDayOfTheWeek(
 }
 
 function StockListEarnings({ data }: StockListEarningsProps) {
+  console.log(data);
   return (
     <Grid
       sx={{ overflow: "hidden" }}
@@ -67,47 +68,7 @@ function StockListEarnings({ data }: StockListEarningsProps) {
       justifyContent="center"
       alignItems="flex-start"
     >
-      <Grid item md={5}>
-        <Typography color="secondary" fontSize={12} pt="1rem" pb="1rem">
-          <LightMode style={{ verticalAlign: "middle" }} />
-          Before Open
-        </Typography>
-        <Stack justifyContent="center" alignItems="center">
-          {data.map((value) => {
-            if (value.hour === "bmo") {
-              return (
-                <Typography color="secondary" key={value.symbol}>
-                  {value.symbol}
-                </Typography>
-              );
-            }
-          })}
-        </Stack>
-      </Grid>
-      <Grid item md={5}>
-        <Typography
-          color="secondary"
-          fontSize={12}
-          pt="1rem"
-          pb="1rem"
-          align="center"
-        >
-          <DarkMode style={{ verticalAlign: "middle" }} />
-          After Close
-        </Typography>
-        <Stack justifyContent="center" alignItems="center">
-          {data.map((value) => {
-            if (value.hour === "amc") {
-              return (
-                <Typography color="secondary" key={value.symbol}>
-                  {value.symbol}
-                </Typography>
-              );
-            }
-          })}
-        </Stack>
-      </Grid>
-      {data.length === 0 && (
+      {data.length === 0 ? (
         <Grid item xs={12}>
           <Typography
             mt="1rem"
@@ -120,6 +81,49 @@ function StockListEarnings({ data }: StockListEarningsProps) {
             NO DATA!
           </Typography>
         </Grid>
+      ) : (
+        <>
+          <Grid item md={5}>
+            <Typography color="secondary" fontSize={12} pt="1rem" pb="1rem">
+              <LightMode style={{ verticalAlign: "middle" }} />
+              Before Open
+            </Typography>
+            <Stack justifyContent="center" alignItems="center">
+              {data.map((value) => {
+                if (value.hour === "bmo") {
+                  return (
+                    <Typography color="secondary" key={value.symbol}>
+                      {value.symbol}
+                    </Typography>
+                  );
+                }
+              })}
+            </Stack>
+          </Grid>
+          <Grid item md={5}>
+            <Typography
+              color="secondary"
+              fontSize={12}
+              pt="1rem"
+              pb="1rem"
+              align="center"
+            >
+              <DarkMode style={{ verticalAlign: "middle" }} />
+              After Close
+            </Typography>
+            <Stack justifyContent="center" alignItems="center">
+              {data.map((value) => {
+                if (value.hour === "amc") {
+                  return (
+                    <Typography color="secondary" key={value.symbol}>
+                      {value.symbol}
+                    </Typography>
+                  );
+                }
+              })}
+            </Stack>
+          </Grid>
+        </>
       )}
     </Grid>
   );
@@ -131,7 +135,7 @@ export default function EarningsCalendar({}: Props) {
   // Date Range Text is for the Weekly
   const [dateRange, setDateRange] = React.useState<string>("");
   // for Daily Component
-  const [dateSelected, setDateSelected] = React.useState<string>("");
+  const [dateSelected, setDateSelected] = React.useState<string | undefined>();
   const [showEPSEstimate, setShowEPSEstimate] = React.useState<boolean>(false);
 
   const theme = useTheme();
@@ -194,11 +198,7 @@ export default function EarningsCalendar({}: Props) {
 
   return (
     <div>
-      <Paper
-        elevation={12}
-        variant="outlined"
-        sx={{ p: "1rem", backgroundColor: "inherit" }}
-      >
+      <Paper variant="outlined" sx={{ p: "1rem", backgroundColor: "inherit" }}>
         <Typography color="secondary" variant="h5" align="center">
           Most Important Earnings Releases
         </Typography>
@@ -266,53 +266,56 @@ export default function EarningsCalendar({}: Props) {
           alignItems={{ md: "flex-start", lg: "center" }}
           columns={10}
         >
-          {[1, 2, 3, 4, 5].map((val: number) => {
-            const date = new Date(dateSelected);
-            const currentDay = getDay(date);
+          {dateSelected &&
+            [1, 2, 3, 4, 5].map((val: number) => {
+              const date = new Date(dateSelected);
+              const currentDay = getDay(date);
 
-            const getDateForWeekDay =
-              val !== currentDay
-                ? currentDay > val
-                  ? previousDay(date, val)
-                  : nextDay(date, val as Day)
-                : date;
-            console.log(currentDay, getDateForWeekDay);
-            return (
-              <Grid
-                height={{ lg: "50vh", md: "auto" }}
-                sx={
-                  val === currentDay
-                    ? {
-                        overflow: "scroll",
-                        backgroundColor: "rgba(255, 237, 160,0.25)",
-                      }
-                    : {
-                        overflow: "scroll",
-                        border: 1,
-                        borderColor: "secondary.main",
-                        "&:hover": {
+              const getDateForWeekDay =
+                val !== currentDay
+                  ? currentDay > val
+                    ? previousDay(date, val)
+                    : nextDay(date, val as Day)
+                  : date;
+              return (
+                <Grid
+                  height={{ lg: "50vh", md: "auto" }}
+                  sx={
+                    val === currentDay
+                      ? {
+                          overflow: "scroll",
                           backgroundColor: "rgba(255, 237, 160,0.25)",
-                        },
-                      }
-                }
-                key={val}
-                item
-                lg={2}
-                md={6}
-              >
-                {![0, 6].includes(currentDay) && (
-                  <StockListEarnings
-                    data={data.earningsCalendar.filter((value) => {
-                      // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
+                        }
+                      : {
+                          overflow: "scroll",
+                          border: 1,
+                          borderColor: "secondary.main",
+                          "&:hover": {
+                            backgroundColor: "rgba(255, 237, 160,0.25)",
+                          },
+                        }
+                  }
+                  key={val}
+                  item
+                  lg={2}
+                  md={6}
+                >
+                  {![0, 6].includes(currentDay) && (
+                    <StockListEarnings
+                      data={data.earningsCalendar.filter((value) => {
+                        // if (isSameDay(new Date(value.date), getDateForWeekDay)) {
 
-                      // }
-                      return isSameDay(new Date(value.date), getDateForWeekDay);
-                    })}
-                  />
-                )}
-              </Grid>
-            );
-          })}
+                        // }
+                        return isSameDay(
+                          new Date(value.date),
+                          getDateForWeekDay
+                        );
+                      })}
+                    />
+                  )}
+                </Grid>
+              );
+            })}
         </Grid>
         {/* DAILY DESIGN */}
         <Box

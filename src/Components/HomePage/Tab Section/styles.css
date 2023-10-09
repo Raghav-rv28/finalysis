@@ -13,6 +13,7 @@
 .ag-theme-alpine-dark {
   --ag-borders: none;
   --ag-font-size: 14px;
+  --ag-row-height: 75px;
   --ag-row-border-style: solid;
   --ag-row-border-width: 1px;
   --ag-row-border-color: #ffeda0;

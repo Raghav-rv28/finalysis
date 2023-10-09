@@ -15,6 +15,7 @@ import Grid from "@mui/material/Grid";
 import StockGrid from "./Top Section/StockGrid";
 import CryptoGrid from "./Top Section/CryptoGrid";
 import Loading from "../../app/loading";
+import Gauge from "./Top Section/Gauge";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -66,7 +67,9 @@ export default function HomeContent({ children }: Props) {
         <Grid item>
           <StockGrid />
         </Grid>
-        <Grid item></Grid>
+        <Grid item sx={{ maxWidth: 250, minHeight: 200 }}>
+          <Gauge />
+        </Grid>
         <Grid item sx={{ width: 450, backgroundColor: "#121212" }}>
           <CryptoGrid />
         </Grid>

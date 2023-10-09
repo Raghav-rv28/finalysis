@@ -6,11 +6,13 @@ import HeatMap from "./HeatMap";
 import Grid from "@mui/material/Grid";
 import { getMonth, getYear } from "date-fns";
 import { CalendarGrid, SectorGrid } from "./SectorGrids";
+import millify from "millify";
+import { Stack, Slider } from "@mui/material";
+import "./styles.css";
 
 type Props = { globalSectorData: any };
 const currentYear = getYear(new Date());
-//  c=[36.73,39.24,36.93,40.59,38.21,37.38,37.75,36.04,37.69,38.19,37.02,33.95 ]
-// t=[1664582400,1667260800,1669852800,1672531200,1675209600,1677628800,1680307200,1682899200,1685577600,1688169600,1690848000,1693526400]
+
 function getMonthlyChange(params, month, year): string {
   let result: number = 0;
   params.data.data.t.forEach((d, i) => {
@@ -28,6 +30,46 @@ function getMonthlyChange(params, month, year): string {
   return `${result.toFixed(2)}%`;
   // return change of previous month and this months close
 }
+
+const get52WRange = (params) => {
+  return (
+    <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+    >
+      <Slider
+        sx={{
+          pt: "1rem",
+          maxWidth: 200,
+          [".Mui-disabled"]: {
+            color: "secondary.main",
+          },
+        }}
+        disabled
+        size="small"
+        color="secondary"
+        value={params.data.previous_close}
+        marks={[
+          {
+            value: 0,
+            label: `${(
+              Math.round(Number(params.data.fifty_two_week.low) * 100) / 100
+            ).toFixed(2)}`,
+          },
+          {
+            value: 100,
+            label: `${(
+              Math.round(Number(params.data.fifty_two_week.high) * 100) / 100
+            ).toFixed(2)}`,
+          },
+        ]}
+      />
+    </Stack>
+  );
+};
+
 export default function MarketOverview({ globalSectorData }: Props) {
   const [rowData, setRowData] = React.useState<
     Array<{ [key: string]: string | number }>
@@ -36,16 +78,40 @@ export default function MarketOverview({ globalSectorData }: Props) {
     Array<{ [key: string]: string | number }>
   >([]);
   const [SectorColumnData, setSectorColumnData] = React.useState<
-    Array<{ [key: string]: string | number }>
+    Array<{ [key: string]: any }>
   >([
     { field: "symbol", width: 50 },
-    { field: "name", headerName: "Sector" },
-    { field: "previous_close", headerName: "Last Price" },
-    { field: "percent_change", headerName: "Change %" },
-    { field: "average_volume", headerName: "Volume" },
+    { field: "name", headerName: "Sector", width: 250, resizable: true },
+    {
+      field: "previous_close",
+      headerName: "Last Price",
+      width: 125,
+      valueGetter: (params) =>
+        `${(Math.round(Number(params.data.previous_close) * 100) / 100).toFixed(
+          2
+        )}`,
+    },
+    {
+      field: "percent_change",
+      headerName: "Change %",
+      width: 125,
+      valueGetter: (params) =>
+        `${(Math.round(Number(params.data.previous_close) * 100) / 100).toFixed(
+          2
+        )}%`,
+    },
+    {
+      field: "average_volume",
+      headerName: "Volume",
+      width: 125,
+      valueGetter: (params) => millify(params.data.average_volume),
+    },
     {
       field: "fifty_two_week.range",
       headerName: "52w Range",
+      width: 250,
+      resizable: true,
+      cellRenderer: (params) => get52WRange(params),
     },
   ]);
   const [CalendarColumnData, setCalendarColumnData] = React.useState<
