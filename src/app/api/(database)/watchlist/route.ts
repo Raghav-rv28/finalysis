@@ -4,6 +4,7 @@ import {
   PutCommand,
   GetCommand,
 } from "@aws-sdk/lib-dynamodb";
+import {} from "next";
 import setDate from "date-fns/setDate";
 import subYears from "date-fns/subYears";
 import { getQuote } from "../../../../lib/functions/finnhub";
@@ -154,9 +155,7 @@ export async function GET(request: Request) {
         })
       );
       if (dbUpdate.$metadata.httpStatusCode) {
-        return Response.json({ data }) as Response;
-      } else {
-        return Response.json({ action: "add failed" }) as Response;
+        return new Response(JSON.stringify({ data }));
       }
     }
     if (Object.keys(WatchlistItem).includes(symbol) && action === "delete") {
@@ -177,11 +176,6 @@ export async function GET(request: Request) {
           },
         })
       );
-      if (dbUpdate.$metadata.httpStatusCode) {
-        return Response.json({ action: "delete successfully" }) as Response;
-      } else {
-        return Response.json({ action: "delete failed" }) as Response;
-      }
     }
   } catch (err) {
     console.log(err);
