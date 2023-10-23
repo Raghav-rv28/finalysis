@@ -2,8 +2,6 @@
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import CryptoCurrency from "./Tab Section/Cryptocurrency";
-import NewsList from "./Tab Section/NewsList";
 import React, { Suspense } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
@@ -15,6 +13,9 @@ import Grid from "@mui/material/Grid";
 import StockGrid from "./Top Section/StockGrid";
 import CryptoGrid from "./Top Section/CryptoGrid";
 import Loading from "../../app/loading";
+import CryptoCurrency from "./Tab Section/Cryptocurrency";
+import NewsList from "./Tab Section/NewsList";
+import { useTheme } from "@emotion/react";
 // import Gauge from "./Top Section/Gauge";
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -48,6 +49,7 @@ export default function HomeContent({ children }: Props) {
   const [open, setOpen] = React.useState<boolean>(true);
   // Local Functions
 
+  const theme = useTheme();
   const handleClose = React.useCallback(() => {
     setOpen(false);
   }, []);
@@ -62,7 +64,10 @@ export default function HomeContent({ children }: Props) {
         justifyContent="space-evenly"
         alignItems="center"
         direction="row"
-        sx={{ mb: "1rem", mt: "1rem" }}
+        sx={{
+          mb: "1rem",
+          mt: "1rem",
+        }}
       >
         <Grid item>
           <StockGrid />

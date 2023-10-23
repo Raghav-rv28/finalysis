@@ -7,10 +7,10 @@ import HomeContent from "./HomeContent";
 import { getItem } from "../../lib/functions/database";
 import { getServerSession } from "next-auth/next";
 import options from "../../app/api/auth/[...nextauth]/options";
-import { Box, Button } from "@mui/material";
 import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
 import Loading from "../../app/loading";
 import MOServerWrapper from "./Tab Section/MOServerWrapper";
+import { useTheme } from "@mui/material/styles";
 
 export default async function Home({ mode }: { mode: string }) {
   const session = await getServerSession(options);
@@ -42,10 +42,6 @@ export default async function Home({ mode }: { mode: string }) {
       <Grid
         container
         sx={{
-          background:
-            mode === "dark"
-              ? "linear-gradient(to right bottom, #202020, #4a148c)"
-              : "linear-gradient(to right bottom, #fff, #fff176)",
           border: "0.1rem #000",
           borderStyle: "solid none none none",
         }}
