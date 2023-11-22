@@ -22,7 +22,6 @@ import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Avatar from "@mui/material/Avatar";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Typography from "@mui/material/Typography";
 
 // Media & Files
 import logoOnly from "../../../public/media/logo/logoOnly.png";
@@ -32,6 +31,8 @@ import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/global/stocks.json";
 import { SearchDialog } from "./SearchDialog";
 import Link from "next/link";
+import { useStore } from "../../lib/store";
+import StoreInitializer from "../StoreInitializer";
 // Search Design
 
 const Search = styled("div")(({ theme }) => ({
@@ -50,11 +51,8 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
-interface PageProps {
-  mode: any;
-  setMode: any;
-}
-export default function NavBar({ mode, setMode }: PageProps) {
+interface PageProps {}
+export default function NavBar({}: PageProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -65,7 +63,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
-
+  const { mode } = useStore();
   // Effects
   // React.useEffect(() => {
   //   if (searchQuery !== "" && searchRef.current !== undefined) {
@@ -118,6 +116,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
     handleMenuClose();
   };
 
+  console.log(mode);
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -206,6 +205,7 @@ export default function NavBar({ mode, setMode }: PageProps) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <StoreInitializer mode={mode} />
       <AppBar
         enableColorOnDark
         sx={{ backgroundColor: "primary.dark" }}
@@ -261,12 +261,12 @@ export default function NavBar({ mode, setMode }: PageProps) {
               <FormControl>
                 <FormControlLabel
                   label=""
-                  onChange={() =>
-                    setMode((prev: string) =>
-                      prev === "light" ? "dark" : "light"
-                    )
-                  }
-                  checked={mode === "light"}
+                  onChange={() => {
+                    useStore.setState({
+                      mode: mode === "light" ? "dark" : "light",
+                    });
+                  }}
+                  checked={mode === "dark"}
                   control={<MaterialUISwitch sx={{ m: 2 }} />}
                 />
               </FormControl>

@@ -1,32 +1,23 @@
-"use client";
-import { SessionProvider } from "next-auth/react";
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import ThemeRegistry from "../lib/Theme/themeRegistry";
 import NavBar from "../Components/NavBar/Navbar";
 import type { Session } from "next-auth";
 import { NextAuthProvider } from "../lib/NextAuthProvider";
+import { useStore } from "../lib/store";
 export default function RootLayout(props: {
   session: Session;
   children: React.ReactNode;
 }) {
   const { session, children } = props;
-  const [mode, setMode] = useState<string>();
 
-  useEffect(() => {
-    setMode(localStorage.getItem("mode"));
-  }, []);
-  useEffect(() => {
-    if (mode !== undefined) {
-      localStorage.setItem("mode", mode);
-    }
-  }, [mode]);
+  useStore.setState({ mode: "light" });
 
   return (
     <html lang="en">
       <body>
-        <ThemeRegistry options={{ key: "mui" }} mode={mode}>
+        <ThemeRegistry options={{ key: "mui" }} mode={useStore.getState().mode}>
           <NextAuthProvider session={session}>
-            <NavBar setMode={setMode} mode={mode} />
+            <NavBar />
             {children}
           </NextAuthProvider>
         </ThemeRegistry>

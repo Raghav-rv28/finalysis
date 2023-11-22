@@ -79,7 +79,7 @@ export default function CryptoCurrency() {
   ]);
 
   const onGridReady = () => {
-    console.log(gridRef);
+    // console.log(gridRef);
     if (gridRef.current !== undefined && gridRef.current !== null) {
       gridRef.current.api.sizeColumnsToFit();
     }

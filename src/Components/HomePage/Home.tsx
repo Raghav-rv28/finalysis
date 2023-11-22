@@ -11,8 +11,9 @@ import WatchlistServerWrapper from "./SideBar/WatchlistServerWrapper";
 import Loading from "../../app/loading";
 import MOServerWrapper from "./Tab Section/MOServerWrapper";
 import { useTheme } from "@mui/material/styles";
+import { useStore } from "../../lib/store";
 
-export default async function Home({ mode }: { mode: string }) {
+export default async function Home() {
   const session = await getServerSession(options);
   let userData: {
     itemId: string;
@@ -29,7 +30,8 @@ export default async function Home({ mode }: { mode: string }) {
     "GLOBAL",
     "GLOBAL-TOP-MOVERS-LATEST"
   );
-
+  const mode = useStore.getState().mode;
+  console.log(mode);
   // // get watchlist info
   // console.log(userData);
   //   // querying will generate multiple items.
@@ -42,6 +44,10 @@ export default async function Home({ mode }: { mode: string }) {
       <Grid
         container
         sx={{
+          background:
+            mode === "dark"
+              ? "linear-gradient(to right bottom, #202020, #4a148c)"
+              : "linear-gradient(to right bottom, #fff, #fff176)",
           border: "0.1rem #000",
           borderStyle: "solid none none none",
         }}
@@ -53,8 +59,6 @@ export default async function Home({ mode }: { mode: string }) {
           lg={1}
         ></Grid>
         <Grid item md={12} lg={10}>
-          {/* INDEXES/MARKETS CHART SECTION */}
-
           <Grid
             justifyContent="space-evenly"
             alignItems="center"
@@ -73,6 +77,7 @@ export default async function Home({ mode }: { mode: string }) {
               item
               lg={11}
             >
+              {/* INDEXES/MARKETS CHART SECTION */}
               <HomeContent>
                 <MOServerWrapper session={session} />
               </HomeContent>
@@ -96,7 +101,6 @@ export default async function Home({ mode }: { mode: string }) {
               </Suspense>
             </Grid>
           </Grid>
-          {/* TOP MOVERS SECTION */}
         </Grid>
         <Grid
           sx={{ backgroundColor: "background.paper" }}

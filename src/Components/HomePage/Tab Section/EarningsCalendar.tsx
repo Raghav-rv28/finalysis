@@ -40,7 +40,7 @@ const months = [
 ];
 
 function StockListEarnings({ data }: StockListEarningsProps) {
-  console.log(data);
+  // console.log(data);
   return (
     <Grid
       sx={{ overflow: "hidden" }}
