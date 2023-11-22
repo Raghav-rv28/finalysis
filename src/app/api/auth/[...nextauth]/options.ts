@@ -16,7 +16,7 @@ const options: NextAuthOptions = {
       issuer: process.env.COGNITO_ISSUER,
       authorization: {
         params: {
-          redirect_uri: `${process.env.NEXTAUTH_URL}/api/auth/callback/cognito`,
+          redirect_uri: `${process.env.NEXTAUTH_URL}api/auth/callback/cognito`,
         },
       },
     }),
