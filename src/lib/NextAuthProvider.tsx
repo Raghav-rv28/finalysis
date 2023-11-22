@@ -9,5 +9,9 @@ type Props = {
 };
 
 export const NextAuthProvider = ({ children, session }: Props) => {
-  return <SessionProvider session={session}>{children}</SessionProvider>;
+  return (
+    <SessionProvider baseUrl={process.env.NEXTAUTH_URL} session={session}>
+      {children}
+    </SessionProvider>
+  );
 };
