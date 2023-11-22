@@ -14,6 +14,11 @@ const options: NextAuthOptions = {
       clientId: process.env.COGNITO_CLIENT_ID,
       clientSecret: process.env.COGNITO_CLIENT_SECRET,
       issuer: process.env.COGNITO_ISSUER,
+      authorization: {
+        params: {
+          redirect_uri: `${process.env.NEXTAUTH_URL}/api/auth/callback/cognito`,
+        },
+      },
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
