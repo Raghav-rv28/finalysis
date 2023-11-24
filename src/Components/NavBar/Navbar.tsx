@@ -31,8 +31,6 @@ import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/global/stocks.json";
 import { SearchDialog } from "./SearchDialog";
 import Link from "next/link";
-import { useStore } from "../../lib/store";
-import StoreInitializer from "../StoreInitializer";
 // Search Design
 
 const Search = styled("div")(({ theme }) => ({
@@ -51,8 +49,10 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
-interface PageProps {}
-export default function NavBar({}: PageProps) {
+interface PageProps {
+  mode: string;
+}
+export default function NavBar({ mode }: PageProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -63,7 +63,6 @@ export default function NavBar({}: PageProps) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { data: session, status } = useSession();
-  const { mode } = useStore();
   // Effects
   // React.useEffect(() => {
   //   if (searchQuery !== "" && searchRef.current !== undefined) {
@@ -205,7 +204,6 @@ export default function NavBar({}: PageProps) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <StoreInitializer mode={"dark"} />
       <AppBar
         enableColorOnDark
         sx={{ backgroundColor: "primary.dark" }}
@@ -262,9 +260,8 @@ export default function NavBar({}: PageProps) {
                 <FormControlLabel
                   label=""
                   onChange={() => {
-                    useStore.setState({
-                      mode: mode === "light" ? "dark" : "light",
-                    });
+                    // change mode
+                    //  mode: mode === "light" ? "dark" : "light",
                   }}
                   checked={mode === "dark"}
                   control={<MaterialUISwitch sx={{ m: 2 }} />}

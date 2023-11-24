@@ -1,9 +1,10 @@
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import CognitoProvider from "next-auth/providers/cognito";
-
-import { NextAuthOptions } from "next-auth";
+import Token from "../../../../types/next-auth";
+import { NextAuthOptions, Session, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { btoa } from "buffer";
 
 const options: NextAuthOptions = {
   secret:
@@ -19,6 +20,17 @@ const options: NextAuthOptions = {
           redirect_uri: `${process.env.NEXTAUTH_URL}api/auth/callback/cognito`,
         },
       },
+      token: {
+        url: "https://finalysis-test.auth.us-east-2.amazoncognito.com/oauth2/token",
+        params: {
+          Authorization: `Basic ${btoa(
+            `${process.env.COGNITO_CLIENT_ID}:${process.env.COGNITO_CLIENT_SECRET}`
+          )}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+          grant_type: " refresh_token ",
+          client_id: process.env.COGNITO_CLIENT_ID as string,
+        },
+      },
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
@@ -30,14 +42,11 @@ const options: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, user, token }) {
-      console.log("session");
-      console.log(session);
-      return session;
-    },
-    async jwt({ token, user }) {
-      console.log(token);
+    async jwt({ token, account }) {
       return token;
+    },
+    async session({ session, user, token }) {
+      return { token, ...session };
     },
   },
 };
