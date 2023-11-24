@@ -205,7 +205,7 @@ export default function NavBar({}: PageProps) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <StoreInitializer mode={mode} />
+      <StoreInitializer mode={"dark"} />
       <AppBar
         enableColorOnDark
         sx={{ backgroundColor: "primary.dark" }}

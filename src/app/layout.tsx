@@ -10,8 +10,6 @@ export default function RootLayout(props: {
 }) {
   const { session, children } = props;
 
-  useStore.setState({ mode: "light" });
-
   return (
     <html lang="en">
       <body>

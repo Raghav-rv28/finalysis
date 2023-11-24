@@ -138,7 +138,7 @@ export async function GET(request: Request) {
       action === "add"
     ) {
       const data = await getQuote(symbol);
-      console.log(JSON.stringify(data));
+      // console.log(JSON.stringify(data));
 
       const dbUpdate = await ddbDocClient.send(
         new PutCommand({
@@ -164,7 +164,7 @@ export async function GET(request: Request) {
           temp[val] = WatchlistItem[val];
         }
       });
-      console.log(Object.keys(temp));
+      // console.log(Object.keys(temp));
       const dbUpdate = await ddbDocClient.send(
         new PutCommand({
           TableName: tableName,

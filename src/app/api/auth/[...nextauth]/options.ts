@@ -29,5 +29,16 @@ const options: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_SECRET as string,
     }),
   ],
+  callbacks: {
+    async session({ session, user, token }) {
+      console.log("session");
+      console.log(session);
+      return session;
+    },
+    async jwt({ token, user }) {
+      console.log(token);
+      return token;
+    },
+  },
 };
 export default options;
