@@ -25,7 +25,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Media & Files
 import logoOnly from "../../../public/media/logo/logoOnly.png";
-import logoWithSlogan from "../../../public/media/logo/logoWithSloganBGRemoved.png";
+import logoWithSlogan from "../../../public/media/logo/logoInverted.png";
 import MaterialUISwitch from "./MaterialUISwitch";
 import TickerTape from "./TickerTape";
 import stockData from "../../app/api/data/global/stocks.json";

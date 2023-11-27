@@ -10,7 +10,6 @@ import WatchlistServerWrapper from "../Components/HomePage/SideBar/WatchlistServ
 import Loading from "../app/loading";
 import TopMovers from "../Components/HomePage/SideBar/TopMovers";
 import MOServerWrapper from "../Components/HomePage/Tab Section/MOServerWrapper";
-import { useTheme } from "@mui/material/styles";
 
 export default async function Homepage() {
   const session = await getServerSession(options);
@@ -25,15 +24,19 @@ export default async function Homepage() {
   // let globalSectorData: any;
   // let globalCryptoData: any;
   if (session) {
-    console.log(session);
-    userData = await getItem("USER", `USER-PROFILE-${session.user.email}`);
+    userData = await getItem(
+      "USER",
+      `USER-PROFILE-${session.user.email}`,
+      session.token
+    );
   }
+
   const globalTopMoversData = await getItem(
     "GLOBAL",
     "GLOBAL-TOP-MOVERS-LATEST"
   );
   // // get watchlist info
-  // console.log(userData);
+  console.log(userData);
   //   // querying will generate multiple items.
   //   globalCryptoData = await getItem("GLOBAL", "GLOBAL-CRYPTO-LATEST");
 

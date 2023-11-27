@@ -1,5 +1,9 @@
 import "server-only";
-export async function getItem(itemId: string, itemType: string) {
+export async function getItem(
+  itemId: string,
+  itemType: string,
+  token?: string
+) {
   try {
     console.log("Getting Item:", itemId, itemType);
     const response = await fetch(
